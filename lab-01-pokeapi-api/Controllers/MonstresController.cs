@@ -13,18 +13,18 @@ public class MonstresController : ControllerBase
         _context = context;
     }
 
-    // GET: api/Monstre
+    // GET: api/Monstres
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Monstre>>> GetMonstre()
     {
-        return await _context.TheMonstre.ToListAsync();
+        return await _context.Monstres.ToListAsync();
     }
 
-    // GET: api/Monstre/5
+    // GET: api/Monstres/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Monstre>> GetMonstre(int id)
     {
-        var monstre = await _context.TheMonstre.FindAsync(id);
+        var monstre = await _context.Monstres.FindAsync(id);
 
         if (monstre == null)
         {
@@ -34,7 +34,7 @@ public class MonstresController : ControllerBase
         return monstre;
     }
 
-    // PUT: api/Monstre/5
+    // PUT: api/Monstres/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
     public async Task<IActionResult> PutMonstre(int? id, Monstre monstre)
@@ -65,28 +65,28 @@ public class MonstresController : ControllerBase
         return NoContent();
     }
 
-    // POST: api/Monstre
+    // POST: api/Monstres
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
     public async Task<ActionResult<Monstre>> PostMonstre(Monstre monstre)
     {
-        _context.TheMonstre.Add(monstre);
+        _context.Monstres.Add(monstre);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction("GetMonstre", new { id = monstre.Id }, monstre);
     }
 
-    // DELETE: api/Monstre/5
+    // DELETE: api/Monstres/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMonstre(int? id)
     {
-        var monstre = await _context.TheMonstre.FindAsync(id);
+        var monstre = await _context.Monstres.FindAsync(id);
         if (monstre == null)
         {
             return NotFound();
         }
 
-        _context.TheMonstre.Remove(monstre);
+        _context.Monstres.Remove(monstre);
         await _context.SaveChangesAsync();
 
         return NoContent();
@@ -94,6 +94,6 @@ public class MonstresController : ControllerBase
 
     private bool MonstreExists(int? id)
     {
-        return _context.TheMonstre.Any(e => e.Id == id);
+        return _context.Monstres.Any(e => e.Id == id);
     }
 }

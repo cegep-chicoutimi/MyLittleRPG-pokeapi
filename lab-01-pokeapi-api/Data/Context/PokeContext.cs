@@ -7,7 +7,7 @@ namespace lab_01_pokeapi_api.Data.Context
 {
     public class PokeContext : DbContext
     {
-        public DbSet<Monstre> TheMonstre { get; set; }
+        public DbSet<Monstre> Monstres { get; set; }
 
         public PokeContext(DbContextOptions<PokeContext> options) : base(options) { }
 
