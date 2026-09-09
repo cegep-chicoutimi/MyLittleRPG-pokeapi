@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="lab-01-pokeapi-api/lab-01-pokeapi-api.csproj" Id="21af61fe-939f-4d0d-8f57-c33e9e9678a2" />
-  <Project Path="lab-01/lab-01-json.csproj" />
+  <Project Path="lab-01-e02-pokeapi-api/lab-01-e02-pokeapi-api.csproj" />
+  <Project Path="lab-01/lab-01-e01-json.csproj" />
 </Solution>

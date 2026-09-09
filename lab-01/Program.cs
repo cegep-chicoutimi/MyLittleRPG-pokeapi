@@ -15,7 +15,7 @@ namespace lab_01
         {
             HttpClient client = new HttpClient();
 
-            using StreamWriter sw = new StreamWriter("../../../../pokemons.json");
+            using StreamWriter sw = new StreamWriter("../../../pokemons.json");
             using JsonTextWriter writer = new JsonTextWriter(sw) { Formatting = Formatting.Indented };
             JsonSerializer serializer = new JsonSerializer();
             int i;
