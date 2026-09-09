@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using lab_01_pokeapi_api.Models;
-using lab_01_pokeapi_api.Data.Context;
+using lab_01_e02_pokeapi_api.Models;
+using lab_01_e02_pokeapi_api.Data.Context;
 
 [Route("api/[controller]")]
 [ApiController]

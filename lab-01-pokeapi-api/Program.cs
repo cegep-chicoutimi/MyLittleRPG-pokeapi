@@ -1,8 +1,8 @@
 
-using lab_01_pokeapi_api.Data.Context;
+using lab_01_e02_pokeapi_api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace lab_01_pokeapi_api
+namespace lab_01_e02_pokeapi_api
 {
     public class Program
     {

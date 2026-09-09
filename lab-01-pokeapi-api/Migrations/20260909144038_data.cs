@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace lab_01_pokeapi_api.Migrations
+namespace lab_01_e02_pokeapi_api.Migrations
 {
     /// <inheritdoc />
     public partial class data : Migration

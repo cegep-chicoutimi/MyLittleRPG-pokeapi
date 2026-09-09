@@ -1,9 +1,9 @@
-﻿using lab_01_pokeapi_api.Models;
+﻿using lab_01_e02_pokeapi_api.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace lab_01_pokeapi_api.Data.Context
+namespace lab_01_e02_pokeapi_api.Data.Context
 {
     public class PokeContext : DbContext
     {

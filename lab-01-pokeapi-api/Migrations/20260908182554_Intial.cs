@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace lab_01_pokeapi_api.Migrations
+namespace lab_01_e02_pokeapi_api.Migrations
 {
     /// <inheritdoc />
     public partial class Intial : Migration

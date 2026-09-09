@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using lab_01_pokeapi_api.Data.Context;
+using lab_01_e02_pokeapi_api.Data.Context;
 
 #nullable disable
 
-namespace lab_01_pokeapi_api.Migrations
+namespace lab_01_e02_pokeapi_api.Migrations
 {
     [DbContext(typeof(PokeContext))]
     partial class PokeContextModelSnapshot : ModelSnapshot
@@ -18,7 +18,7 @@ namespace lab_01_pokeapi_api.Migrations
                 .HasAnnotation("ProductVersion", "10.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("lab_01_pokeapi_api.Models.Monstre", b =>
+            modelBuilder.Entity("lab_01_e02_pokeapi_api.Models.Monstre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace lab_01_pokeapi_api.Models
+namespace lab_01_e02_pokeapi_api.Models
 {
     public class Monstre
     {
