@@ -1,4 +1,7 @@
 
+using lab_01_pokeapi_api.Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace lab_01_pokeapi_api
 {
     public class Program
@@ -9,6 +12,13 @@ namespace lab_01_pokeapi_api
 
             // Add services to the container.
 
+            builder.Services.AddDbContext<PokeContext>(options =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("Default");
+                options.UseMySQL(connectionString);
+            });
+            builder.Services.AddSwaggerGen();
+
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
@@ -18,7 +28,8 @@ namespace lab_01_pokeapi_api
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();

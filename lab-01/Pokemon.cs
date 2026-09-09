@@ -20,9 +20,6 @@ namespace lab_01
 
             JsonDocument jsonResult = JsonDocument.Parse(result);
 
-
-
-
             return jsonResult;
         }
     }
@@ -31,7 +28,7 @@ namespace lab_01
     public class Pokemon
     {
 
-        private int id;
+        private int pokemonId;
         private string nom = "";
         private int pointDeVieBase; // HP / 3 (min 3)
         private int forceBase; // Attaque / 8 (minimum 5)
@@ -44,12 +41,12 @@ namespace lab_01
         [JsonProperty("id")]
         public int Id
         {
-            get => id;
+            get => pokemonId;
             set
             {
                 if (!(value > 809 || value < 1))
                 {
-                    id = value;
+                    pokemonId = value;
                 }
                 else throw new ArgumentException("Must be between 1 and 809");
             }
@@ -69,53 +66,62 @@ namespace lab_01
         public int PointDeVieBase
         {
             get => pointDeVieBase;
-            set
+            set => pointDeVieBase = value;
+        }
+
+        public int ConvertPv(int value)
+        {
+            int pv = value / 3;
+            if (pv < 10)
             {
-                pointDeVieBase = value / 3;
-                if (pointDeVieBase < 10)
-                {
-                    pointDeVieBase = 10;
-                }
+                pv = 10;
             }
+            return pv;
         }
 
         [JsonProperty("forceBase")]
         public int ForceBase
         {
             get => forceBase;
-            set
+            set => forceBase = value;
+        }
+
+        public int ConvertForce(int value)
+        {
+            int force = value / 8;
+            if (force < 5)
             {
-                forceBase = value / 8;
-                if (forceBase < 5)
-                {
-                    forceBase = 5;
-                }
+                force = 5;
             }
+            return force;
         }
 
         [JsonProperty("defenseBase")]
         public int DefenseBase
         {
             get => defenseBase;
-            set
+            set => defenseBase = value;
+        }
+
+        public int ConvertDefense(int value)
+        {
+            int defense = value / 8;
+            if (defense < 5)
             {
-                defenseBase = value / 8;
-                if (defenseBase < 5)
-                {
-                    pointDeVieBase = 5;
-                }
+                defense = 5;
             }
+            return defense;
         }
 
         [JsonProperty("experienceBase")]
         public int ExperienceBase
         {
             get => experienceBase;
-            set
-            {
-                experienceBase = value < 0 ? 0 : value * 2;
-            }
+            set => experienceBase = value;
         }
+
+        public int ConvertExp(int value)
+            => value < 0 ? 0 : value * 2;
 
         [JsonProperty("spriteUrl")]
         public string SpriteUrl
@@ -146,42 +152,44 @@ namespace lab_01
 
         public Pokemon()
         {
-            id = 0;
-            Nom = "MissingNo."; // https://www.pokepedia.fr/MissingNo
-            PointDeVieBase = 33;
-            ForceBase = 136;
-            DefenseBase = 0;
-            ExperienceBase = 33 + 136 + 0 + 1 + 1 + 29 + 6;
-            SpriteUrl = "https://www.pokepedia.fr/images/9/91/%2C_%27M_%2800%29.png";
-            Type1 = "normal";
-            Type2 = null;
+            //pokemonId = 0;
+            //Nom = "MissingNo."; // https://www.pokepedia.fr/MissingNo
+            //PointDeVieBase = 33;
+            //ForceBase = 136;
+            //DefenseBase = 0;
+            //ExperienceBase = 33 + 136 + 0 + 1 + 1 + 29 + 6;
+            //SpriteUrl = "https://www.pokepedia.fr/images/9/91/%2C_%27M_%2800%29.png";
+            //Type1 = "normal";
+            //Type2 = null;
         }
 
-        public Pokemon(int _id, string _name, 
-            Dictionary<string, int> _stats, string _spriteUrl, 
+        // From PokeAPI
+
+        public Pokemon(int _pokemonId, string _name,
+            Dictionary<string, int> _stats, string _spriteUrl,
             string _type1, string? _type2)
         {
-            Id = _id;
+            Id = _pokemonId;
             Nom = _name;
-            PointDeVieBase = _stats["hp"];
-            ForceBase = _stats["attack"];
-            DefenseBase = _stats["defense"];
+            PointDeVieBase = ConvertPv(_stats["hp"]);
+            ForceBase = ConvertForce(_stats["attack"]);
+            DefenseBase = ConvertDefense(_stats["defense"]);
 
-            ExperienceBase = _stats["hp"] + _stats["attack"] +
+            ExperienceBase = ConvertExp(_stats["hp"] + _stats["attack"] +
                 _stats["defense"] + _stats["special-attack"] +
-                _stats["special-defense"] + _stats["speed"];
+                _stats["special-defense"] + _stats["speed"]);
 
             SpriteUrl = _spriteUrl;
             Type1 = _type1;
             Type2 = _type2;
         }
 
-        //  From BD
-        private Pokemon(int _id, string _nom, int _pointVieBase, 
+        // From Json
+        private Pokemon(int _pokemonId, string _nom, int _pointVieBase,
             int _forceBase, int _defenseBase, int _experienceBase,
-            string _spriteUrl, string _type1, string? _type2 )
-        { 
-            id  = _id;
+            string _spriteUrl, string _type1, string? _type2)
+        {
+            pokemonId = _pokemonId;
             nom = _nom;
             pointDeVieBase = _pointVieBase;
             forceBase = _forceBase;
