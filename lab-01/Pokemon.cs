@@ -44,11 +44,11 @@ namespace lab_01
             get => pokemonId;
             set
             {
-                if (!(value > 809 || value < 1))
+                if (value == 0)
                 {
                     pokemonId = value;
                 }
-                else throw new ArgumentException("Must be between 1 and 809");
+                else throw new ArgumentException("Id can't be 0");
             }
         }
 

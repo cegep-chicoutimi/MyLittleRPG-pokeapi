@@ -25,11 +25,12 @@ namespace lab_01_e02_pokeapi_api.Models
             get => pokemonId;
             set
             {
-                if (!(value > 809 || value < 1))
-                {
-                    pokemonId = value;
-                }
-                else throw new ArgumentException("Must be between 1 and 809");
+                //if (value == 0)
+                //{
+                //    pokemonId = value;
+                //}
+                //else throw new ArgumentException("Id can't be 0");
+                pokemonId = value;
             }
         }
 
