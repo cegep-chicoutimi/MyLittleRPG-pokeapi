@@ -23,6 +23,8 @@ namespace lab_01_e02_pokeapi_api.Data.Context
                 List<Monstre> monstres;
                 monstres = JsonConvert.DeserializeObject<IEnumerable<Monstre>>(line) as List<Monstre> ?? new List<Monstre>();
 
+                foreach(Monstre m in monstres) { m.MonstreId = m.PokemonId; }
+
                 modelBuilder.Entity<Monstre>().HasData(monstres);
             }
             catch

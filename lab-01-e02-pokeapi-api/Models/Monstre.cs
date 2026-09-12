@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lab_01_e02_pokeapi_api.Models
 {
     public class Monstre
     {
+        private int monstreId;
         private int pokemonId;
         private string nom = "";
         private int pointDeVieBase; // HP / 3 (min 3)
@@ -14,13 +17,16 @@ namespace lab_01_e02_pokeapi_api.Models
         private string type1 = ""; // Premier type du Pokémon
         private string? type2; // Second type du Pokémon
 
-        [JsonProperty("id")]
-        public int MonsterId
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MonstreId
         {
-            get => pokemonId;
-            set { Id = value; }
+            get => monstreId;
+            set { monstreId = value; }
         }
-        public int Id
+
+        [JsonProperty("id")]
+        public int PokemonId
         {
             get => pokemonId;
             set
@@ -51,7 +57,7 @@ namespace lab_01_e02_pokeapi_api.Models
             set => pointDeVieBase = value;
         }
 
-        public int ConvertPv(int value)
+        public static int ConvertPv(int value)
         {
             int pv = value / 3;
             if (pv < 10)
@@ -68,7 +74,7 @@ namespace lab_01_e02_pokeapi_api.Models
             set => forceBase = value;
         }
 
-        public int ConvertForce(int value)
+        public static int ConvertForce(int value)
         {
             int force = value / 8;
             if (force < 5)
@@ -85,7 +91,7 @@ namespace lab_01_e02_pokeapi_api.Models
             set => defenseBase = value;
         }
 
-        public int ConvertDefense(int value)
+        public static int ConvertDefense(int value)
         {
             int defense = value / 8;
             if (defense < 5)
@@ -102,7 +108,7 @@ namespace lab_01_e02_pokeapi_api.Models
             set => experienceBase = value;
         }
 
-        public int ConvertExp(int value)
+        public static int ConvertExp(int value)
             => value < 0 ? 0 : value * 2;
 
         [JsonProperty("spriteUrl")]
@@ -150,7 +156,8 @@ namespace lab_01_e02_pokeapi_api.Models
             Dictionary<string, int> _stats, string _spriteUrl,
             string _type1, string? _type2)
         {
-            Id = _pokemonId;
+            MonstreId = _pokemonId;
+            PokemonId = _pokemonId;
             Nom = _name;
             PointDeVieBase = ConvertPv(_stats["hp"]);
             ForceBase = ConvertForce(_stats["attack"]);
@@ -170,6 +177,7 @@ namespace lab_01_e02_pokeapi_api.Models
             int _forceBase, int _defenseBase, int _experienceBase,
             string _spriteUrl, string _type1, string? _type2)
         {
+            monstreId = _pokemonId;
             pokemonId = _pokemonId;
             nom = _nom;
             pointDeVieBase = _pointVieBase;
@@ -189,10 +197,10 @@ namespace lab_01_e02_pokeapi_api.Models
             (
                 -1,
                 "MissingNo.",
-                33,
-                136,
-                0,
-                33 + 136 + 0 + 1 + 1 + 29 + 6,
+                ConvertPv(33),
+                ConvertForce(136),
+                ConvertForce(0),
+                ConvertExp(33 + 136 + 0 + 1 + 1 + 29 + 6),
                 "https://www.pokepedia.fr/images/9/91/%2C_%27M_%2800%29.png",
                 "normal",
                 null

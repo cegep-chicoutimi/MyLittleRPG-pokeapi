@@ -39,7 +39,7 @@ public class MonstresController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> PutMonstre(int? id, Monstre monstre)
     {
-        if (id != monstre.Id)
+        if (id != monstre.MonstreId)
         {
             return BadRequest();
         }
@@ -73,7 +73,7 @@ public class MonstresController : ControllerBase
         _context.Monstres.Add(monstre);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction("GetMonstre", new { id = monstre.Id }, monstre);
+        return CreatedAtAction("GetMonstre", new { id = monstre.MonstreId }, monstre);
     }
 
     // DELETE: api/Monstres/5
@@ -94,6 +94,6 @@ public class MonstresController : ControllerBase
 
     private bool MonstreExists(int? id)
     {
-        return _context.Monstres.Any(e => e.Id == id);
+        return _context.Monstres.Any(e => e.MonstreId == id);
     }
 }

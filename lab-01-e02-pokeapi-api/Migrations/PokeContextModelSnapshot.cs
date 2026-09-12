@@ -20,7 +20,7 @@ namespace lab_01_e02_pokeapi_api.Migrations
 
             modelBuilder.Entity("lab_01_e02_pokeapi_api.Models.Monstre", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("MonstreId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -33,14 +33,14 @@ namespace lab_01_e02_pokeapi_api.Migrations
                     b.Property<int>("ForceBase")
                         .HasColumnType("int");
 
-                    b.Property<int>("MonsterId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("PointDeVieBase")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonId")
                         .HasColumnType("int");
 
                     b.Property<string>("SpriteUrl")
@@ -54,10524 +54,10511 @@ namespace lab_01_e02_pokeapi_api.Migrations
                     b.Property<string>("Type2")
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("MonstreId");
 
                     b.ToTable("Monstres");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            MonstreId = 1,
                             DefenseBase = 6,
                             ExperienceBase = 636,
                             ForceBase = 6,
-                            MonsterId = 1,
                             Nom = "bulbasaur",
                             PointDeVieBase = 15,
+                            PokemonId = 1,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 2,
+                            MonstreId = 2,
                             DefenseBase = 7,
                             ExperienceBase = 810,
                             ForceBase = 7,
-                            MonsterId = 2,
                             Nom = "ivysaur",
                             PointDeVieBase = 20,
+                            PokemonId = 2,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 3,
+                            MonstreId = 3,
                             DefenseBase = 10,
                             ExperienceBase = 1050,
                             ForceBase = 10,
-                            MonsterId = 3,
                             Nom = "venusaur",
                             PointDeVieBase = 26,
+                            PokemonId = 3,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 4,
+                            MonstreId = 4,
                             DefenseBase = 5,
                             ExperienceBase = 618,
                             ForceBase = 6,
-                            MonsterId = 4,
                             Nom = "charmander",
                             PointDeVieBase = 13,
+                            PokemonId = 4,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 5,
+                            MonstreId = 5,
                             DefenseBase = 7,
                             ExperienceBase = 810,
                             ForceBase = 8,
-                            MonsterId = 5,
                             Nom = "charmeleon",
                             PointDeVieBase = 19,
+                            PokemonId = 5,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 6,
+                            MonstreId = 6,
                             DefenseBase = 9,
                             ExperienceBase = 1068,
                             ForceBase = 10,
-                            MonsterId = 6,
                             Nom = "charizard",
                             PointDeVieBase = 26,
+                            PokemonId = 6,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 7,
+                            MonstreId = 7,
                             DefenseBase = 8,
                             ExperienceBase = 628,
                             ForceBase = 6,
-                            MonsterId = 7,
                             Nom = "squirtle",
                             PointDeVieBase = 14,
+                            PokemonId = 7,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 8,
+                            MonstreId = 8,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 7,
-                            MonsterId = 8,
                             Nom = "wartortle",
                             PointDeVieBase = 19,
+                            PokemonId = 8,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 9,
+                            MonstreId = 9,
                             DefenseBase = 12,
                             ExperienceBase = 1060,
                             ForceBase = 10,
-                            MonsterId = 9,
                             Nom = "blastoise",
                             PointDeVieBase = 26,
+                            PokemonId = 9,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 10,
-                            DefenseBase = 4,
+                            MonstreId = 10,
+                            DefenseBase = 5,
                             ExperienceBase = 390,
                             ForceBase = 5,
-                            MonsterId = 10,
                             Nom = "caterpie",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 10,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 11,
+                            MonstreId = 11,
                             DefenseBase = 6,
                             ExperienceBase = 410,
                             ForceBase = 5,
-                            MonsterId = 11,
                             Nom = "metapod",
                             PointDeVieBase = 16,
+                            PokemonId = 11,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 12,
+                            MonstreId = 12,
                             DefenseBase = 6,
                             ExperienceBase = 790,
                             ForceBase = 5,
-                            MonsterId = 12,
                             Nom = "butterfree",
                             PointDeVieBase = 20,
+                            PokemonId = 12,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 13,
-                            DefenseBase = 3,
+                            MonstreId = 13,
+                            DefenseBase = 5,
                             ExperienceBase = 390,
                             ForceBase = 5,
-                            MonsterId = 13,
                             Nom = "weedle",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 13,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 14,
+                            MonstreId = 14,
                             DefenseBase = 6,
                             ExperienceBase = 410,
                             ForceBase = 5,
-                            MonsterId = 14,
                             Nom = "kakuna",
                             PointDeVieBase = 15,
+                            PokemonId = 14,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 15,
+                            MonstreId = 15,
                             DefenseBase = 5,
                             ExperienceBase = 790,
                             ForceBase = 11,
-                            MonsterId = 15,
                             Nom = "beedrill",
                             PointDeVieBase = 21,
+                            PokemonId = 15,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 16,
+                            MonstreId = 16,
                             DefenseBase = 5,
                             ExperienceBase = 502,
                             ForceBase = 5,
-                            MonsterId = 16,
                             Nom = "pidgey",
                             PointDeVieBase = 13,
+                            PokemonId = 16,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 17,
+                            MonstreId = 17,
                             DefenseBase = 6,
                             ExperienceBase = 698,
                             ForceBase = 7,
-                            MonsterId = 17,
                             Nom = "pidgeotto",
                             PointDeVieBase = 21,
+                            PokemonId = 17,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 18,
+                            MonstreId = 18,
                             DefenseBase = 9,
                             ExperienceBase = 958,
                             ForceBase = 10,
-                            MonsterId = 18,
                             Nom = "pidgeot",
                             PointDeVieBase = 27,
+                            PokemonId = 18,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 19,
-                            DefenseBase = 4,
+                            MonstreId = 19,
+                            DefenseBase = 5,
                             ExperienceBase = 506,
                             ForceBase = 7,
-                            MonsterId = 19,
                             Nom = "rattata",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 19,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 20,
+                            MonstreId = 20,
                             DefenseBase = 7,
                             ExperienceBase = 826,
                             ForceBase = 10,
-                            MonsterId = 20,
                             Nom = "raticate",
                             PointDeVieBase = 18,
+                            PokemonId = 20,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 21,
-                            DefenseBase = 3,
+                            MonstreId = 21,
+                            DefenseBase = 5,
                             ExperienceBase = 524,
                             ForceBase = 7,
-                            MonsterId = 21,
                             Nom = "spearow",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 21,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 22,
+                            MonstreId = 22,
                             DefenseBase = 8,
                             ExperienceBase = 884,
                             ForceBase = 11,
-                            MonsterId = 22,
                             Nom = "fearow",
                             PointDeVieBase = 21,
+                            PokemonId = 22,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 23,
+                            MonstreId = 23,
                             DefenseBase = 5,
                             ExperienceBase = 576,
                             ForceBase = 7,
-                            MonsterId = 23,
                             Nom = "ekans",
                             PointDeVieBase = 11,
+                            PokemonId = 23,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 24,
+                            MonstreId = 24,
                             DefenseBase = 8,
                             ExperienceBase = 896,
                             ForceBase = 11,
-                            MonsterId = 24,
                             Nom = "arbok",
                             PointDeVieBase = 20,
+                            PokemonId = 24,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 25,
+                            MonstreId = 25,
                             DefenseBase = 5,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 25,
                             Nom = "pikachu",
                             PointDeVieBase = 11,
+                            PokemonId = 25,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 26,
+                            MonstreId = 26,
                             DefenseBase = 6,
                             ExperienceBase = 970,
                             ForceBase = 11,
-                            MonsterId = 26,
                             Nom = "raichu",
                             PointDeVieBase = 20,
+                            PokemonId = 26,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 27,
+                            MonstreId = 27,
                             DefenseBase = 10,
                             ExperienceBase = 600,
                             ForceBase = 9,
-                            MonsterId = 27,
                             Nom = "sandshrew",
                             PointDeVieBase = 16,
+                            PokemonId = 27,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 28,
+                            MonstreId = 28,
                             DefenseBase = 13,
                             ExperienceBase = 900,
                             ForceBase = 12,
-                            MonsterId = 28,
                             Nom = "sandslash",
                             PointDeVieBase = 25,
+                            PokemonId = 28,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 29,
+                            MonstreId = 29,
                             DefenseBase = 6,
                             ExperienceBase = 550,
                             ForceBase = 5,
-                            MonsterId = 29,
                             Nom = "nidoran-f",
                             PointDeVieBase = 18,
+                            PokemonId = 29,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 30,
+                            MonstreId = 30,
                             DefenseBase = 8,
                             ExperienceBase = 730,
                             ForceBase = 7,
-                            MonsterId = 30,
                             Nom = "nidorina",
                             PointDeVieBase = 23,
+                            PokemonId = 30,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 31,
+                            MonstreId = 31,
                             DefenseBase = 10,
                             ExperienceBase = 1010,
                             ForceBase = 11,
-                            MonsterId = 31,
                             Nom = "nidoqueen",
                             PointDeVieBase = 30,
+                            PokemonId = 31,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
                             Type1 = "poison",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 32,
+                            MonstreId = 32,
                             DefenseBase = 5,
                             ExperienceBase = 546,
                             ForceBase = 7,
-                            MonsterId = 32,
                             Nom = "nidoran-m",
                             PointDeVieBase = 15,
+                            PokemonId = 32,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 33,
+                            MonstreId = 33,
                             DefenseBase = 7,
                             ExperienceBase = 730,
                             ForceBase = 9,
-                            MonsterId = 33,
                             Nom = "nidorino",
                             PointDeVieBase = 20,
+                            PokemonId = 33,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 34,
+                            MonstreId = 34,
                             DefenseBase = 9,
                             ExperienceBase = 1010,
                             ForceBase = 12,
-                            MonsterId = 34,
                             Nom = "nidoking",
                             PointDeVieBase = 27,
+                            PokemonId = 34,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
                             Type1 = "poison",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 35,
+                            MonstreId = 35,
                             DefenseBase = 6,
                             ExperienceBase = 646,
                             ForceBase = 5,
-                            MonsterId = 35,
                             Nom = "clefairy",
                             PointDeVieBase = 23,
+                            PokemonId = 35,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 36,
+                            MonstreId = 36,
                             DefenseBase = 9,
                             ExperienceBase = 966,
                             ForceBase = 8,
-                            MonsterId = 36,
                             Nom = "clefable",
                             PointDeVieBase = 31,
+                            PokemonId = 36,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 37,
+                            MonstreId = 37,
                             DefenseBase = 5,
                             ExperienceBase = 598,
                             ForceBase = 5,
-                            MonsterId = 37,
                             Nom = "vulpix",
                             PointDeVieBase = 12,
+                            PokemonId = 37,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 38,
+                            MonstreId = 38,
                             DefenseBase = 9,
                             ExperienceBase = 1010,
                             ForceBase = 9,
-                            MonsterId = 38,
                             Nom = "ninetales",
                             PointDeVieBase = 24,
+                            PokemonId = 38,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 39,
-                            DefenseBase = 2,
+                            MonstreId = 39,
+                            DefenseBase = 5,
                             ExperienceBase = 540,
                             ForceBase = 5,
-                            MonsterId = 39,
                             Nom = "jigglypuff",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 38,
+                            PokemonId = 39,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
                             Type1 = "normal",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 40,
+                            MonstreId = 40,
                             DefenseBase = 5,
                             ExperienceBase = 870,
                             ForceBase = 8,
-                            MonsterId = 40,
                             Nom = "wigglytuff",
                             PointDeVieBase = 46,
+                            PokemonId = 40,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
                             Type1 = "normal",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 41,
-                            DefenseBase = 4,
+                            MonstreId = 41,
+                            DefenseBase = 5,
                             ExperienceBase = 490,
                             ForceBase = 5,
-                            MonsterId = 41,
                             Nom = "zubat",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 41,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
                             Type1 = "poison",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 42,
+                            MonstreId = 42,
                             DefenseBase = 8,
                             ExperienceBase = 910,
                             ForceBase = 10,
-                            MonsterId = 42,
                             Nom = "golbat",
                             PointDeVieBase = 25,
+                            PokemonId = 42,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
                             Type1 = "poison",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 43,
+                            MonstreId = 43,
                             DefenseBase = 6,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 43,
                             Nom = "oddish",
                             PointDeVieBase = 15,
+                            PokemonId = 43,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 44,
+                            MonstreId = 44,
                             DefenseBase = 8,
                             ExperienceBase = 790,
                             ForceBase = 8,
-                            MonsterId = 44,
                             Nom = "gloom",
                             PointDeVieBase = 20,
+                            PokemonId = 44,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 45,
+                            MonstreId = 45,
                             DefenseBase = 10,
                             ExperienceBase = 980,
                             ForceBase = 10,
-                            MonsterId = 45,
                             Nom = "vileplume",
                             PointDeVieBase = 25,
+                            PokemonId = 45,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 46,
+                            MonstreId = 46,
                             DefenseBase = 6,
                             ExperienceBase = 570,
                             ForceBase = 8,
-                            MonsterId = 46,
                             Nom = "paras",
                             PointDeVieBase = 11,
+                            PokemonId = 46,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 47,
+                            MonstreId = 47,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 11,
-                            MonsterId = 47,
                             Nom = "parasect",
                             PointDeVieBase = 20,
+                            PokemonId = 47,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 48,
+                            MonstreId = 48,
                             DefenseBase = 6,
                             ExperienceBase = 610,
                             ForceBase = 6,
-                            MonsterId = 48,
                             Nom = "venonat",
                             PointDeVieBase = 20,
+                            PokemonId = 48,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 49,
+                            MonstreId = 49,
                             DefenseBase = 7,
                             ExperienceBase = 900,
                             ForceBase = 8,
-                            MonsterId = 49,
                             Nom = "venomoth",
                             PointDeVieBase = 23,
+                            PokemonId = 49,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 50,
-                            DefenseBase = 3,
+                            MonstreId = 50,
+                            DefenseBase = 5,
                             ExperienceBase = 530,
                             ForceBase = 6,
-                            MonsterId = 50,
                             Nom = "diglett",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 50,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 51,
+                            MonstreId = 51,
                             DefenseBase = 6,
                             ExperienceBase = 850,
                             ForceBase = 12,
-                            MonsterId = 51,
                             Nom = "dugtrio",
                             PointDeVieBase = 11,
+                            PokemonId = 51,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 52,
-                            DefenseBase = 4,
+                            MonstreId = 52,
+                            DefenseBase = 5,
                             ExperienceBase = 580,
                             ForceBase = 5,
-                            MonsterId = 52,
                             Nom = "meowth",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 52,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 53,
+                            MonstreId = 53,
                             DefenseBase = 7,
                             ExperienceBase = 880,
                             ForceBase = 8,
-                            MonsterId = 53,
                             Nom = "persian",
                             PointDeVieBase = 21,
+                            PokemonId = 53,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 54,
+                            MonstreId = 54,
                             DefenseBase = 6,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 54,
                             Nom = "psyduck",
                             PointDeVieBase = 16,
+                            PokemonId = 54,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 55,
+                            MonstreId = 55,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 10,
-                            MonsterId = 55,
                             Nom = "golduck",
                             PointDeVieBase = 26,
+                            PokemonId = 55,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 56,
-                            DefenseBase = 4,
+                            MonstreId = 56,
+                            DefenseBase = 5,
                             ExperienceBase = 610,
                             ForceBase = 10,
-                            MonsterId = 56,
                             Nom = "mankey",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 56,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 57,
+                            MonstreId = 57,
                             DefenseBase = 7,
                             ExperienceBase = 910,
                             ForceBase = 13,
-                            MonsterId = 57,
                             Nom = "primeape",
                             PointDeVieBase = 21,
+                            PokemonId = 57,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 58,
+                            MonstreId = 58,
                             DefenseBase = 5,
                             ExperienceBase = 700,
                             ForceBase = 8,
-                            MonsterId = 58,
                             Nom = "growlithe",
                             PointDeVieBase = 18,
+                            PokemonId = 58,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 59,
+                            MonstreId = 59,
                             DefenseBase = 10,
                             ExperienceBase = 1110,
                             ForceBase = 13,
-                            MonsterId = 59,
                             Nom = "arcanine",
                             PointDeVieBase = 30,
+                            PokemonId = 59,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 60,
+                            MonstreId = 60,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 60,
                             Nom = "poliwag",
                             PointDeVieBase = 13,
+                            PokemonId = 60,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 61,
+                            MonstreId = 61,
                             DefenseBase = 8,
                             ExperienceBase = 770,
                             ForceBase = 8,
-                            MonsterId = 61,
                             Nom = "poliwhirl",
                             PointDeVieBase = 21,
+                            PokemonId = 61,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 62,
+                            MonstreId = 62,
                             DefenseBase = 11,
                             ExperienceBase = 1020,
                             ForceBase = 11,
-                            MonsterId = 62,
                             Nom = "poliwrath",
                             PointDeVieBase = 30,
+                            PokemonId = 62,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
                             Type1 = "water",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 63,
-                            DefenseBase = 1,
+                            MonstreId = 63,
+                            DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 5,
-                            MonsterId = 63,
                             Nom = "abra",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 63,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 64,
-                            DefenseBase = 3,
+                            MonstreId = 64,
+                            DefenseBase = 5,
                             ExperienceBase = 800,
                             ForceBase = 5,
-                            MonsterId = 64,
                             Nom = "kadabra",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 64,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 65,
+                            MonstreId = 65,
                             DefenseBase = 5,
                             ExperienceBase = 1000,
                             ForceBase = 6,
-                            MonsterId = 65,
                             Nom = "alakazam",
                             PointDeVieBase = 18,
+                            PokemonId = 65,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 66,
+                            MonstreId = 66,
                             DefenseBase = 6,
                             ExperienceBase = 610,
                             ForceBase = 10,
-                            MonsterId = 66,
                             Nom = "machop",
                             PointDeVieBase = 23,
+                            PokemonId = 66,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 67,
+                            MonstreId = 67,
                             DefenseBase = 8,
                             ExperienceBase = 810,
                             ForceBase = 12,
-                            MonsterId = 67,
                             Nom = "machoke",
                             PointDeVieBase = 26,
+                            PokemonId = 67,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 68,
+                            MonstreId = 68,
                             DefenseBase = 10,
                             ExperienceBase = 1010,
                             ForceBase = 16,
-                            MonsterId = 68,
                             Nom = "machamp",
                             PointDeVieBase = 30,
+                            PokemonId = 68,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 69,
-                            DefenseBase = 4,
+                            MonstreId = 69,
+                            DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 9,
-                            MonsterId = 69,
                             Nom = "bellsprout",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 16,
+                            PokemonId = 69,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 70,
+                            MonstreId = 70,
                             DefenseBase = 6,
                             ExperienceBase = 780,
                             ForceBase = 11,
-                            MonsterId = 70,
                             Nom = "weepinbell",
                             PointDeVieBase = 21,
+                            PokemonId = 70,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 71,
+                            MonstreId = 71,
                             DefenseBase = 8,
                             ExperienceBase = 980,
                             ForceBase = 13,
-                            MonsterId = 71,
                             Nom = "victreebel",
                             PointDeVieBase = 26,
+                            PokemonId = 71,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 72,
-                            DefenseBase = 4,
+                            MonstreId = 72,
+                            DefenseBase = 5,
                             ExperienceBase = 670,
                             ForceBase = 5,
-                            MonsterId = 72,
                             Nom = "tentacool",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 72,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
                             Type1 = "water",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 73,
+                            MonstreId = 73,
                             DefenseBase = 8,
                             ExperienceBase = 1030,
                             ForceBase = 8,
-                            MonsterId = 73,
                             Nom = "tentacruel",
                             PointDeVieBase = 26,
+                            PokemonId = 73,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
                             Type1 = "water",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 74,
+                            MonstreId = 74,
                             DefenseBase = 12,
                             ExperienceBase = 600,
                             ForceBase = 10,
-                            MonsterId = 74,
                             Nom = "geodude",
                             PointDeVieBase = 13,
+                            PokemonId = 74,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 75,
+                            MonstreId = 75,
                             DefenseBase = 14,
                             ExperienceBase = 780,
                             ForceBase = 11,
-                            MonsterId = 75,
                             Nom = "graveler",
                             PointDeVieBase = 18,
+                            PokemonId = 75,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 76,
+                            MonstreId = 76,
                             DefenseBase = 16,
                             ExperienceBase = 990,
                             ForceBase = 15,
-                            MonsterId = 76,
                             Nom = "golem",
                             PointDeVieBase = 26,
+                            PokemonId = 76,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 77,
+                            MonstreId = 77,
                             DefenseBase = 6,
                             ExperienceBase = 820,
                             ForceBase = 10,
-                            MonsterId = 77,
                             Nom = "ponyta",
                             PointDeVieBase = 16,
+                            PokemonId = 77,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 78,
+                            MonstreId = 78,
                             DefenseBase = 8,
                             ExperienceBase = 1000,
                             ForceBase = 12,
-                            MonsterId = 78,
                             Nom = "rapidash",
                             PointDeVieBase = 21,
+                            PokemonId = 78,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 79,
+                            MonstreId = 79,
                             DefenseBase = 8,
                             ExperienceBase = 630,
                             ForceBase = 8,
-                            MonsterId = 79,
                             Nom = "slowpoke",
                             PointDeVieBase = 30,
+                            PokemonId = 79,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
                             Type1 = "water",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 80,
+                            MonstreId = 80,
                             DefenseBase = 13,
                             ExperienceBase = 980,
                             ForceBase = 9,
-                            MonsterId = 80,
                             Nom = "slowbro",
                             PointDeVieBase = 31,
+                            PokemonId = 80,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
                             Type1 = "water",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 81,
+                            MonstreId = 81,
                             DefenseBase = 8,
                             ExperienceBase = 650,
                             ForceBase = 5,
-                            MonsterId = 81,
                             Nom = "magnemite",
                             PointDeVieBase = 10,
+                            PokemonId = 81,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
                             Type1 = "electric",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 82,
+                            MonstreId = 82,
                             DefenseBase = 11,
                             ExperienceBase = 930,
                             ForceBase = 7,
-                            MonsterId = 82,
                             Nom = "magneton",
                             PointDeVieBase = 16,
+                            PokemonId = 82,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
                             Type1 = "electric",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 83,
+                            MonstreId = 83,
                             DefenseBase = 6,
                             ExperienceBase = 754,
                             ForceBase = 11,
-                            MonsterId = 83,
                             Nom = "farfetchd",
                             PointDeVieBase = 17,
+                            PokemonId = 83,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 84,
+                            MonstreId = 84,
                             DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 10,
-                            MonsterId = 84,
                             Nom = "doduo",
                             PointDeVieBase = 11,
+                            PokemonId = 84,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 85,
+                            MonstreId = 85,
                             DefenseBase = 8,
                             ExperienceBase = 940,
                             ForceBase = 13,
-                            MonsterId = 85,
                             Nom = "dodrio",
                             PointDeVieBase = 20,
+                            PokemonId = 85,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 86,
+                            MonstreId = 86,
                             DefenseBase = 6,
                             ExperienceBase = 650,
                             ForceBase = 5,
-                            MonsterId = 86,
                             Nom = "seel",
                             PointDeVieBase = 21,
+                            PokemonId = 86,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 87,
+                            MonstreId = 87,
                             DefenseBase = 10,
                             ExperienceBase = 950,
                             ForceBase = 8,
-                            MonsterId = 87,
                             Nom = "dewgong",
                             PointDeVieBase = 30,
+                            PokemonId = 87,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
                             Type1 = "water",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 88,
+                            MonstreId = 88,
                             DefenseBase = 6,
                             ExperienceBase = 650,
                             ForceBase = 10,
-                            MonsterId = 88,
                             Nom = "grimer",
                             PointDeVieBase = 26,
+                            PokemonId = 88,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 89,
+                            MonstreId = 89,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 13,
-                            MonsterId = 89,
                             Nom = "muk",
                             PointDeVieBase = 35,
+                            PokemonId = 89,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 90,
+                            MonstreId = 90,
                             DefenseBase = 12,
                             ExperienceBase = 610,
                             ForceBase = 8,
-                            MonsterId = 90,
                             Nom = "shellder",
                             PointDeVieBase = 10,
+                            PokemonId = 90,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 91,
+                            MonstreId = 91,
                             DefenseBase = 22,
                             ExperienceBase = 1050,
                             ForceBase = 11,
-                            MonsterId = 91,
                             Nom = "cloyster",
                             PointDeVieBase = 16,
+                            PokemonId = 91,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
                             Type1 = "water",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 92,
-                            DefenseBase = 3,
+                            MonstreId = 92,
+                            DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 5,
-                            MonsterId = 92,
                             Nom = "gastly",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 92,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
                             Type1 = "ghost",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 93,
+                            MonstreId = 93,
                             DefenseBase = 5,
                             ExperienceBase = 810,
                             ForceBase = 6,
-                            MonsterId = 93,
                             Nom = "haunter",
                             PointDeVieBase = 15,
+                            PokemonId = 93,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
                             Type1 = "ghost",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 94,
+                            MonstreId = 94,
                             DefenseBase = 7,
                             ExperienceBase = 1000,
                             ForceBase = 8,
-                            MonsterId = 94,
                             Nom = "gengar",
                             PointDeVieBase = 20,
+                            PokemonId = 94,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
                             Type1 = "ghost",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 95,
+                            MonstreId = 95,
                             DefenseBase = 20,
                             ExperienceBase = 770,
                             ForceBase = 5,
-                            MonsterId = 95,
                             Nom = "onix",
                             PointDeVieBase = 11,
+                            PokemonId = 95,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 96,
+                            MonstreId = 96,
                             DefenseBase = 5,
                             ExperienceBase = 656,
                             ForceBase = 6,
-                            MonsterId = 96,
                             Nom = "drowzee",
                             PointDeVieBase = 20,
+                            PokemonId = 96,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 97,
+                            MonstreId = 97,
                             DefenseBase = 8,
                             ExperienceBase = 966,
                             ForceBase = 9,
-                            MonsterId = 97,
                             Nom = "hypno",
                             PointDeVieBase = 28,
+                            PokemonId = 97,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 98,
+                            MonstreId = 98,
                             DefenseBase = 11,
                             ExperienceBase = 650,
                             ForceBase = 13,
-                            MonsterId = 98,
                             Nom = "krabby",
                             PointDeVieBase = 10,
+                            PokemonId = 98,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 99,
+                            MonstreId = 99,
                             DefenseBase = 14,
                             ExperienceBase = 950,
                             ForceBase = 16,
-                            MonsterId = 99,
                             Nom = "kingler",
                             PointDeVieBase = 18,
+                            PokemonId = 99,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 100,
+                            MonstreId = 100,
                             DefenseBase = 6,
                             ExperienceBase = 660,
                             ForceBase = 5,
-                            MonsterId = 100,
                             Nom = "voltorb",
                             PointDeVieBase = 13,
+                            PokemonId = 100,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 101,
+                            MonstreId = 101,
                             DefenseBase = 8,
                             ExperienceBase = 980,
                             ForceBase = 6,
-                            MonsterId = 101,
                             Nom = "electrode",
                             PointDeVieBase = 20,
+                            PokemonId = 101,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 102,
+                            MonstreId = 102,
                             DefenseBase = 10,
                             ExperienceBase = 650,
                             ForceBase = 5,
-                            MonsterId = 102,
                             Nom = "exeggcute",
                             PointDeVieBase = 20,
+                            PokemonId = 102,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
                             Type1 = "grass",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 103,
+                            MonstreId = 103,
                             DefenseBase = 10,
                             ExperienceBase = 1060,
                             ForceBase = 11,
-                            MonsterId = 103,
                             Nom = "exeggutor",
                             PointDeVieBase = 31,
+                            PokemonId = 103,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
                             Type1 = "grass",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 104,
+                            MonstreId = 104,
                             DefenseBase = 11,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 104,
                             Nom = "cubone",
                             PointDeVieBase = 16,
+                            PokemonId = 104,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 105,
+                            MonstreId = 105,
                             DefenseBase = 13,
                             ExperienceBase = 850,
                             ForceBase = 10,
-                            MonsterId = 105,
                             Nom = "marowak",
                             PointDeVieBase = 20,
+                            PokemonId = 105,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 106,
+                            MonstreId = 106,
                             DefenseBase = 6,
                             ExperienceBase = 910,
                             ForceBase = 15,
-                            MonsterId = 106,
                             Nom = "hitmonlee",
                             PointDeVieBase = 16,
+                            PokemonId = 106,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 107,
+                            MonstreId = 107,
                             DefenseBase = 9,
                             ExperienceBase = 910,
                             ForceBase = 13,
-                            MonsterId = 107,
                             Nom = "hitmonchan",
                             PointDeVieBase = 16,
+                            PokemonId = 107,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 108,
+                            MonstreId = 108,
                             DefenseBase = 9,
                             ExperienceBase = 770,
                             ForceBase = 6,
-                            MonsterId = 108,
                             Nom = "lickitung",
                             PointDeVieBase = 30,
+                            PokemonId = 108,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 109,
+                            MonstreId = 109,
                             DefenseBase = 11,
                             ExperienceBase = 680,
                             ForceBase = 8,
-                            MonsterId = 109,
                             Nom = "koffing",
                             PointDeVieBase = 13,
+                            PokemonId = 109,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 110,
+                            MonstreId = 110,
                             DefenseBase = 15,
                             ExperienceBase = 980,
                             ForceBase = 11,
-                            MonsterId = 110,
                             Nom = "weezing",
                             PointDeVieBase = 21,
+                            PokemonId = 110,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 111,
+                            MonstreId = 111,
                             DefenseBase = 11,
                             ExperienceBase = 690,
                             ForceBase = 10,
-                            MonsterId = 111,
                             Nom = "rhyhorn",
                             PointDeVieBase = 26,
+                            PokemonId = 111,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
                             Type1 = "ground",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 112,
+                            MonstreId = 112,
                             DefenseBase = 15,
                             ExperienceBase = 970,
                             ForceBase = 16,
-                            MonsterId = 112,
                             Nom = "rhydon",
                             PointDeVieBase = 35,
+                            PokemonId = 112,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
                             Type1 = "ground",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 113,
-                            DefenseBase = 0,
+                            MonstreId = 113,
+                            DefenseBase = 5,
                             ExperienceBase = 900,
                             ForceBase = 5,
-                            MonsterId = 113,
                             Nom = "chansey",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 83,
+                            PokemonId = 113,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 114,
+                            MonstreId = 114,
                             DefenseBase = 14,
                             ExperienceBase = 870,
                             ForceBase = 6,
-                            MonsterId = 114,
                             Nom = "tangela",
                             PointDeVieBase = 21,
+                            PokemonId = 114,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 115,
+                            MonstreId = 115,
                             DefenseBase = 10,
                             ExperienceBase = 980,
                             ForceBase = 11,
-                            MonsterId = 115,
                             Nom = "kangaskhan",
                             PointDeVieBase = 35,
+                            PokemonId = 115,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 116,
+                            MonstreId = 116,
                             DefenseBase = 8,
                             ExperienceBase = 590,
                             ForceBase = 5,
-                            MonsterId = 116,
                             Nom = "horsea",
                             PointDeVieBase = 10,
+                            PokemonId = 116,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 117,
+                            MonstreId = 117,
                             DefenseBase = 11,
                             ExperienceBase = 880,
                             ForceBase = 8,
-                            MonsterId = 117,
                             Nom = "seadra",
                             PointDeVieBase = 18,
+                            PokemonId = 117,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 118,
+                            MonstreId = 118,
                             DefenseBase = 7,
                             ExperienceBase = 640,
                             ForceBase = 8,
-                            MonsterId = 118,
                             Nom = "goldeen",
                             PointDeVieBase = 15,
+                            PokemonId = 118,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 119,
+                            MonstreId = 119,
                             DefenseBase = 8,
                             ExperienceBase = 900,
                             ForceBase = 11,
-                            MonsterId = 119,
                             Nom = "seaking",
                             PointDeVieBase = 26,
+                            PokemonId = 119,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 120,
+                            MonstreId = 120,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 5,
-                            MonsterId = 120,
                             Nom = "staryu",
                             PointDeVieBase = 10,
+                            PokemonId = 120,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 121,
+                            MonstreId = 121,
                             DefenseBase = 10,
                             ExperienceBase = 1040,
                             ForceBase = 9,
-                            MonsterId = 121,
                             Nom = "starmie",
                             PointDeVieBase = 20,
+                            PokemonId = 121,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
                             Type1 = "water",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 122,
+                            MonstreId = 122,
                             DefenseBase = 8,
                             ExperienceBase = 920,
                             ForceBase = 5,
-                            MonsterId = 122,
                             Nom = "mr-mime",
                             PointDeVieBase = 13,
+                            PokemonId = 122,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 123,
+                            MonstreId = 123,
                             DefenseBase = 10,
                             ExperienceBase = 1000,
                             ForceBase = 13,
-                            MonsterId = 123,
                             Nom = "scyther",
                             PointDeVieBase = 23,
+                            PokemonId = 123,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 124,
-                            DefenseBase = 4,
+                            MonstreId = 124,
+                            DefenseBase = 5,
                             ExperienceBase = 910,
                             ForceBase = 6,
-                            MonsterId = 124,
                             Nom = "jynx",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 21,
+                            PokemonId = 124,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
                             Type1 = "ice",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 125,
+                            MonstreId = 125,
                             DefenseBase = 7,
                             ExperienceBase = 980,
                             ForceBase = 10,
-                            MonsterId = 125,
                             Nom = "electabuzz",
                             PointDeVieBase = 21,
+                            PokemonId = 125,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 126,
+                            MonstreId = 126,
                             DefenseBase = 7,
                             ExperienceBase = 990,
                             ForceBase = 11,
-                            MonsterId = 126,
                             Nom = "magmar",
                             PointDeVieBase = 21,
+                            PokemonId = 126,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 127,
+                            MonstreId = 127,
                             DefenseBase = 12,
                             ExperienceBase = 1000,
                             ForceBase = 15,
-                            MonsterId = 127,
                             Nom = "pinsir",
                             PointDeVieBase = 21,
+                            PokemonId = 127,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 128,
+                            MonstreId = 128,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 12,
-                            MonsterId = 128,
                             Nom = "tauros",
                             PointDeVieBase = 25,
+                            PokemonId = 128,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 129,
+                            MonstreId = 129,
                             DefenseBase = 6,
                             ExperienceBase = 400,
                             ForceBase = 5,
-                            MonsterId = 129,
                             Nom = "magikarp",
                             PointDeVieBase = 10,
+                            PokemonId = 129,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 130,
+                            MonstreId = 130,
                             DefenseBase = 9,
                             ExperienceBase = 1080,
                             ForceBase = 15,
-                            MonsterId = 130,
                             Nom = "gyarados",
                             PointDeVieBase = 31,
+                            PokemonId = 130,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 131,
+                            MonstreId = 131,
                             DefenseBase = 10,
                             ExperienceBase = 1070,
                             ForceBase = 10,
-                            MonsterId = 131,
                             Nom = "lapras",
                             PointDeVieBase = 43,
+                            PokemonId = 131,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
                             Type1 = "water",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 132,
+                            MonstreId = 132,
                             DefenseBase = 6,
                             ExperienceBase = 576,
                             ForceBase = 6,
-                            MonsterId = 132,
                             Nom = "ditto",
                             PointDeVieBase = 16,
+                            PokemonId = 132,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 133,
+                            MonstreId = 133,
                             DefenseBase = 6,
                             ExperienceBase = 650,
                             ForceBase = 6,
-                            MonsterId = 133,
                             Nom = "eevee",
                             PointDeVieBase = 18,
+                            PokemonId = 133,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 134,
+                            MonstreId = 134,
                             DefenseBase = 7,
                             ExperienceBase = 1050,
                             ForceBase = 8,
-                            MonsterId = 134,
                             Nom = "vaporeon",
                             PointDeVieBase = 43,
+                            PokemonId = 134,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 135,
+                            MonstreId = 135,
                             DefenseBase = 7,
                             ExperienceBase = 1050,
                             ForceBase = 8,
-                            MonsterId = 135,
                             Nom = "jolteon",
                             PointDeVieBase = 21,
+                            PokemonId = 135,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 136,
+                            MonstreId = 136,
                             DefenseBase = 7,
                             ExperienceBase = 1050,
                             ForceBase = 16,
-                            MonsterId = 136,
                             Nom = "flareon",
                             PointDeVieBase = 21,
+                            PokemonId = 136,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 137,
+                            MonstreId = 137,
                             DefenseBase = 8,
                             ExperienceBase = 790,
                             ForceBase = 7,
-                            MonsterId = 137,
                             Nom = "porygon",
                             PointDeVieBase = 21,
+                            PokemonId = 137,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 138,
+                            MonstreId = 138,
                             DefenseBase = 12,
                             ExperienceBase = 710,
                             ForceBase = 5,
-                            MonsterId = 138,
                             Nom = "omanyte",
                             PointDeVieBase = 11,
+                            PokemonId = 138,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 139,
+                            MonstreId = 139,
                             DefenseBase = 15,
                             ExperienceBase = 990,
                             ForceBase = 7,
-                            MonsterId = 139,
                             Nom = "omastar",
                             PointDeVieBase = 23,
+                            PokemonId = 139,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 140,
+                            MonstreId = 140,
                             DefenseBase = 11,
                             ExperienceBase = 710,
                             ForceBase = 10,
-                            MonsterId = 140,
                             Nom = "kabuto",
                             PointDeVieBase = 10,
+                            PokemonId = 140,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 141,
+                            MonstreId = 141,
                             DefenseBase = 13,
                             ExperienceBase = 990,
                             ForceBase = 14,
-                            MonsterId = 141,
                             Nom = "kabutops",
                             PointDeVieBase = 20,
+                            PokemonId = 141,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 142,
+                            MonstreId = 142,
                             DefenseBase = 8,
                             ExperienceBase = 1030,
                             ForceBase = 13,
-                            MonsterId = 142,
                             Nom = "aerodactyl",
                             PointDeVieBase = 26,
+                            PokemonId = 142,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
                             Type1 = "rock",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 143,
+                            MonstreId = 143,
                             DefenseBase = 8,
                             ExperienceBase = 1080,
                             ForceBase = 13,
-                            MonsterId = 143,
                             Nom = "snorlax",
                             PointDeVieBase = 53,
+                            PokemonId = 143,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 144,
+                            MonstreId = 144,
                             DefenseBase = 12,
                             ExperienceBase = 1160,
                             ForceBase = 10,
-                            MonsterId = 144,
                             Nom = "articuno",
                             PointDeVieBase = 30,
+                            PokemonId = 144,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
                             Type1 = "ice",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 145,
+                            MonstreId = 145,
                             DefenseBase = 10,
                             ExperienceBase = 1160,
                             ForceBase = 11,
-                            MonsterId = 145,
                             Nom = "zapdos",
                             PointDeVieBase = 30,
+                            PokemonId = 145,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
                             Type1 = "electric",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 146,
+                            MonstreId = 146,
                             DefenseBase = 11,
                             ExperienceBase = 1160,
                             ForceBase = 12,
-                            MonsterId = 146,
                             Nom = "moltres",
                             PointDeVieBase = 30,
+                            PokemonId = 146,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 147,
+                            MonstreId = 147,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 147,
                             Nom = "dratini",
                             PointDeVieBase = 13,
+                            PokemonId = 147,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 148,
+                            MonstreId = 148,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 10,
-                            MonsterId = 148,
                             Nom = "dragonair",
                             PointDeVieBase = 20,
+                            PokemonId = 148,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 149,
+                            MonstreId = 149,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 16,
-                            MonsterId = 149,
                             Nom = "dragonite",
                             PointDeVieBase = 30,
+                            PokemonId = 149,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
                             Type1 = "dragon",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 150,
+                            MonstreId = 150,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 13,
-                            MonsterId = 150,
                             Nom = "mewtwo",
                             PointDeVieBase = 35,
+                            PokemonId = 150,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 151,
+                            MonstreId = 151,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 151,
                             Nom = "mew",
                             PointDeVieBase = 33,
+                            PokemonId = 151,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 152,
+                            MonstreId = 152,
                             DefenseBase = 8,
                             ExperienceBase = 636,
                             ForceBase = 6,
-                            MonsterId = 152,
                             Nom = "chikorita",
                             PointDeVieBase = 15,
+                            PokemonId = 152,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 153,
+                            MonstreId = 153,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 7,
-                            MonsterId = 153,
                             Nom = "bayleef",
                             PointDeVieBase = 20,
+                            PokemonId = 153,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/153.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 154,
+                            MonstreId = 154,
                             DefenseBase = 12,
                             ExperienceBase = 1050,
                             ForceBase = 10,
-                            MonsterId = 154,
                             Nom = "meganium",
                             PointDeVieBase = 26,
+                            PokemonId = 154,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/154.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 155,
+                            MonstreId = 155,
                             DefenseBase = 5,
                             ExperienceBase = 618,
                             ForceBase = 6,
-                            MonsterId = 155,
                             Nom = "cyndaquil",
                             PointDeVieBase = 13,
+                            PokemonId = 155,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 156,
+                            MonstreId = 156,
                             DefenseBase = 7,
                             ExperienceBase = 810,
                             ForceBase = 8,
-                            MonsterId = 156,
                             Nom = "quilava",
                             PointDeVieBase = 19,
+                            PokemonId = 156,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 157,
+                            MonstreId = 157,
                             DefenseBase = 9,
                             ExperienceBase = 1068,
                             ForceBase = 10,
-                            MonsterId = 157,
                             Nom = "typhlosion",
                             PointDeVieBase = 26,
+                            PokemonId = 157,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 158,
+                            MonstreId = 158,
                             DefenseBase = 8,
                             ExperienceBase = 628,
                             ForceBase = 8,
-                            MonsterId = 158,
                             Nom = "totodile",
                             PointDeVieBase = 16,
+                            PokemonId = 158,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 159,
+                            MonstreId = 159,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 10,
-                            MonsterId = 159,
                             Nom = "croconaw",
                             PointDeVieBase = 21,
+                            PokemonId = 159,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/159.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 160,
+                            MonstreId = 160,
                             DefenseBase = 12,
                             ExperienceBase = 1060,
                             ForceBase = 13,
-                            MonsterId = 160,
                             Nom = "feraligatr",
                             PointDeVieBase = 28,
+                            PokemonId = 160,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 161,
-                            DefenseBase = 4,
+                            MonstreId = 161,
+                            DefenseBase = 5,
                             ExperienceBase = 430,
                             ForceBase = 5,
-                            MonsterId = 161,
                             Nom = "sentret",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 11,
+                            PokemonId = 161,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/161.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 162,
+                            MonstreId = 162,
                             DefenseBase = 8,
                             ExperienceBase = 830,
                             ForceBase = 9,
-                            MonsterId = 162,
                             Nom = "furret",
                             PointDeVieBase = 28,
+                            PokemonId = 162,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/162.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 163,
-                            DefenseBase = 3,
+                            MonstreId = 163,
+                            DefenseBase = 5,
                             ExperienceBase = 524,
                             ForceBase = 5,
-                            MonsterId = 163,
                             Nom = "hoothoot",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 20,
+                            PokemonId = 163,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/163.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 164,
+                            MonstreId = 164,
                             DefenseBase = 6,
                             ExperienceBase = 904,
                             ForceBase = 6,
-                            MonsterId = 164,
                             Nom = "noctowl",
                             PointDeVieBase = 33,
+                            PokemonId = 164,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 165,
-                            DefenseBase = 3,
+                            MonstreId = 165,
+                            DefenseBase = 5,
                             ExperienceBase = 530,
                             ForceBase = 5,
-                            MonsterId = 165,
                             Nom = "ledyba",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 165,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/165.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 166,
+                            MonstreId = 166,
                             DefenseBase = 6,
                             ExperienceBase = 780,
                             ForceBase = 5,
-                            MonsterId = 166,
                             Nom = "ledian",
                             PointDeVieBase = 18,
+                            PokemonId = 166,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/166.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 167,
+                            MonstreId = 167,
                             DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 7,
-                            MonsterId = 167,
                             Nom = "spinarak",
                             PointDeVieBase = 13,
+                            PokemonId = 167,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/167.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 168,
+                            MonstreId = 168,
                             DefenseBase = 8,
                             ExperienceBase = 800,
                             ForceBase = 11,
-                            MonsterId = 168,
                             Nom = "ariados",
                             PointDeVieBase = 23,
+                            PokemonId = 168,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/168.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 169,
+                            MonstreId = 169,
                             DefenseBase = 10,
                             ExperienceBase = 1070,
                             ForceBase = 11,
-                            MonsterId = 169,
                             Nom = "crobat",
                             PointDeVieBase = 28,
+                            PokemonId = 169,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/169.png",
                             Type1 = "poison",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 170,
-                            DefenseBase = 4,
+                            MonstreId = 170,
+                            DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 5,
-                            MonsterId = 170,
                             Nom = "chinchou",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 25,
+                            PokemonId = 170,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
                             Type1 = "water",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 171,
+                            MonstreId = 171,
                             DefenseBase = 7,
                             ExperienceBase = 920,
                             ForceBase = 7,
-                            MonsterId = 171,
                             Nom = "lanturn",
                             PointDeVieBase = 41,
+                            PokemonId = 171,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/171.png",
                             Type1 = "water",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 172,
-                            DefenseBase = 1,
+                            MonstreId = 172,
+                            DefenseBase = 5,
                             ExperienceBase = 410,
                             ForceBase = 5,
-                            MonsterId = 172,
                             Nom = "pichu",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 172,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/172.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 173,
-                            DefenseBase = 3,
+                            MonstreId = 173,
+                            DefenseBase = 5,
                             ExperienceBase = 436,
                             ForceBase = 5,
-                            MonsterId = 173,
                             Nom = "cleffa",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 16,
+                            PokemonId = 173,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/173.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 174,
-                            DefenseBase = 1,
+                            MonstreId = 174,
+                            DefenseBase = 5,
                             ExperienceBase = 420,
                             ForceBase = 5,
-                            MonsterId = 174,
                             Nom = "igglybuff",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 30,
+                            PokemonId = 174,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/174.png",
                             Type1 = "normal",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 175,
+                            MonstreId = 175,
                             DefenseBase = 8,
                             ExperienceBase = 490,
                             ForceBase = 5,
-                            MonsterId = 175,
                             Nom = "togepi",
                             PointDeVieBase = 11,
+                            PokemonId = 175,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 176,
+                            MonstreId = 176,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 5,
-                            MonsterId = 176,
                             Nom = "togetic",
                             PointDeVieBase = 18,
+                            PokemonId = 176,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/176.png",
                             Type1 = "fairy",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 177,
+                            MonstreId = 177,
                             DefenseBase = 5,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 177,
                             Nom = "natu",
                             PointDeVieBase = 13,
+                            PokemonId = 177,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/177.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 178,
+                            MonstreId = 178,
                             DefenseBase = 8,
                             ExperienceBase = 940,
                             ForceBase = 9,
-                            MonsterId = 178,
                             Nom = "xatu",
                             PointDeVieBase = 21,
+                            PokemonId = 178,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 179,
+                            MonstreId = 179,
                             DefenseBase = 5,
                             ExperienceBase = 560,
                             ForceBase = 5,
-                            MonsterId = 179,
                             Nom = "mareep",
                             PointDeVieBase = 18,
+                            PokemonId = 179,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/179.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 180,
+                            MonstreId = 180,
                             DefenseBase = 6,
                             ExperienceBase = 730,
                             ForceBase = 6,
-                            MonsterId = 180,
                             Nom = "flaaffy",
                             PointDeVieBase = 23,
+                            PokemonId = 180,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/180.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 181,
+                            MonstreId = 181,
                             DefenseBase = 10,
                             ExperienceBase = 1020,
                             ForceBase = 9,
-                            MonsterId = 181,
                             Nom = "ampharos",
                             PointDeVieBase = 30,
+                            PokemonId = 181,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 182,
+                            MonstreId = 182,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 10,
-                            MonsterId = 182,
                             Nom = "bellossom",
                             PointDeVieBase = 25,
+                            PokemonId = 182,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/182.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 183,
+                            MonstreId = 183,
                             DefenseBase = 6,
                             ExperienceBase = 500,
                             ForceBase = 5,
-                            MonsterId = 183,
                             Nom = "marill",
                             PointDeVieBase = 23,
+                            PokemonId = 183,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/183.png",
                             Type1 = "water",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 184,
+                            MonstreId = 184,
                             DefenseBase = 10,
                             ExperienceBase = 840,
                             ForceBase = 6,
-                            MonsterId = 184,
                             Nom = "azumarill",
                             PointDeVieBase = 33,
+                            PokemonId = 184,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
                             Type1 = "water",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 185,
+                            MonstreId = 185,
                             DefenseBase = 14,
                             ExperienceBase = 820,
                             ForceBase = 12,
-                            MonsterId = 185,
                             Nom = "sudowoodo",
                             PointDeVieBase = 23,
+                            PokemonId = 185,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/185.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 186,
+                            MonstreId = 186,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 9,
-                            MonsterId = 186,
                             Nom = "politoed",
                             PointDeVieBase = 30,
+                            PokemonId = 186,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/186.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 187,
+                            MonstreId = 187,
                             DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 5,
-                            MonsterId = 187,
                             Nom = "hoppip",
                             PointDeVieBase = 11,
+                            PokemonId = 187,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/187.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 188,
+                            MonstreId = 188,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 5,
-                            MonsterId = 188,
                             Nom = "skiploom",
                             PointDeVieBase = 18,
+                            PokemonId = 188,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/188.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 189,
+                            MonstreId = 189,
                             DefenseBase = 8,
                             ExperienceBase = 920,
                             ForceBase = 6,
-                            MonsterId = 189,
                             Nom = "jumpluff",
                             PointDeVieBase = 25,
+                            PokemonId = 189,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/189.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 190,
+                            MonstreId = 190,
                             DefenseBase = 6,
                             ExperienceBase = 720,
                             ForceBase = 8,
-                            MonsterId = 190,
                             Nom = "aipom",
                             PointDeVieBase = 18,
+                            PokemonId = 190,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/190.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 191,
-                            DefenseBase = 3,
+                            MonstreId = 191,
+                            DefenseBase = 5,
                             ExperienceBase = 360,
                             ForceBase = 5,
-                            MonsterId = 191,
                             Nom = "sunkern",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 191,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/191.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 192,
+                            MonstreId = 192,
                             DefenseBase = 6,
                             ExperienceBase = 850,
                             ForceBase = 9,
-                            MonsterId = 192,
                             Nom = "sunflora",
                             PointDeVieBase = 25,
+                            PokemonId = 192,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/192.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 193,
+                            MonstreId = 193,
                             DefenseBase = 5,
                             ExperienceBase = 780,
                             ForceBase = 8,
-                            MonsterId = 193,
                             Nom = "yanma",
                             PointDeVieBase = 21,
+                            PokemonId = 193,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/193.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 194,
+                            MonstreId = 194,
                             DefenseBase = 5,
                             ExperienceBase = 420,
                             ForceBase = 5,
-                            MonsterId = 194,
                             Nom = "wooper",
                             PointDeVieBase = 18,
+                            PokemonId = 194,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/194.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 195,
+                            MonstreId = 195,
                             DefenseBase = 10,
                             ExperienceBase = 860,
                             ForceBase = 10,
-                            MonsterId = 195,
                             Nom = "quagsire",
                             PointDeVieBase = 31,
+                            PokemonId = 195,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/195.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 196,
+                            MonstreId = 196,
                             DefenseBase = 7,
                             ExperienceBase = 1050,
                             ForceBase = 8,
-                            MonsterId = 196,
                             Nom = "espeon",
                             PointDeVieBase = 21,
+                            PokemonId = 196,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 197,
+                            MonstreId = 197,
                             DefenseBase = 13,
                             ExperienceBase = 1050,
                             ForceBase = 8,
-                            MonsterId = 197,
                             Nom = "umbreon",
                             PointDeVieBase = 31,
+                            PokemonId = 197,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 198,
+                            MonstreId = 198,
                             DefenseBase = 5,
                             ExperienceBase = 810,
                             ForceBase = 10,
-                            MonsterId = 198,
                             Nom = "murkrow",
                             PointDeVieBase = 20,
+                            PokemonId = 198,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/198.png",
                             Type1 = "dark",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 199,
+                            MonstreId = 199,
                             DefenseBase = 10,
                             ExperienceBase = 980,
                             ForceBase = 9,
-                            MonsterId = 199,
                             Nom = "slowking",
                             PointDeVieBase = 31,
+                            PokemonId = 199,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png",
                             Type1 = "water",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 200,
+                            MonstreId = 200,
                             DefenseBase = 7,
                             ExperienceBase = 870,
                             ForceBase = 7,
-                            MonsterId = 200,
                             Nom = "misdreavus",
                             PointDeVieBase = 20,
+                            PokemonId = 200,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 201,
+                            MonstreId = 201,
                             DefenseBase = 6,
                             ExperienceBase = 672,
                             ForceBase = 9,
-                            MonsterId = 201,
                             Nom = "unown",
                             PointDeVieBase = 16,
+                            PokemonId = 201,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 202,
+                            MonstreId = 202,
                             DefenseBase = 7,
                             ExperienceBase = 810,
                             ForceBase = 5,
-                            MonsterId = 202,
                             Nom = "wobbuffet",
                             PointDeVieBase = 63,
+                            PokemonId = 202,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/202.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 203,
+                            MonstreId = 203,
                             DefenseBase = 8,
                             ExperienceBase = 910,
                             ForceBase = 10,
-                            MonsterId = 203,
                             Nom = "girafarig",
                             PointDeVieBase = 23,
+                            PokemonId = 203,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
                             Type1 = "normal",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 204,
+                            MonstreId = 204,
                             DefenseBase = 11,
                             ExperienceBase = 580,
                             ForceBase = 8,
-                            MonsterId = 204,
                             Nom = "pineco",
                             PointDeVieBase = 16,
+                            PokemonId = 204,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/204.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 205,
+                            MonstreId = 205,
                             DefenseBase = 17,
                             ExperienceBase = 930,
                             ForceBase = 11,
-                            MonsterId = 205,
                             Nom = "forretress",
                             PointDeVieBase = 25,
+                            PokemonId = 205,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/205.png",
                             Type1 = "bug",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 206,
+                            MonstreId = 206,
                             DefenseBase = 8,
                             ExperienceBase = 830,
                             ForceBase = 8,
-                            MonsterId = 206,
                             Nom = "dunsparce",
                             PointDeVieBase = 33,
+                            PokemonId = 206,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/206.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 207,
+                            MonstreId = 207,
                             DefenseBase = 13,
                             ExperienceBase = 860,
                             ForceBase = 9,
-                            MonsterId = 207,
                             Nom = "gligar",
                             PointDeVieBase = 21,
+                            PokemonId = 207,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/207.png",
                             Type1 = "ground",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 208,
+                            MonstreId = 208,
                             DefenseBase = 25,
                             ExperienceBase = 1020,
                             ForceBase = 10,
-                            MonsterId = 208,
                             Nom = "steelix",
                             PointDeVieBase = 25,
+                            PokemonId = 208,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
                             Type1 = "steel",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 209,
+                            MonstreId = 209,
                             DefenseBase = 6,
                             ExperienceBase = 600,
                             ForceBase = 10,
-                            MonsterId = 209,
                             Nom = "snubbull",
                             PointDeVieBase = 20,
+                            PokemonId = 209,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/209.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 210,
+                            MonstreId = 210,
                             DefenseBase = 9,
                             ExperienceBase = 900,
                             ForceBase = 15,
-                            MonsterId = 210,
                             Nom = "granbull",
                             PointDeVieBase = 30,
+                            PokemonId = 210,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 211,
+                            MonstreId = 211,
                             DefenseBase = 10,
                             ExperienceBase = 880,
                             ForceBase = 11,
-                            MonsterId = 211,
                             Nom = "qwilfish",
                             PointDeVieBase = 21,
+                            PokemonId = 211,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png",
                             Type1 = "water",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 212,
+                            MonstreId = 212,
                             DefenseBase = 12,
                             ExperienceBase = 1000,
                             ForceBase = 16,
-                            MonsterId = 212,
                             Nom = "scizor",
                             PointDeVieBase = 23,
+                            PokemonId = 212,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png",
                             Type1 = "bug",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 213,
+                            MonstreId = 213,
                             DefenseBase = 28,
                             ExperienceBase = 1010,
                             ForceBase = 5,
-                            MonsterId = 213,
                             Nom = "shuckle",
                             PointDeVieBase = 10,
+                            PokemonId = 213,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/213.png",
                             Type1 = "bug",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 214,
+                            MonstreId = 214,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 15,
-                            MonsterId = 214,
                             Nom = "heracross",
                             PointDeVieBase = 26,
+                            PokemonId = 214,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png",
                             Type1 = "bug",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 215,
+                            MonstreId = 215,
                             DefenseBase = 6,
                             ExperienceBase = 860,
                             ForceBase = 11,
-                            MonsterId = 215,
                             Nom = "sneasel",
                             PointDeVieBase = 18,
+                            PokemonId = 215,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png",
                             Type1 = "dark",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 216,
+                            MonstreId = 216,
                             DefenseBase = 6,
                             ExperienceBase = 660,
                             ForceBase = 10,
-                            MonsterId = 216,
                             Nom = "teddiursa",
                             PointDeVieBase = 20,
+                            PokemonId = 216,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/216.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 217,
+                            MonstreId = 217,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 16,
-                            MonsterId = 217,
                             Nom = "ursaring",
                             PointDeVieBase = 30,
+                            PokemonId = 217,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/217.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 218,
+                            MonstreId = 218,
                             DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 5,
-                            MonsterId = 218,
                             Nom = "slugma",
                             PointDeVieBase = 13,
+                            PokemonId = 218,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/218.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 219,
+                            MonstreId = 219,
                             DefenseBase = 15,
                             ExperienceBase = 860,
                             ForceBase = 6,
-                            MonsterId = 219,
                             Nom = "magcargo",
                             PointDeVieBase = 20,
+                            PokemonId = 219,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
                             Type1 = "fire",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 220,
+                            MonstreId = 220,
                             DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 6,
-                            MonsterId = 220,
                             Nom = "swinub",
                             PointDeVieBase = 16,
+                            PokemonId = 220,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/220.png",
                             Type1 = "ice",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 221,
+                            MonstreId = 221,
                             DefenseBase = 10,
                             ExperienceBase = 900,
                             ForceBase = 12,
-                            MonsterId = 221,
                             Nom = "piloswine",
                             PointDeVieBase = 33,
+                            PokemonId = 221,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/221.png",
                             Type1 = "ice",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 222,
+                            MonstreId = 222,
                             DefenseBase = 11,
                             ExperienceBase = 820,
                             ForceBase = 6,
-                            MonsterId = 222,
                             Nom = "corsola",
                             PointDeVieBase = 21,
+                            PokemonId = 222,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png",
                             Type1 = "water",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 223,
-                            DefenseBase = 4,
+                            MonstreId = 223,
+                            DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 223,
                             Nom = "remoraid",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 11,
+                            PokemonId = 223,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/223.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 224,
+                            MonstreId = 224,
                             DefenseBase = 9,
                             ExperienceBase = 960,
                             ForceBase = 13,
-                            MonsterId = 224,
                             Nom = "octillery",
                             PointDeVieBase = 25,
+                            PokemonId = 224,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/224.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 225,
+                            MonstreId = 225,
                             DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 6,
-                            MonsterId = 225,
                             Nom = "delibird",
                             PointDeVieBase = 15,
+                            PokemonId = 225,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/225.png",
                             Type1 = "ice",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 226,
+                            MonstreId = 226,
                             DefenseBase = 8,
                             ExperienceBase = 970,
                             ForceBase = 5,
-                            MonsterId = 226,
                             Nom = "mantine",
                             PointDeVieBase = 28,
+                            PokemonId = 226,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/226.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 227,
+                            MonstreId = 227,
                             DefenseBase = 17,
                             ExperienceBase = 930,
                             ForceBase = 10,
-                            MonsterId = 227,
                             Nom = "skarmory",
                             PointDeVieBase = 21,
+                            PokemonId = 227,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png",
                             Type1 = "steel",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 228,
-                            DefenseBase = 3,
+                            MonstreId = 228,
+                            DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 7,
-                            MonsterId = 228,
                             Nom = "houndour",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 228,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/228.png",
                             Type1 = "dark",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 229,
+                            MonstreId = 229,
                             DefenseBase = 6,
                             ExperienceBase = 1000,
                             ForceBase = 11,
-                            MonsterId = 229,
                             Nom = "houndoom",
                             PointDeVieBase = 25,
+                            PokemonId = 229,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/229.png",
                             Type1 = "dark",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 230,
+                            MonstreId = 230,
                             DefenseBase = 11,
                             ExperienceBase = 1080,
                             ForceBase = 11,
-                            MonsterId = 230,
                             Nom = "kingdra",
                             PointDeVieBase = 25,
+                            PokemonId = 230,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/230.png",
                             Type1 = "water",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 231,
+                            MonstreId = 231,
                             DefenseBase = 7,
                             ExperienceBase = 660,
                             ForceBase = 7,
-                            MonsterId = 231,
                             Nom = "phanpy",
                             PointDeVieBase = 30,
+                            PokemonId = 231,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 232,
+                            MonstreId = 232,
                             DefenseBase = 15,
                             ExperienceBase = 1000,
                             ForceBase = 15,
-                            MonsterId = 232,
                             Nom = "donphan",
                             PointDeVieBase = 30,
+                            PokemonId = 232,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/232.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 233,
+                            MonstreId = 233,
                             DefenseBase = 11,
                             ExperienceBase = 1030,
                             ForceBase = 10,
-                            MonsterId = 233,
                             Nom = "porygon2",
                             PointDeVieBase = 28,
+                            PokemonId = 233,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/233.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 234,
+                            MonstreId = 234,
                             DefenseBase = 7,
                             ExperienceBase = 930,
                             ForceBase = 11,
-                            MonsterId = 234,
                             Nom = "stantler",
                             PointDeVieBase = 24,
+                            PokemonId = 234,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/234.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 235,
-                            DefenseBase = 4,
+                            MonstreId = 235,
+                            DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 5,
-                            MonsterId = 235,
                             Nom = "smeargle",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 18,
+                            PokemonId = 235,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 236,
-                            DefenseBase = 4,
+                            MonstreId = 236,
+                            DefenseBase = 5,
                             ExperienceBase = 420,
                             ForceBase = 5,
-                            MonsterId = 236,
                             Nom = "tyrogue",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 11,
+                            PokemonId = 236,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/236.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 237,
+                            MonstreId = 237,
                             DefenseBase = 11,
                             ExperienceBase = 910,
                             ForceBase = 11,
-                            MonsterId = 237,
                             Nom = "hitmontop",
                             PointDeVieBase = 16,
+                            PokemonId = 237,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/237.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 238,
-                            DefenseBase = 1,
+                            MonstreId = 238,
+                            DefenseBase = 5,
                             ExperienceBase = 610,
                             ForceBase = 5,
-                            MonsterId = 238,
                             Nom = "smoochum",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 238,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/238.png",
                             Type1 = "ice",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 239,
-                            DefenseBase = 4,
+                            MonstreId = 239,
+                            DefenseBase = 5,
                             ExperienceBase = 720,
                             ForceBase = 7,
-                            MonsterId = 239,
                             Nom = "elekid",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 239,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/239.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 240,
-                            DefenseBase = 4,
+                            MonstreId = 240,
+                            DefenseBase = 5,
                             ExperienceBase = 730,
                             ForceBase = 9,
-                            MonsterId = 240,
                             Nom = "magby",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 240,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/240.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 241,
+                            MonstreId = 241,
                             DefenseBase = 13,
                             ExperienceBase = 980,
                             ForceBase = 10,
-                            MonsterId = 241,
                             Nom = "miltank",
                             PointDeVieBase = 31,
+                            PokemonId = 241,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/241.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 242,
-                            DefenseBase = 1,
+                            MonstreId = 242,
+                            DefenseBase = 5,
                             ExperienceBase = 1080,
                             ForceBase = 5,
-                            MonsterId = 242,
                             Nom = "blissey",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 85,
+                            PokemonId = 242,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 243,
+                            MonstreId = 243,
                             DefenseBase = 9,
                             ExperienceBase = 1160,
                             ForceBase = 10,
-                            MonsterId = 243,
                             Nom = "raikou",
                             PointDeVieBase = 30,
+                            PokemonId = 243,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 244,
+                            MonstreId = 244,
                             DefenseBase = 10,
                             ExperienceBase = 1160,
                             ForceBase = 14,
-                            MonsterId = 244,
                             Nom = "entei",
                             PointDeVieBase = 38,
+                            PokemonId = 244,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/244.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 245,
+                            MonstreId = 245,
                             DefenseBase = 14,
                             ExperienceBase = 1160,
                             ForceBase = 9,
-                            MonsterId = 245,
                             Nom = "suicune",
                             PointDeVieBase = 33,
+                            PokemonId = 245,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 246,
+                            MonstreId = 246,
                             DefenseBase = 6,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 246,
                             Nom = "larvitar",
                             PointDeVieBase = 16,
+                            PokemonId = 246,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/246.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 247,
+                            MonstreId = 247,
                             DefenseBase = 8,
                             ExperienceBase = 820,
                             ForceBase = 10,
-                            MonsterId = 247,
                             Nom = "pupitar",
                             PointDeVieBase = 23,
+                            PokemonId = 247,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/247.png",
                             Type1 = "rock",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 248,
+                            MonstreId = 248,
                             DefenseBase = 13,
                             ExperienceBase = 1200,
                             ForceBase = 16,
-                            MonsterId = 248,
                             Nom = "tyranitar",
                             PointDeVieBase = 33,
+                            PokemonId = 248,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png",
                             Type1 = "rock",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 249,
+                            MonstreId = 249,
                             DefenseBase = 16,
                             ExperienceBase = 1360,
                             ForceBase = 11,
-                            MonsterId = 249,
                             Nom = "lugia",
                             PointDeVieBase = 35,
+                            PokemonId = 249,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/249.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 250,
+                            MonstreId = 250,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 16,
-                            MonsterId = 250,
                             Nom = "ho-oh",
                             PointDeVieBase = 35,
+                            PokemonId = 250,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/250.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 251,
+                            MonstreId = 251,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 251,
                             Nom = "celebi",
                             PointDeVieBase = 33,
+                            PokemonId = 251,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/251.png",
                             Type1 = "psychic",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 252,
-                            DefenseBase = 4,
+                            MonstreId = 252,
+                            DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 5,
-                            MonsterId = 252,
                             Nom = "treecko",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 252,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 253,
+                            MonstreId = 253,
                             DefenseBase = 5,
                             ExperienceBase = 810,
                             ForceBase = 8,
-                            MonsterId = 253,
                             Nom = "grovyle",
                             PointDeVieBase = 16,
+                            PokemonId = 253,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/253.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 254,
+                            MonstreId = 254,
                             DefenseBase = 8,
                             ExperienceBase = 1060,
                             ForceBase = 10,
-                            MonsterId = 254,
                             Nom = "sceptile",
                             PointDeVieBase = 23,
+                            PokemonId = 254,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 255,
+                            MonstreId = 255,
                             DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 7,
-                            MonsterId = 255,
                             Nom = "torchic",
                             PointDeVieBase = 15,
+                            PokemonId = 255,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 256,
+                            MonstreId = 256,
                             DefenseBase = 7,
                             ExperienceBase = 810,
                             ForceBase = 10,
-                            MonsterId = 256,
                             Nom = "combusken",
                             PointDeVieBase = 20,
+                            PokemonId = 256,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/256.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 257,
+                            MonstreId = 257,
                             DefenseBase = 8,
                             ExperienceBase = 1060,
                             ForceBase = 15,
-                            MonsterId = 257,
                             Nom = "blaziken",
                             PointDeVieBase = 26,
+                            PokemonId = 257,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 258,
+                            MonstreId = 258,
                             DefenseBase = 6,
                             ExperienceBase = 620,
                             ForceBase = 8,
-                            MonsterId = 258,
                             Nom = "mudkip",
                             PointDeVieBase = 16,
+                            PokemonId = 258,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/258.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 259,
+                            MonstreId = 259,
                             DefenseBase = 8,
                             ExperienceBase = 810,
                             ForceBase = 10,
-                            MonsterId = 259,
                             Nom = "marshtomp",
                             PointDeVieBase = 23,
+                            PokemonId = 259,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/259.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 260,
+                            MonstreId = 260,
                             DefenseBase = 11,
                             ExperienceBase = 1070,
                             ForceBase = 13,
-                            MonsterId = 260,
                             Nom = "swampert",
                             PointDeVieBase = 33,
+                            PokemonId = 260,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 261,
-                            DefenseBase = 4,
+                            MonstreId = 261,
+                            DefenseBase = 5,
                             ExperienceBase = 440,
                             ForceBase = 6,
-                            MonsterId = 261,
                             Nom = "poochyena",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 11,
+                            PokemonId = 261,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/261.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 262,
+                            MonstreId = 262,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 11,
-                            MonsterId = 262,
                             Nom = "mightyena",
                             PointDeVieBase = 23,
+                            PokemonId = 262,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/262.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 263,
+                            MonstreId = 263,
                             DefenseBase = 5,
                             ExperienceBase = 480,
                             ForceBase = 5,
-                            MonsterId = 263,
                             Nom = "zigzagoon",
                             PointDeVieBase = 12,
+                            PokemonId = 263,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 264,
+                            MonstreId = 264,
                             DefenseBase = 7,
                             ExperienceBase = 840,
                             ForceBase = 8,
-                            MonsterId = 264,
                             Nom = "linoone",
                             PointDeVieBase = 26,
+                            PokemonId = 264,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 265,
-                            DefenseBase = 4,
+                            MonstreId = 265,
+                            DefenseBase = 5,
                             ExperienceBase = 390,
                             ForceBase = 5,
-                            MonsterId = 265,
                             Nom = "wurmple",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 265,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/265.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 266,
+                            MonstreId = 266,
                             DefenseBase = 6,
                             ExperienceBase = 410,
                             ForceBase = 5,
-                            MonsterId = 266,
                             Nom = "silcoon",
                             PointDeVieBase = 16,
+                            PokemonId = 266,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/266.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 267,
+                            MonstreId = 267,
                             DefenseBase = 6,
                             ExperienceBase = 790,
                             ForceBase = 8,
-                            MonsterId = 267,
                             Nom = "beautifly",
                             PointDeVieBase = 20,
+                            PokemonId = 267,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 268,
+                            MonstreId = 268,
                             DefenseBase = 6,
                             ExperienceBase = 410,
                             ForceBase = 5,
-                            MonsterId = 268,
                             Nom = "cascoon",
                             PointDeVieBase = 16,
+                            PokemonId = 268,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/268.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 269,
+                            MonstreId = 269,
                             DefenseBase = 8,
                             ExperienceBase = 770,
                             ForceBase = 6,
-                            MonsterId = 269,
                             Nom = "dustox",
                             PointDeVieBase = 20,
+                            PokemonId = 269,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/269.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 270,
-                            DefenseBase = 3,
+                            MonstreId = 270,
+                            DefenseBase = 5,
                             ExperienceBase = 440,
                             ForceBase = 5,
-                            MonsterId = 270,
                             Nom = "lotad",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 270,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/270.png",
                             Type1 = "water",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 271,
+                            MonstreId = 271,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 6,
-                            MonsterId = 271,
                             Nom = "lombre",
                             PointDeVieBase = 20,
+                            PokemonId = 271,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/271.png",
                             Type1 = "water",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 272,
+                            MonstreId = 272,
                             DefenseBase = 8,
                             ExperienceBase = 960,
                             ForceBase = 8,
-                            MonsterId = 272,
                             Nom = "ludicolo",
                             PointDeVieBase = 26,
+                            PokemonId = 272,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png",
                             Type1 = "water",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 273,
+                            MonstreId = 273,
                             DefenseBase = 6,
                             ExperienceBase = 440,
                             ForceBase = 5,
-                            MonsterId = 273,
                             Nom = "seedot",
                             PointDeVieBase = 13,
+                            PokemonId = 273,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/273.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 274,
+                            MonstreId = 274,
                             DefenseBase = 5,
                             ExperienceBase = 680,
                             ForceBase = 8,
-                            MonsterId = 274,
                             Nom = "nuzleaf",
                             PointDeVieBase = 23,
+                            PokemonId = 274,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/274.png",
                             Type1 = "grass",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 275,
+                            MonstreId = 275,
                             DefenseBase = 7,
                             ExperienceBase = 960,
                             ForceBase = 12,
-                            MonsterId = 275,
                             Nom = "shiftry",
                             PointDeVieBase = 30,
+                            PokemonId = 275,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/275.png",
                             Type1 = "grass",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 276,
-                            DefenseBase = 3,
+                            MonstreId = 276,
+                            DefenseBase = 5,
                             ExperienceBase = 540,
                             ForceBase = 6,
-                            MonsterId = 276,
                             Nom = "taillow",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 276,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/276.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 277,
+                            MonstreId = 277,
                             DefenseBase = 7,
                             ExperienceBase = 910,
                             ForceBase = 10,
-                            MonsterId = 277,
                             Nom = "swellow",
                             PointDeVieBase = 20,
+                            PokemonId = 277,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 278,
-                            DefenseBase = 3,
+                            MonstreId = 278,
+                            DefenseBase = 5,
                             ExperienceBase = 540,
                             ForceBase = 5,
-                            MonsterId = 278,
                             Nom = "wingull",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 278,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/278.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 279,
+                            MonstreId = 279,
                             DefenseBase = 12,
                             ExperienceBase = 880,
                             ForceBase = 6,
-                            MonsterId = 279,
                             Nom = "pelipper",
                             PointDeVieBase = 20,
+                            PokemonId = 279,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 280,
-                            DefenseBase = 3,
+                            MonstreId = 280,
+                            DefenseBase = 5,
                             ExperienceBase = 396,
                             ForceBase = 5,
-                            MonsterId = 280,
                             Nom = "ralts",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 280,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 281,
-                            DefenseBase = 4,
+                            MonstreId = 281,
+                            DefenseBase = 5,
                             ExperienceBase = 556,
                             ForceBase = 5,
-                            MonsterId = 281,
                             Nom = "kirlia",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 12,
+                            PokemonId = 281,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/281.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 282,
+                            MonstreId = 282,
                             DefenseBase = 8,
                             ExperienceBase = 1036,
                             ForceBase = 8,
-                            MonsterId = 282,
                             Nom = "gardevoir",
                             PointDeVieBase = 22,
+                            PokemonId = 282,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 283,
-                            DefenseBase = 4,
+                            MonstreId = 283,
+                            DefenseBase = 5,
                             ExperienceBase = 538,
                             ForceBase = 5,
-                            MonsterId = 283,
                             Nom = "surskit",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 283,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/283.png",
                             Type1 = "bug",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 284,
+                            MonstreId = 284,
                             DefenseBase = 7,
                             ExperienceBase = 908,
                             ForceBase = 7,
-                            MonsterId = 284,
                             Nom = "masquerain",
                             PointDeVieBase = 23,
+                            PokemonId = 284,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/284.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 285,
+                            MonstreId = 285,
                             DefenseBase = 7,
                             ExperienceBase = 590,
                             ForceBase = 5,
-                            MonsterId = 285,
                             Nom = "shroomish",
                             PointDeVieBase = 20,
+                            PokemonId = 285,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/285.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 286,
+                            MonstreId = 286,
                             DefenseBase = 10,
                             ExperienceBase = 920,
                             ForceBase = 16,
-                            MonsterId = 286,
                             Nom = "breloom",
                             PointDeVieBase = 20,
+                            PokemonId = 286,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/286.png",
                             Type1 = "grass",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 287,
+                            MonstreId = 287,
                             DefenseBase = 7,
                             ExperienceBase = 560,
                             ForceBase = 7,
-                            MonsterId = 287,
                             Nom = "slakoth",
                             PointDeVieBase = 20,
+                            PokemonId = 287,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/287.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 288,
+                            MonstreId = 288,
                             DefenseBase = 10,
                             ExperienceBase = 880,
                             ForceBase = 10,
-                            MonsterId = 288,
                             Nom = "vigoroth",
                             PointDeVieBase = 26,
+                            PokemonId = 288,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/288.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 289,
+                            MonstreId = 289,
                             DefenseBase = 12,
                             ExperienceBase = 1340,
                             ForceBase = 20,
-                            MonsterId = 289,
                             Nom = "slaking",
                             PointDeVieBase = 50,
+                            PokemonId = 289,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 290,
+                            MonstreId = 290,
                             DefenseBase = 11,
                             ExperienceBase = 532,
                             ForceBase = 5,
-                            MonsterId = 290,
                             Nom = "nincada",
                             PointDeVieBase = 10,
+                            PokemonId = 290,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png",
                             Type1 = "bug",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 291,
+                            MonstreId = 291,
                             DefenseBase = 5,
                             ExperienceBase = 912,
                             ForceBase = 11,
-                            MonsterId = 291,
                             Nom = "ninjask",
                             PointDeVieBase = 20,
+                            PokemonId = 291,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/291.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 292,
+                            MonstreId = 292,
                             DefenseBase = 5,
                             ExperienceBase = 472,
                             ForceBase = 11,
-                            MonsterId = 292,
                             Nom = "shedinja",
                             PointDeVieBase = 10,
+                            PokemonId = 292,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png",
                             Type1 = "bug",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 293,
-                            DefenseBase = 2,
+                            MonstreId = 293,
+                            DefenseBase = 5,
                             ExperienceBase = 480,
                             ForceBase = 6,
-                            MonsterId = 293,
                             Nom = "whismur",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 21,
+                            PokemonId = 293,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 294,
+                            MonstreId = 294,
                             DefenseBase = 5,
                             ExperienceBase = 720,
                             ForceBase = 8,
-                            MonsterId = 294,
                             Nom = "loudred",
                             PointDeVieBase = 28,
+                            PokemonId = 294,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/294.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 295,
+                            MonstreId = 295,
                             DefenseBase = 7,
                             ExperienceBase = 980,
                             ForceBase = 11,
-                            MonsterId = 295,
                             Nom = "exploud",
                             PointDeVieBase = 34,
+                            PokemonId = 295,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/295.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 296,
-                            DefenseBase = 3,
+                            MonstreId = 296,
+                            DefenseBase = 5,
                             ExperienceBase = 474,
                             ForceBase = 7,
-                            MonsterId = 296,
                             Nom = "makuhita",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 24,
+                            PokemonId = 296,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/296.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 297,
+                            MonstreId = 297,
                             DefenseBase = 7,
                             ExperienceBase = 948,
                             ForceBase = 15,
-                            MonsterId = 297,
                             Nom = "hariyama",
                             PointDeVieBase = 48,
+                            PokemonId = 297,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/297.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 298,
+                            MonstreId = 298,
                             DefenseBase = 5,
                             ExperienceBase = 380,
                             ForceBase = 5,
-                            MonsterId = 298,
                             Nom = "azurill",
                             PointDeVieBase = 16,
+                            PokemonId = 298,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/298.png",
                             Type1 = "normal",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 299,
+                            MonstreId = 299,
                             DefenseBase = 16,
                             ExperienceBase = 750,
                             ForceBase = 5,
-                            MonsterId = 299,
                             Nom = "nosepass",
                             PointDeVieBase = 10,
+                            PokemonId = 299,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/299.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 300,
+                            MonstreId = 300,
                             DefenseBase = 5,
                             ExperienceBase = 520,
                             ForceBase = 5,
-                            MonsterId = 300,
                             Nom = "skitty",
                             PointDeVieBase = 16,
+                            PokemonId = 300,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/300.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 301,
+                            MonstreId = 301,
                             DefenseBase = 8,
                             ExperienceBase = 800,
                             ForceBase = 8,
-                            MonsterId = 301,
                             Nom = "delcatty",
                             PointDeVieBase = 23,
+                            PokemonId = 301,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/301.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 302,
+                            MonstreId = 302,
                             DefenseBase = 9,
                             ExperienceBase = 760,
                             ForceBase = 9,
-                            MonsterId = 302,
                             Nom = "sableye",
                             PointDeVieBase = 16,
+                            PokemonId = 302,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png",
                             Type1 = "dark",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 303,
+                            MonstreId = 303,
                             DefenseBase = 10,
                             ExperienceBase = 760,
                             ForceBase = 10,
-                            MonsterId = 303,
                             Nom = "mawile",
                             PointDeVieBase = 16,
+                            PokemonId = 303,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/303.png",
                             Type1 = "steel",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 304,
+                            MonstreId = 304,
                             DefenseBase = 12,
                             ExperienceBase = 660,
                             ForceBase = 8,
-                            MonsterId = 304,
                             Nom = "aron",
                             PointDeVieBase = 16,
+                            PokemonId = 304,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/304.png",
                             Type1 = "steel",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 305,
+                            MonstreId = 305,
                             DefenseBase = 17,
                             ExperienceBase = 860,
                             ForceBase = 11,
-                            MonsterId = 305,
                             Nom = "lairon",
                             PointDeVieBase = 20,
+                            PokemonId = 305,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/305.png",
                             Type1 = "steel",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 306,
+                            MonstreId = 306,
                             DefenseBase = 22,
                             ExperienceBase = 1060,
                             ForceBase = 13,
-                            MonsterId = 306,
                             Nom = "aggron",
                             PointDeVieBase = 23,
+                            PokemonId = 306,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png",
                             Type1 = "steel",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 307,
+                            MonstreId = 307,
                             DefenseBase = 6,
                             ExperienceBase = 560,
                             ForceBase = 5,
-                            MonsterId = 307,
                             Nom = "meditite",
                             PointDeVieBase = 10,
+                            PokemonId = 307,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/307.png",
                             Type1 = "fighting",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 308,
+                            MonstreId = 308,
                             DefenseBase = 9,
                             ExperienceBase = 820,
                             ForceBase = 7,
-                            MonsterId = 308,
                             Nom = "medicham",
                             PointDeVieBase = 20,
+                            PokemonId = 308,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png",
                             Type1 = "fighting",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 309,
+                            MonstreId = 309,
                             DefenseBase = 5,
                             ExperienceBase = 590,
                             ForceBase = 5,
-                            MonsterId = 309,
                             Nom = "electrike",
                             PointDeVieBase = 13,
+                            PokemonId = 309,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/309.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 310,
+                            MonstreId = 310,
                             DefenseBase = 7,
                             ExperienceBase = 950,
                             ForceBase = 9,
-                            MonsterId = 310,
                             Nom = "manectric",
                             PointDeVieBase = 23,
+                            PokemonId = 310,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 311,
+                            MonstreId = 311,
                             DefenseBase = 5,
                             ExperienceBase = 810,
                             ForceBase = 6,
-                            MonsterId = 311,
                             Nom = "plusle",
                             PointDeVieBase = 20,
+                            PokemonId = 311,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 312,
+                            MonstreId = 312,
                             DefenseBase = 6,
                             ExperienceBase = 810,
                             ForceBase = 5,
-                            MonsterId = 312,
                             Nom = "minun",
                             PointDeVieBase = 20,
+                            PokemonId = 312,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/312.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 313,
+                            MonstreId = 313,
                             DefenseBase = 9,
                             ExperienceBase = 860,
                             ForceBase = 9,
-                            MonsterId = 313,
                             Nom = "volbeat",
                             PointDeVieBase = 21,
+                            PokemonId = 313,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/313.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 314,
+                            MonstreId = 314,
                             DefenseBase = 9,
                             ExperienceBase = 860,
                             ForceBase = 5,
-                            MonsterId = 314,
                             Nom = "illumise",
                             PointDeVieBase = 21,
+                            PokemonId = 314,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 315,
+                            MonstreId = 315,
                             DefenseBase = 5,
                             ExperienceBase = 800,
                             ForceBase = 7,
-                            MonsterId = 315,
                             Nom = "roselia",
                             PointDeVieBase = 16,
+                            PokemonId = 315,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/315.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 316,
+                            MonstreId = 316,
                             DefenseBase = 6,
                             ExperienceBase = 604,
                             ForceBase = 5,
-                            MonsterId = 316,
                             Nom = "gulpin",
                             PointDeVieBase = 23,
+                            PokemonId = 316,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 317,
+                            MonstreId = 317,
                             DefenseBase = 10,
                             ExperienceBase = 934,
                             ForceBase = 9,
-                            MonsterId = 317,
                             Nom = "swalot",
                             PointDeVieBase = 33,
+                            PokemonId = 317,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/317.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 318,
-                            DefenseBase = 2,
+                            MonstreId = 318,
+                            DefenseBase = 5,
                             ExperienceBase = 610,
                             ForceBase = 11,
-                            MonsterId = 318,
                             Nom = "carvanha",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 318,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/318.png",
                             Type1 = "water",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 319,
+                            MonstreId = 319,
                             DefenseBase = 5,
                             ExperienceBase = 920,
                             ForceBase = 15,
-                            MonsterId = 319,
                             Nom = "sharpedo",
                             PointDeVieBase = 23,
+                            PokemonId = 319,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png",
                             Type1 = "water",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 320,
-                            DefenseBase = 4,
+                            MonstreId = 320,
+                            DefenseBase = 5,
                             ExperienceBase = 800,
                             ForceBase = 8,
-                            MonsterId = 320,
                             Nom = "wailmer",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 43,
+                            PokemonId = 320,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 321,
+                            MonstreId = 321,
                             DefenseBase = 5,
                             ExperienceBase = 1000,
                             ForceBase = 11,
-                            MonsterId = 321,
                             Nom = "wailord",
                             PointDeVieBase = 56,
+                            PokemonId = 321,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/321.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 322,
+                            MonstreId = 322,
                             DefenseBase = 5,
                             ExperienceBase = 610,
                             ForceBase = 7,
-                            MonsterId = 322,
                             Nom = "numel",
                             PointDeVieBase = 20,
+                            PokemonId = 322,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png",
                             Type1 = "fire",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 323,
+                            MonstreId = 323,
                             DefenseBase = 8,
                             ExperienceBase = 920,
                             ForceBase = 12,
-                            MonsterId = 323,
                             Nom = "camerupt",
                             PointDeVieBase = 23,
+                            PokemonId = 323,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png",
                             Type1 = "fire",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 324,
+                            MonstreId = 324,
                             DefenseBase = 17,
                             ExperienceBase = 940,
                             ForceBase = 10,
-                            MonsterId = 324,
                             Nom = "torkoal",
                             PointDeVieBase = 23,
+                            PokemonId = 324,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 325,
-                            DefenseBase = 4,
+                            MonstreId = 325,
+                            DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 5,
-                            MonsterId = 325,
                             Nom = "spoink",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 20,
+                            PokemonId = 325,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/325.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 326,
+                            MonstreId = 326,
                             DefenseBase = 8,
                             ExperienceBase = 940,
                             ForceBase = 5,
-                            MonsterId = 326,
                             Nom = "grumpig",
                             PointDeVieBase = 26,
+                            PokemonId = 326,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/326.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 327,
+                            MonstreId = 327,
                             DefenseBase = 7,
                             ExperienceBase = 720,
                             ForceBase = 7,
-                            MonsterId = 327,
                             Nom = "spinda",
                             PointDeVieBase = 20,
+                            PokemonId = 327,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/327.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 328,
+                            MonstreId = 328,
                             DefenseBase = 5,
                             ExperienceBase = 580,
                             ForceBase = 12,
-                            MonsterId = 328,
                             Nom = "trapinch",
                             PointDeVieBase = 15,
+                            PokemonId = 328,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/328.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 329,
+                            MonstreId = 329,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 8,
-                            MonsterId = 329,
                             Nom = "vibrava",
                             PointDeVieBase = 16,
+                            PokemonId = 329,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/329.png",
                             Type1 = "ground",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 330,
+                            MonstreId = 330,
                             DefenseBase = 10,
                             ExperienceBase = 1040,
                             ForceBase = 12,
-                            MonsterId = 330,
                             Nom = "flygon",
                             PointDeVieBase = 26,
+                            PokemonId = 330,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/330.png",
                             Type1 = "ground",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 331,
+                            MonstreId = 331,
                             DefenseBase = 5,
                             ExperienceBase = 670,
                             ForceBase = 10,
-                            MonsterId = 331,
                             Nom = "cacnea",
                             PointDeVieBase = 16,
+                            PokemonId = 331,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/331.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 332,
+                            MonstreId = 332,
                             DefenseBase = 7,
                             ExperienceBase = 950,
                             ForceBase = 14,
-                            MonsterId = 332,
                             Nom = "cacturne",
                             PointDeVieBase = 23,
+                            PokemonId = 332,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/332.png",
                             Type1 = "grass",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 333,
+                            MonstreId = 333,
                             DefenseBase = 7,
                             ExperienceBase = 620,
                             ForceBase = 5,
-                            MonsterId = 333,
                             Nom = "swablu",
                             PointDeVieBase = 15,
+                            PokemonId = 333,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/333.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 334,
+                            MonstreId = 334,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 8,
-                            MonsterId = 334,
                             Nom = "altaria",
                             PointDeVieBase = 25,
+                            PokemonId = 334,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png",
                             Type1 = "dragon",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 335,
+                            MonstreId = 335,
                             DefenseBase = 7,
                             ExperienceBase = 916,
                             ForceBase = 14,
-                            MonsterId = 335,
                             Nom = "zangoose",
                             PointDeVieBase = 24,
+                            PokemonId = 335,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/335.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 336,
+                            MonstreId = 336,
                             DefenseBase = 7,
                             ExperienceBase = 916,
                             ForceBase = 12,
-                            MonsterId = 336,
                             Nom = "seviper",
                             PointDeVieBase = 24,
+                            PokemonId = 336,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/336.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 337,
+                            MonstreId = 337,
                             DefenseBase = 8,
                             ExperienceBase = 920,
                             ForceBase = 6,
-                            MonsterId = 337,
                             Nom = "lunatone",
                             PointDeVieBase = 30,
+                            PokemonId = 337,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/337.png",
                             Type1 = "rock",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 338,
+                            MonstreId = 338,
                             DefenseBase = 10,
                             ExperienceBase = 920,
                             ForceBase = 11,
-                            MonsterId = 338,
                             Nom = "solrock",
                             PointDeVieBase = 30,
+                            PokemonId = 338,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/338.png",
                             Type1 = "rock",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 339,
+                            MonstreId = 339,
                             DefenseBase = 5,
                             ExperienceBase = 576,
                             ForceBase = 6,
-                            MonsterId = 339,
                             Nom = "barboach",
                             PointDeVieBase = 16,
+                            PokemonId = 339,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/339.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 340,
+                            MonstreId = 340,
                             DefenseBase = 9,
                             ExperienceBase = 936,
                             ForceBase = 9,
-                            MonsterId = 340,
                             Nom = "whiscash",
                             PointDeVieBase = 36,
+                            PokemonId = 340,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/340.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 341,
+                            MonstreId = 341,
                             DefenseBase = 8,
                             ExperienceBase = 616,
                             ForceBase = 10,
-                            MonsterId = 341,
                             Nom = "corphish",
                             PointDeVieBase = 14,
+                            PokemonId = 341,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 342,
+                            MonstreId = 342,
                             DefenseBase = 10,
                             ExperienceBase = 936,
                             ForceBase = 15,
-                            MonsterId = 342,
                             Nom = "crawdaunt",
                             PointDeVieBase = 21,
+                            PokemonId = 342,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/342.png",
                             Type1 = "water",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 343,
+                            MonstreId = 343,
                             DefenseBase = 6,
                             ExperienceBase = 600,
                             ForceBase = 5,
-                            MonsterId = 343,
                             Nom = "baltoy",
                             PointDeVieBase = 13,
+                            PokemonId = 343,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/343.png",
                             Type1 = "ground",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 344,
+                            MonstreId = 344,
                             DefenseBase = 13,
                             ExperienceBase = 1000,
                             ForceBase = 8,
-                            MonsterId = 344,
                             Nom = "claydol",
                             PointDeVieBase = 20,
+                            PokemonId = 344,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/344.png",
                             Type1 = "ground",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 345,
+                            MonstreId = 345,
                             DefenseBase = 9,
                             ExperienceBase = 710,
                             ForceBase = 5,
-                            MonsterId = 345,
                             Nom = "lileep",
                             PointDeVieBase = 22,
+                            PokemonId = 345,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/345.png",
                             Type1 = "rock",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 346,
+                            MonstreId = 346,
                             DefenseBase = 12,
                             ExperienceBase = 990,
                             ForceBase = 10,
-                            MonsterId = 346,
                             Nom = "cradily",
                             PointDeVieBase = 28,
+                            PokemonId = 346,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/346.png",
                             Type1 = "rock",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 347,
+                            MonstreId = 347,
                             DefenseBase = 6,
                             ExperienceBase = 710,
                             ForceBase = 11,
-                            MonsterId = 347,
                             Nom = "anorith",
                             PointDeVieBase = 15,
+                            PokemonId = 347,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/347.png",
                             Type1 = "rock",
                             Type2 = "bug"
                         },
                         new
                         {
-                            Id = 348,
+                            MonstreId = 348,
                             DefenseBase = 12,
                             ExperienceBase = 990,
                             ForceBase = 15,
-                            MonsterId = 348,
                             Nom = "armaldo",
                             PointDeVieBase = 25,
+                            PokemonId = 348,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/348.png",
                             Type1 = "rock",
                             Type2 = "bug"
                         },
                         new
                         {
-                            Id = 349,
-                            DefenseBase = 2,
+                            MonstreId = 349,
+                            DefenseBase = 5,
                             ExperienceBase = 400,
                             ForceBase = 5,
-                            MonsterId = 349,
                             Nom = "feebas",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 10,
+                            PokemonId = 349,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/349.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 350,
+                            MonstreId = 350,
                             DefenseBase = 9,
                             ExperienceBase = 1080,
                             ForceBase = 7,
-                            MonsterId = 350,
                             Nom = "milotic",
                             PointDeVieBase = 31,
+                            PokemonId = 350,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 351,
+                            MonstreId = 351,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 8,
-                            MonsterId = 351,
                             Nom = "castform",
                             PointDeVieBase = 23,
+                            PokemonId = 351,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 352,
+                            MonstreId = 352,
                             DefenseBase = 8,
                             ExperienceBase = 880,
                             ForceBase = 11,
-                            MonsterId = 352,
                             Nom = "kecleon",
                             PointDeVieBase = 20,
+                            PokemonId = 352,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/352.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 353,
-                            DefenseBase = 4,
-                            ExperienceBase = 590,
-                            ForceBase = 9,
-                            MonsterId = 353,
-                            Nom = "shuppet",
-                            PointDeVieBase = 5,
-                            SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/353.png",
-                            Type1 = "ghost",
-                            Type2 = ""
-                        },
-                        new
-                        {
-                            Id = 354,
+                            MonstreId = 354,
                             DefenseBase = 8,
                             ExperienceBase = 910,
                             ForceBase = 14,
-                            MonsterId = 354,
                             Nom = "banette",
                             PointDeVieBase = 21,
+                            PokemonId = 354,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 355,
+                            MonstreId = 355,
                             DefenseBase = 11,
                             ExperienceBase = 590,
                             ForceBase = 5,
-                            MonsterId = 355,
                             Nom = "duskull",
                             PointDeVieBase = 10,
+                            PokemonId = 355,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 356,
+                            MonstreId = 356,
                             DefenseBase = 16,
                             ExperienceBase = 910,
                             ForceBase = 8,
-                            MonsterId = 356,
                             Nom = "dusclops",
                             PointDeVieBase = 13,
+                            PokemonId = 356,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/356.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 357,
+                            MonstreId = 357,
                             DefenseBase = 10,
                             ExperienceBase = 920,
                             ForceBase = 8,
-                            MonsterId = 357,
                             Nom = "tropius",
                             PointDeVieBase = 33,
+                            PokemonId = 357,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/357.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 358,
+                            MonstreId = 358,
                             DefenseBase = 10,
                             ExperienceBase = 910,
                             ForceBase = 6,
-                            MonsterId = 358,
                             Nom = "chimecho",
                             PointDeVieBase = 25,
+                            PokemonId = 358,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/358.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 359,
+                            MonstreId = 359,
                             DefenseBase = 7,
                             ExperienceBase = 930,
                             ForceBase = 16,
-                            MonsterId = 359,
                             Nom = "absol",
                             PointDeVieBase = 21,
+                            PokemonId = 359,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 360,
+                            MonstreId = 360,
                             DefenseBase = 6,
                             ExperienceBase = 520,
                             ForceBase = 5,
-                            MonsterId = 360,
                             Nom = "wynaut",
                             PointDeVieBase = 31,
+                            PokemonId = 360,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 361,
+                            MonstreId = 361,
                             DefenseBase = 6,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 361,
                             Nom = "snorunt",
                             PointDeVieBase = 16,
+                            PokemonId = 361,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/361.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 362,
+                            MonstreId = 362,
                             DefenseBase = 10,
                             ExperienceBase = 960,
                             ForceBase = 10,
-                            MonsterId = 362,
                             Nom = "glalie",
                             PointDeVieBase = 26,
+                            PokemonId = 362,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 363,
+                            MonstreId = 363,
                             DefenseBase = 6,
                             ExperienceBase = 580,
                             ForceBase = 5,
-                            MonsterId = 363,
                             Nom = "spheal",
                             PointDeVieBase = 23,
+                            PokemonId = 363,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png",
                             Type1 = "ice",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 364,
+                            MonstreId = 364,
                             DefenseBase = 8,
                             ExperienceBase = 820,
                             ForceBase = 7,
-                            MonsterId = 364,
                             Nom = "sealeo",
                             PointDeVieBase = 30,
+                            PokemonId = 364,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/364.png",
                             Type1 = "ice",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 365,
+                            MonstreId = 365,
                             DefenseBase = 11,
                             ExperienceBase = 1060,
                             ForceBase = 10,
-                            MonsterId = 365,
                             Nom = "walrein",
                             PointDeVieBase = 36,
+                            PokemonId = 365,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/365.png",
                             Type1 = "ice",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 366,
+                            MonstreId = 366,
                             DefenseBase = 10,
                             ExperienceBase = 690,
                             ForceBase = 8,
-                            MonsterId = 366,
                             Nom = "clamperl",
                             PointDeVieBase = 11,
+                            PokemonId = 366,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/366.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 367,
+                            MonstreId = 367,
                             DefenseBase = 13,
                             ExperienceBase = 970,
                             ForceBase = 13,
-                            MonsterId = 367,
                             Nom = "huntail",
                             PointDeVieBase = 18,
+                            PokemonId = 367,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/367.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 368,
+                            MonstreId = 368,
                             DefenseBase = 13,
                             ExperienceBase = 970,
                             ForceBase = 10,
-                            MonsterId = 368,
                             Nom = "gorebyss",
                             PointDeVieBase = 18,
+                            PokemonId = 368,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/368.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 369,
+                            MonstreId = 369,
                             DefenseBase = 16,
                             ExperienceBase = 970,
                             ForceBase = 11,
-                            MonsterId = 369,
                             Nom = "relicanth",
                             PointDeVieBase = 33,
+                            PokemonId = 369,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/369.png",
                             Type1 = "water",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 370,
+                            MonstreId = 370,
                             DefenseBase = 6,
                             ExperienceBase = 660,
                             ForceBase = 5,
-                            MonsterId = 370,
                             Nom = "luvdisc",
                             PointDeVieBase = 14,
+                            PokemonId = 370,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/370.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 371,
+                            MonstreId = 371,
                             DefenseBase = 7,
                             ExperienceBase = 600,
                             ForceBase = 9,
-                            MonsterId = 371,
                             Nom = "bagon",
                             PointDeVieBase = 15,
+                            PokemonId = 371,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 372,
+                            MonstreId = 372,
                             DefenseBase = 12,
                             ExperienceBase = 840,
                             ForceBase = 11,
-                            MonsterId = 372,
                             Nom = "shelgon",
                             PointDeVieBase = 21,
+                            PokemonId = 372,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/372.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 373,
+                            MonstreId = 373,
                             DefenseBase = 10,
                             ExperienceBase = 1200,
                             ForceBase = 16,
-                            MonsterId = 373,
                             Nom = "salamence",
                             PointDeVieBase = 31,
+                            PokemonId = 373,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png",
                             Type1 = "dragon",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 374,
+                            MonstreId = 374,
                             DefenseBase = 10,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 374,
                             Nom = "beldum",
                             PointDeVieBase = 13,
+                            PokemonId = 374,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 375,
+                            MonstreId = 375,
                             DefenseBase = 12,
                             ExperienceBase = 840,
                             ForceBase = 9,
-                            MonsterId = 375,
                             Nom = "metang",
                             PointDeVieBase = 20,
+                            PokemonId = 375,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 376,
+                            MonstreId = 376,
                             DefenseBase = 16,
                             ExperienceBase = 1200,
                             ForceBase = 16,
-                            MonsterId = 376,
                             Nom = "metagross",
                             PointDeVieBase = 26,
+                            PokemonId = 376,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 377,
+                            MonstreId = 377,
                             DefenseBase = 25,
                             ExperienceBase = 1160,
                             ForceBase = 12,
-                            MonsterId = 377,
                             Nom = "regirock",
                             PointDeVieBase = 26,
+                            PokemonId = 377,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/377.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 378,
+                            MonstreId = 378,
                             DefenseBase = 12,
                             ExperienceBase = 1160,
                             ForceBase = 6,
-                            MonsterId = 378,
                             Nom = "regice",
                             PointDeVieBase = 26,
+                            PokemonId = 378,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/378.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 379,
+                            MonstreId = 379,
                             DefenseBase = 18,
                             ExperienceBase = 1160,
                             ForceBase = 9,
-                            MonsterId = 379,
                             Nom = "registeel",
                             PointDeVieBase = 26,
+                            PokemonId = 379,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png",
                             Type1 = "steel",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 380,
+                            MonstreId = 380,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 10,
-                            MonsterId = 380,
                             Nom = "latias",
                             PointDeVieBase = 26,
+                            PokemonId = 380,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/380.png",
                             Type1 = "dragon",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 381,
+                            MonstreId = 381,
                             DefenseBase = 10,
                             ExperienceBase = 1200,
                             ForceBase = 11,
-                            MonsterId = 381,
                             Nom = "latios",
                             PointDeVieBase = 26,
+                            PokemonId = 381,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/381.png",
                             Type1 = "dragon",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 382,
+                            MonstreId = 382,
                             DefenseBase = 11,
                             ExperienceBase = 1340,
                             ForceBase = 12,
-                            MonsterId = 382,
                             Nom = "kyogre",
                             PointDeVieBase = 33,
+                            PokemonId = 382,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/382.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 383,
+                            MonstreId = 383,
                             DefenseBase = 17,
                             ExperienceBase = 1340,
                             ForceBase = 18,
-                            MonsterId = 383,
                             Nom = "groudon",
                             PointDeVieBase = 33,
+                            PokemonId = 383,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 384,
+                            MonstreId = 384,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 18,
-                            MonsterId = 384,
                             Nom = "rayquaza",
                             PointDeVieBase = 35,
+                            PokemonId = 384,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png",
                             Type1 = "dragon",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 385,
+                            MonstreId = 385,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 385,
                             Nom = "jirachi",
                             PointDeVieBase = 33,
+                            PokemonId = 385,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/385.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 386,
+                            MonstreId = 386,
                             DefenseBase = 6,
                             ExperienceBase = 1200,
                             ForceBase = 18,
-                            MonsterId = 386,
                             Nom = "deoxys-normal",
                             PointDeVieBase = 16,
+                            PokemonId = 386,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 387,
+                            MonstreId = 387,
                             DefenseBase = 8,
                             ExperienceBase = 636,
                             ForceBase = 8,
-                            MonsterId = 387,
                             Nom = "turtwig",
                             PointDeVieBase = 18,
+                            PokemonId = 387,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 388,
+                            MonstreId = 388,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 11,
-                            MonsterId = 388,
                             Nom = "grotle",
                             PointDeVieBase = 25,
+                            PokemonId = 388,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/388.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 389,
+                            MonstreId = 389,
                             DefenseBase = 13,
                             ExperienceBase = 1050,
                             ForceBase = 13,
-                            MonsterId = 389,
                             Nom = "torterra",
                             PointDeVieBase = 31,
+                            PokemonId = 389,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/389.png",
                             Type1 = "grass",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 390,
+                            MonstreId = 390,
                             DefenseBase = 5,
                             ExperienceBase = 618,
                             ForceBase = 7,
-                            MonsterId = 390,
                             Nom = "chimchar",
                             PointDeVieBase = 14,
+                            PokemonId = 390,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 391,
+                            MonstreId = 391,
                             DefenseBase = 6,
                             ExperienceBase = 810,
                             ForceBase = 9,
-                            MonsterId = 391,
                             Nom = "monferno",
                             PointDeVieBase = 21,
+                            PokemonId = 391,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/391.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 392,
+                            MonstreId = 392,
                             DefenseBase = 8,
                             ExperienceBase = 1068,
                             ForceBase = 13,
-                            MonsterId = 392,
                             Nom = "infernape",
                             PointDeVieBase = 25,
+                            PokemonId = 392,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 393,
+                            MonstreId = 393,
                             DefenseBase = 6,
                             ExperienceBase = 628,
                             ForceBase = 6,
-                            MonsterId = 393,
                             Nom = "piplup",
                             PointDeVieBase = 17,
+                            PokemonId = 393,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/393.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 394,
+                            MonstreId = 394,
                             DefenseBase = 8,
                             ExperienceBase = 810,
                             ForceBase = 8,
-                            MonsterId = 394,
                             Nom = "prinplup",
                             PointDeVieBase = 21,
+                            PokemonId = 394,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/394.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 395,
+                            MonstreId = 395,
                             DefenseBase = 11,
                             ExperienceBase = 1060,
                             ForceBase = 10,
-                            MonsterId = 395,
                             Nom = "empoleon",
                             PointDeVieBase = 28,
+                            PokemonId = 395,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/395.png",
                             Type1 = "water",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 396,
-                            DefenseBase = 3,
+                            MonstreId = 396,
+                            DefenseBase = 5,
                             ExperienceBase = 490,
                             ForceBase = 6,
-                            MonsterId = 396,
                             Nom = "starly",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 396,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/396.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 397,
+                            MonstreId = 397,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 9,
-                            MonsterId = 397,
                             Nom = "staravia",
                             PointDeVieBase = 18,
+                            PokemonId = 397,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/397.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 398,
+                            MonstreId = 398,
                             DefenseBase = 8,
                             ExperienceBase = 970,
                             ForceBase = 15,
-                            MonsterId = 398,
                             Nom = "staraptor",
                             PointDeVieBase = 28,
+                            PokemonId = 398,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/398.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 399,
+                            MonstreId = 399,
                             DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 5,
-                            MonsterId = 399,
                             Nom = "bidoof",
                             PointDeVieBase = 19,
+                            PokemonId = 399,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/399.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 400,
+                            MonstreId = 400,
                             DefenseBase = 7,
                             ExperienceBase = 820,
                             ForceBase = 10,
-                            MonsterId = 400,
                             Nom = "bibarel",
                             PointDeVieBase = 26,
+                            PokemonId = 400,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/400.png",
                             Type1 = "normal",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 401,
+                            MonstreId = 401,
                             DefenseBase = 5,
                             ExperienceBase = 388,
                             ForceBase = 5,
-                            MonsterId = 401,
                             Nom = "kricketot",
                             PointDeVieBase = 12,
+                            PokemonId = 401,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/401.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 402,
+                            MonstreId = 402,
                             DefenseBase = 6,
                             ExperienceBase = 768,
                             ForceBase = 10,
-                            MonsterId = 402,
                             Nom = "kricketune",
                             PointDeVieBase = 25,
+                            PokemonId = 402,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/402.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 403,
-                            DefenseBase = 4,
+                            MonstreId = 403,
+                            DefenseBase = 5,
                             ExperienceBase = 526,
                             ForceBase = 8,
-                            MonsterId = 403,
                             Nom = "shinx",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 403,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/403.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 404,
+                            MonstreId = 404,
                             DefenseBase = 6,
                             ExperienceBase = 726,
                             ForceBase = 10,
-                            MonsterId = 404,
                             Nom = "luxio",
                             PointDeVieBase = 20,
+                            PokemonId = 404,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/404.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 405,
+                            MonstreId = 405,
                             DefenseBase = 9,
                             ExperienceBase = 1046,
                             ForceBase = 15,
-                            MonsterId = 405,
                             Nom = "luxray",
                             PointDeVieBase = 26,
+                            PokemonId = 405,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 406,
-                            DefenseBase = 4,
+                            MonstreId = 406,
+                            DefenseBase = 5,
                             ExperienceBase = 560,
                             ForceBase = 5,
-                            MonsterId = 406,
                             Nom = "budew",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 406,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/406.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 407,
+                            MonstreId = 407,
                             DefenseBase = 8,
                             ExperienceBase = 1030,
                             ForceBase = 8,
-                            MonsterId = 407,
                             Nom = "roserade",
                             PointDeVieBase = 20,
+                            PokemonId = 407,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/407.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 408,
+                            MonstreId = 408,
                             DefenseBase = 5,
                             ExperienceBase = 700,
                             ForceBase = 15,
-                            MonsterId = 408,
                             Nom = "cranidos",
                             PointDeVieBase = 22,
+                            PokemonId = 408,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/408.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 409,
+                            MonstreId = 409,
                             DefenseBase = 7,
                             ExperienceBase = 990,
                             ForceBase = 20,
-                            MonsterId = 409,
                             Nom = "rampardos",
                             PointDeVieBase = 32,
+                            PokemonId = 409,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/409.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 410,
+                            MonstreId = 410,
                             DefenseBase = 14,
                             ExperienceBase = 700,
                             ForceBase = 5,
-                            MonsterId = 410,
                             Nom = "shieldon",
                             PointDeVieBase = 10,
+                            PokemonId = 410,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/410.png",
                             Type1 = "rock",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 411,
+                            MonstreId = 411,
                             DefenseBase = 21,
                             ExperienceBase = 990,
                             ForceBase = 6,
-                            MonsterId = 411,
                             Nom = "bastiodon",
                             PointDeVieBase = 20,
+                            PokemonId = 411,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/411.png",
                             Type1 = "rock",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 412,
+                            MonstreId = 412,
                             DefenseBase = 5,
                             ExperienceBase = 448,
                             ForceBase = 5,
-                            MonsterId = 412,
                             Nom = "burmy",
                             PointDeVieBase = 13,
+                            PokemonId = 412,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/412.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 413,
+                            MonstreId = 413,
                             DefenseBase = 10,
                             ExperienceBase = 848,
                             ForceBase = 7,
-                            MonsterId = 413,
                             Nom = "wormadam-plant",
                             PointDeVieBase = 20,
+                            PokemonId = 413,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/413.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 414,
+                            MonstreId = 414,
                             DefenseBase = 6,
                             ExperienceBase = 848,
                             ForceBase = 11,
-                            MonsterId = 414,
                             Nom = "mothim",
                             PointDeVieBase = 23,
+                            PokemonId = 414,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/414.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 415,
+                            MonstreId = 415,
                             DefenseBase = 5,
                             ExperienceBase = 488,
                             ForceBase = 5,
-                            MonsterId = 415,
                             Nom = "combee",
                             PointDeVieBase = 10,
+                            PokemonId = 415,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 416,
+                            MonstreId = 416,
                             DefenseBase = 12,
                             ExperienceBase = 948,
                             ForceBase = 10,
-                            MonsterId = 416,
                             Nom = "vespiquen",
                             PointDeVieBase = 23,
+                            PokemonId = 416,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/416.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 417,
+                            MonstreId = 417,
                             DefenseBase = 8,
                             ExperienceBase = 810,
                             ForceBase = 5,
-                            MonsterId = 417,
                             Nom = "pachirisu",
                             PointDeVieBase = 20,
+                            PokemonId = 417,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/417.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 418,
-                            DefenseBase = 4,
+                            MonstreId = 418,
+                            DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 8,
-                            MonsterId = 418,
                             Nom = "buizel",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 18,
+                            PokemonId = 418,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/418.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 419,
+                            MonstreId = 419,
                             DefenseBase = 6,
                             ExperienceBase = 990,
                             ForceBase = 13,
-                            MonsterId = 419,
                             Nom = "floatzel",
                             PointDeVieBase = 28,
+                            PokemonId = 419,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/419.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 420,
+                            MonstreId = 420,
                             DefenseBase = 5,
                             ExperienceBase = 550,
                             ForceBase = 5,
-                            MonsterId = 420,
                             Nom = "cherubi",
                             PointDeVieBase = 15,
+                            PokemonId = 420,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/420.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 421,
+                            MonstreId = 421,
                             DefenseBase = 8,
                             ExperienceBase = 900,
                             ForceBase = 7,
-                            MonsterId = 421,
                             Nom = "cherrim",
                             PointDeVieBase = 23,
+                            PokemonId = 421,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/421.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 422,
+                            MonstreId = 422,
                             DefenseBase = 6,
                             ExperienceBase = 650,
                             ForceBase = 6,
-                            MonsterId = 422,
                             Nom = "shellos",
                             PointDeVieBase = 25,
+                            PokemonId = 422,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/422.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 423,
+                            MonstreId = 423,
                             DefenseBase = 8,
                             ExperienceBase = 950,
                             ForceBase = 10,
-                            MonsterId = 423,
                             Nom = "gastrodon",
                             PointDeVieBase = 37,
+                            PokemonId = 423,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/423.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 424,
+                            MonstreId = 424,
                             DefenseBase = 8,
                             ExperienceBase = 964,
                             ForceBase = 12,
-                            MonsterId = 424,
                             Nom = "ambipom",
                             PointDeVieBase = 25,
+                            PokemonId = 424,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/424.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 425,
-                            DefenseBase = 4,
+                            MonstreId = 425,
+                            DefenseBase = 5,
                             ExperienceBase = 696,
                             ForceBase = 6,
-                            MonsterId = 425,
                             Nom = "drifloon",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 30,
+                            PokemonId = 425,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png",
                             Type1 = "ghost",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 426,
+                            MonstreId = 426,
                             DefenseBase = 5,
                             ExperienceBase = 996,
                             ForceBase = 10,
-                            MonsterId = 426,
                             Nom = "drifblim",
                             PointDeVieBase = 50,
+                            PokemonId = 426,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/426.png",
                             Type1 = "ghost",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 427,
+                            MonstreId = 427,
                             DefenseBase = 5,
                             ExperienceBase = 700,
                             ForceBase = 8,
-                            MonsterId = 427,
                             Nom = "buneary",
                             PointDeVieBase = 18,
+                            PokemonId = 427,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/427.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 428,
+                            MonstreId = 428,
                             DefenseBase = 10,
                             ExperienceBase = 960,
                             ForceBase = 9,
-                            MonsterId = 428,
                             Nom = "lopunny",
                             PointDeVieBase = 21,
+                            PokemonId = 428,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/428.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 429,
+                            MonstreId = 429,
                             DefenseBase = 7,
                             ExperienceBase = 990,
                             ForceBase = 7,
-                            MonsterId = 429,
                             Nom = "mismagius",
                             PointDeVieBase = 20,
+                            PokemonId = 429,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 430,
+                            MonstreId = 430,
                             DefenseBase = 6,
                             ExperienceBase = 1010,
                             ForceBase = 15,
-                            MonsterId = 430,
                             Nom = "honchkrow",
                             PointDeVieBase = 33,
+                            PokemonId = 430,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/430.png",
                             Type1 = "dark",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 431,
+                            MonstreId = 431,
                             DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 6,
-                            MonsterId = 431,
                             Nom = "glameow",
                             PointDeVieBase = 16,
+                            PokemonId = 431,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/431.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 432,
+                            MonstreId = 432,
                             DefenseBase = 8,
                             ExperienceBase = 904,
                             ForceBase = 10,
-                            MonsterId = 432,
                             Nom = "purugly",
                             PointDeVieBase = 23,
+                            PokemonId = 432,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/432.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 433,
+                            MonstreId = 433,
                             DefenseBase = 6,
                             ExperienceBase = 570,
                             ForceBase = 5,
-                            MonsterId = 433,
                             Nom = "chingling",
                             PointDeVieBase = 15,
+                            PokemonId = 433,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/433.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 434,
+                            MonstreId = 434,
                             DefenseBase = 5,
                             ExperienceBase = 658,
                             ForceBase = 7,
-                            MonsterId = 434,
                             Nom = "stunky",
                             PointDeVieBase = 21,
+                            PokemonId = 434,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/434.png",
                             Type1 = "poison",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 435,
+                            MonstreId = 435,
                             DefenseBase = 8,
                             ExperienceBase = 958,
                             ForceBase = 11,
-                            MonsterId = 435,
                             Nom = "skuntank",
                             PointDeVieBase = 34,
+                            PokemonId = 435,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/435.png",
                             Type1 = "poison",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 436,
+                            MonstreId = 436,
                             DefenseBase = 10,
                             ExperienceBase = 600,
                             ForceBase = 5,
-                            MonsterId = 436,
                             Nom = "bronzor",
                             PointDeVieBase = 19,
+                            PokemonId = 436,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/436.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 437,
+                            MonstreId = 437,
                             DefenseBase = 14,
                             ExperienceBase = 1000,
                             ForceBase = 11,
-                            MonsterId = 437,
                             Nom = "bronzong",
                             PointDeVieBase = 22,
+                            PokemonId = 437,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/437.png",
                             Type1 = "steel",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 438,
+                            MonstreId = 438,
                             DefenseBase = 11,
                             ExperienceBase = 580,
                             ForceBase = 10,
-                            MonsterId = 438,
                             Nom = "bonsly",
                             PointDeVieBase = 16,
+                            PokemonId = 438,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/438.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 439,
+                            MonstreId = 439,
                             DefenseBase = 5,
                             ExperienceBase = 620,
                             ForceBase = 5,
-                            MonsterId = 439,
                             Nom = "mime-jr",
                             PointDeVieBase = 10,
+                            PokemonId = 439,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/439.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 440,
-                            DefenseBase = 0,
+                            MonstreId = 440,
+                            DefenseBase = 5,
                             ExperienceBase = 440,
                             ForceBase = 5,
-                            MonsterId = 440,
                             Nom = "happiny",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 33,
+                            PokemonId = 440,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/440.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 441,
+                            MonstreId = 441,
                             DefenseBase = 5,
                             ExperienceBase = 822,
                             ForceBase = 8,
-                            MonsterId = 441,
                             Nom = "chatot",
                             PointDeVieBase = 25,
+                            PokemonId = 441,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/441.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 442,
+                            MonstreId = 442,
                             DefenseBase = 13,
                             ExperienceBase = 970,
                             ForceBase = 11,
-                            MonsterId = 442,
                             Nom = "spiritomb",
                             PointDeVieBase = 16,
+                            PokemonId = 442,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/442.png",
                             Type1 = "ghost",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 443,
+                            MonstreId = 443,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 443,
                             Nom = "gible",
                             PointDeVieBase = 19,
+                            PokemonId = 443,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/443.png",
                             Type1 = "dragon",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 444,
+                            MonstreId = 444,
                             DefenseBase = 8,
                             ExperienceBase = 820,
                             ForceBase = 11,
-                            MonsterId = 444,
                             Nom = "gabite",
                             PointDeVieBase = 22,
+                            PokemonId = 444,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/444.png",
                             Type1 = "dragon",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 445,
+                            MonstreId = 445,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 16,
-                            MonsterId = 445,
                             Nom = "garchomp",
                             PointDeVieBase = 36,
+                            PokemonId = 445,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png",
                             Type1 = "dragon",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 446,
+                            MonstreId = 446,
                             DefenseBase = 5,
                             ExperienceBase = 780,
                             ForceBase = 10,
-                            MonsterId = 446,
                             Nom = "munchlax",
                             PointDeVieBase = 45,
+                            PokemonId = 446,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/446.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 447,
+                            MonstreId = 447,
                             DefenseBase = 5,
                             ExperienceBase = 570,
                             ForceBase = 8,
-                            MonsterId = 447,
                             Nom = "riolu",
                             PointDeVieBase = 13,
+                            PokemonId = 447,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/447.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 448,
+                            MonstreId = 448,
                             DefenseBase = 8,
                             ExperienceBase = 1050,
                             ForceBase = 13,
-                            MonsterId = 448,
                             Nom = "lucario",
                             PointDeVieBase = 23,
+                            PokemonId = 448,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png",
                             Type1 = "fighting",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 449,
+                            MonstreId = 449,
                             DefenseBase = 9,
                             ExperienceBase = 660,
                             ForceBase = 9,
-                            MonsterId = 449,
                             Nom = "hippopotas",
                             PointDeVieBase = 22,
+                            PokemonId = 449,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 450,
+                            MonstreId = 450,
                             DefenseBase = 14,
                             ExperienceBase = 1050,
                             ForceBase = 14,
-                            MonsterId = 450,
                             Nom = "hippowdon",
                             PointDeVieBase = 36,
+                            PokemonId = 450,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 451,
+                            MonstreId = 451,
                             DefenseBase = 11,
                             ExperienceBase = 660,
                             ForceBase = 6,
-                            MonsterId = 451,
                             Nom = "skorupi",
                             PointDeVieBase = 13,
+                            PokemonId = 451,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/451.png",
                             Type1 = "poison",
                             Type2 = "bug"
                         },
                         new
                         {
-                            Id = 452,
+                            MonstreId = 452,
                             DefenseBase = 13,
                             ExperienceBase = 1000,
                             ForceBase = 11,
-                            MonsterId = 452,
                             Nom = "drapion",
                             PointDeVieBase = 23,
+                            PokemonId = 452,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/452.png",
                             Type1 = "poison",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 453,
+                            MonstreId = 453,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 7,
-                            MonsterId = 453,
                             Nom = "croagunk",
                             PointDeVieBase = 16,
+                            PokemonId = 453,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/453.png",
                             Type1 = "poison",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 454,
+                            MonstreId = 454,
                             DefenseBase = 8,
                             ExperienceBase = 980,
                             ForceBase = 13,
-                            MonsterId = 454,
                             Nom = "toxicroak",
                             PointDeVieBase = 27,
+                            PokemonId = 454,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/454.png",
                             Type1 = "poison",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 455,
+                            MonstreId = 455,
                             DefenseBase = 9,
                             ExperienceBase = 908,
                             ForceBase = 12,
-                            MonsterId = 455,
                             Nom = "carnivine",
                             PointDeVieBase = 24,
+                            PokemonId = 455,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/455.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 456,
+                            MonstreId = 456,
                             DefenseBase = 7,
                             ExperienceBase = 660,
                             ForceBase = 6,
-                            MonsterId = 456,
                             Nom = "finneon",
                             PointDeVieBase = 16,
+                            PokemonId = 456,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/456.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 457,
+                            MonstreId = 457,
                             DefenseBase = 9,
                             ExperienceBase = 920,
                             ForceBase = 8,
-                            MonsterId = 457,
                             Nom = "lumineon",
                             PointDeVieBase = 23,
+                            PokemonId = 457,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/457.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 458,
+                            MonstreId = 458,
                             DefenseBase = 6,
                             ExperienceBase = 690,
                             ForceBase = 5,
-                            MonsterId = 458,
                             Nom = "mantyke",
                             PointDeVieBase = 15,
+                            PokemonId = 458,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/458.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 459,
+                            MonstreId = 459,
                             DefenseBase = 6,
                             ExperienceBase = 668,
                             ForceBase = 7,
-                            MonsterId = 459,
                             Nom = "snover",
                             PointDeVieBase = 20,
+                            PokemonId = 459,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/459.png",
                             Type1 = "grass",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 460,
+                            MonstreId = 460,
                             DefenseBase = 9,
                             ExperienceBase = 988,
                             ForceBase = 11,
-                            MonsterId = 460,
                             Nom = "abomasnow",
                             PointDeVieBase = 30,
+                            PokemonId = 460,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png",
                             Type1 = "grass",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 461,
+                            MonstreId = 461,
                             DefenseBase = 8,
                             ExperienceBase = 1020,
                             ForceBase = 15,
-                            MonsterId = 461,
                             Nom = "weavile",
                             PointDeVieBase = 23,
+                            PokemonId = 461,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/461.png",
                             Type1 = "dark",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 462,
+                            MonstreId = 462,
                             DefenseBase = 14,
                             ExperienceBase = 1070,
                             ForceBase = 8,
-                            MonsterId = 462,
                             Nom = "magnezone",
                             PointDeVieBase = 23,
+                            PokemonId = 462,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png",
                             Type1 = "electric",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 463,
+                            MonstreId = 463,
                             DefenseBase = 11,
                             ExperienceBase = 1030,
                             ForceBase = 10,
-                            MonsterId = 463,
                             Nom = "lickilicky",
                             PointDeVieBase = 36,
+                            PokemonId = 463,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/463.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 464,
+                            MonstreId = 464,
                             DefenseBase = 16,
                             ExperienceBase = 1070,
                             ForceBase = 17,
-                            MonsterId = 464,
                             Nom = "rhyperior",
                             PointDeVieBase = 38,
+                            PokemonId = 464,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png",
                             Type1 = "ground",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 465,
+                            MonstreId = 465,
                             DefenseBase = 15,
                             ExperienceBase = 1070,
                             ForceBase = 12,
-                            MonsterId = 465,
                             Nom = "tangrowth",
                             PointDeVieBase = 33,
+                            PokemonId = 465,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/465.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 466,
+                            MonstreId = 466,
                             DefenseBase = 8,
                             ExperienceBase = 1080,
                             ForceBase = 15,
-                            MonsterId = 466,
                             Nom = "electivire",
                             PointDeVieBase = 25,
+                            PokemonId = 466,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/466.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 467,
+                            MonstreId = 467,
                             DefenseBase = 8,
                             ExperienceBase = 1080,
                             ForceBase = 11,
-                            MonsterId = 467,
                             Nom = "magmortar",
                             PointDeVieBase = 25,
+                            PokemonId = 467,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/467.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 468,
+                            MonstreId = 468,
                             DefenseBase = 11,
                             ExperienceBase = 1090,
                             ForceBase = 6,
-                            MonsterId = 468,
                             Nom = "togekiss",
                             PointDeVieBase = 28,
+                            PokemonId = 468,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/468.png",
                             Type1 = "fairy",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 469,
+                            MonstreId = 469,
                             DefenseBase = 10,
                             ExperienceBase = 1030,
                             ForceBase = 9,
-                            MonsterId = 469,
                             Nom = "yanmega",
                             PointDeVieBase = 28,
+                            PokemonId = 469,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/469.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 470,
+                            MonstreId = 470,
                             DefenseBase = 16,
                             ExperienceBase = 1050,
                             ForceBase = 13,
-                            MonsterId = 470,
                             Nom = "leafeon",
                             PointDeVieBase = 21,
+                            PokemonId = 470,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 471,
+                            MonstreId = 471,
                             DefenseBase = 13,
                             ExperienceBase = 1050,
                             ForceBase = 7,
-                            MonsterId = 471,
                             Nom = "glaceon",
                             PointDeVieBase = 21,
+                            PokemonId = 471,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 472,
+                            MonstreId = 472,
                             DefenseBase = 15,
                             ExperienceBase = 1020,
                             ForceBase = 11,
-                            MonsterId = 472,
                             Nom = "gliscor",
                             PointDeVieBase = 25,
+                            PokemonId = 472,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/472.png",
                             Type1 = "ground",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 473,
+                            MonstreId = 473,
                             DefenseBase = 10,
                             ExperienceBase = 1060,
                             ForceBase = 16,
-                            MonsterId = 473,
                             Nom = "mamoswine",
                             PointDeVieBase = 36,
+                            PokemonId = 473,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
                             Type1 = "ice",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 474,
+                            MonstreId = 474,
                             DefenseBase = 8,
                             ExperienceBase = 1070,
                             ForceBase = 10,
-                            MonsterId = 474,
                             Nom = "porygon-z",
                             PointDeVieBase = 28,
+                            PokemonId = 474,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 475,
+                            MonstreId = 475,
                             DefenseBase = 8,
                             ExperienceBase = 1036,
                             ForceBase = 15,
-                            MonsterId = 475,
                             Nom = "gallade",
                             PointDeVieBase = 22,
+                            PokemonId = 475,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png",
                             Type1 = "psychic",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 476,
+                            MonstreId = 476,
                             DefenseBase = 18,
                             ExperienceBase = 1050,
                             ForceBase = 6,
-                            MonsterId = 476,
                             Nom = "probopass",
                             PointDeVieBase = 20,
+                            PokemonId = 476,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/476.png",
                             Type1 = "rock",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 477,
+                            MonstreId = 477,
                             DefenseBase = 16,
                             ExperienceBase = 1050,
                             ForceBase = 12,
-                            MonsterId = 477,
                             Nom = "dusknoir",
                             PointDeVieBase = 15,
+                            PokemonId = 477,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/477.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 478,
+                            MonstreId = 478,
                             DefenseBase = 8,
                             ExperienceBase = 960,
                             ForceBase = 10,
-                            MonsterId = 478,
                             Nom = "froslass",
                             PointDeVieBase = 23,
+                            PokemonId = 478,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png",
                             Type1 = "ice",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 479,
+                            MonstreId = 479,
                             DefenseBase = 9,
                             ExperienceBase = 880,
                             ForceBase = 6,
-                            MonsterId = 479,
                             Nom = "rotom",
                             PointDeVieBase = 16,
+                            PokemonId = 479,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png",
                             Type1 = "electric",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 480,
+                            MonstreId = 480,
                             DefenseBase = 16,
                             ExperienceBase = 1160,
                             ForceBase = 9,
-                            MonsterId = 480,
                             Nom = "uxie",
                             PointDeVieBase = 25,
+                            PokemonId = 480,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/480.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 481,
+                            MonstreId = 481,
                             DefenseBase = 13,
                             ExperienceBase = 1160,
                             ForceBase = 13,
-                            MonsterId = 481,
                             Nom = "mesprit",
                             PointDeVieBase = 26,
+                            PokemonId = 481,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/481.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 482,
+                            MonstreId = 482,
                             DefenseBase = 8,
                             ExperienceBase = 1160,
                             ForceBase = 15,
-                            MonsterId = 482,
                             Nom = "azelf",
                             PointDeVieBase = 25,
+                            PokemonId = 482,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/482.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 483,
+                            MonstreId = 483,
                             DefenseBase = 15,
                             ExperienceBase = 1360,
                             ForceBase = 15,
-                            MonsterId = 483,
                             Nom = "dialga",
                             PointDeVieBase = 33,
+                            PokemonId = 483,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/483.png",
                             Type1 = "steel",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 484,
+                            MonstreId = 484,
                             DefenseBase = 12,
                             ExperienceBase = 1360,
                             ForceBase = 15,
-                            MonsterId = 484,
                             Nom = "palkia",
                             PointDeVieBase = 30,
+                            PokemonId = 484,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png",
                             Type1 = "water",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 485,
+                            MonstreId = 485,
                             DefenseBase = 13,
                             ExperienceBase = 1200,
                             ForceBase = 11,
-                            MonsterId = 485,
                             Nom = "heatran",
                             PointDeVieBase = 30,
+                            PokemonId = 485,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/485.png",
                             Type1 = "fire",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 486,
+                            MonstreId = 486,
                             DefenseBase = 13,
                             ExperienceBase = 1340,
                             ForceBase = 20,
-                            MonsterId = 486,
                             Nom = "regigigas",
                             PointDeVieBase = 36,
+                            PokemonId = 486,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/486.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 487,
+                            MonstreId = 487,
                             DefenseBase = 15,
                             ExperienceBase = 1360,
                             ForceBase = 12,
-                            MonsterId = 487,
                             Nom = "giratina-altered",
                             PointDeVieBase = 50,
+                            PokemonId = 487,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png",
                             Type1 = "ghost",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 488,
+                            MonstreId = 488,
                             DefenseBase = 13,
                             ExperienceBase = 1160,
                             ForceBase = 8,
-                            MonsterId = 488,
                             Nom = "cresselia",
                             PointDeVieBase = 40,
+                            PokemonId = 488,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/488.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 489,
+                            MonstreId = 489,
                             DefenseBase = 10,
                             ExperienceBase = 960,
                             ForceBase = 10,
-                            MonsterId = 489,
                             Nom = "phione",
                             PointDeVieBase = 26,
+                            PokemonId = 489,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/489.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 490,
+                            MonstreId = 490,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 490,
                             Nom = "manaphy",
                             PointDeVieBase = 33,
+                            PokemonId = 490,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/490.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 491,
+                            MonstreId = 491,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 11,
-                            MonsterId = 491,
                             Nom = "darkrai",
                             PointDeVieBase = 23,
+                            PokemonId = 491,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/491.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 492,
+                            MonstreId = 492,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 492,
                             Nom = "shaymin-land",
                             PointDeVieBase = 33,
+                            PokemonId = 492,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 493,
+                            MonstreId = 493,
                             DefenseBase = 15,
                             ExperienceBase = 1440,
                             ForceBase = 15,
-                            MonsterId = 493,
                             Nom = "arceus",
                             PointDeVieBase = 40,
+                            PokemonId = 493,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 494,
+                            MonstreId = 494,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 494,
                             Nom = "victini",
                             PointDeVieBase = 33,
+                            PokemonId = 494,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png",
                             Type1 = "psychic",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 495,
+                            MonstreId = 495,
                             DefenseBase = 6,
                             ExperienceBase = 616,
                             ForceBase = 5,
-                            MonsterId = 495,
                             Nom = "snivy",
                             PointDeVieBase = 15,
+                            PokemonId = 495,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/495.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 496,
+                            MonstreId = 496,
                             DefenseBase = 9,
                             ExperienceBase = 826,
                             ForceBase = 7,
-                            MonsterId = 496,
                             Nom = "servine",
                             PointDeVieBase = 20,
+                            PokemonId = 496,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/496.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 497,
+                            MonstreId = 497,
                             DefenseBase = 11,
                             ExperienceBase = 1056,
                             ForceBase = 9,
-                            MonsterId = 497,
                             Nom = "serperior",
                             PointDeVieBase = 25,
+                            PokemonId = 497,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/497.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 498,
+                            MonstreId = 498,
                             DefenseBase = 5,
                             ExperienceBase = 616,
                             ForceBase = 7,
-                            MonsterId = 498,
                             Nom = "tepig",
                             PointDeVieBase = 21,
+                            PokemonId = 498,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/498.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 499,
+                            MonstreId = 499,
                             DefenseBase = 6,
                             ExperienceBase = 836,
                             ForceBase = 11,
-                            MonsterId = 499,
                             Nom = "pignite",
                             PointDeVieBase = 30,
+                            PokemonId = 499,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 500,
+                            MonstreId = 500,
                             DefenseBase = 8,
                             ExperienceBase = 1056,
                             ForceBase = 15,
-                            MonsterId = 500,
                             Nom = "emboar",
                             PointDeVieBase = 36,
+                            PokemonId = 500,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/500.png",
                             Type1 = "fire",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 501,
+                            MonstreId = 501,
                             DefenseBase = 5,
                             ExperienceBase = 616,
                             ForceBase = 6,
-                            MonsterId = 501,
                             Nom = "oshawott",
                             PointDeVieBase = 18,
+                            PokemonId = 501,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/501.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 502,
+                            MonstreId = 502,
                             DefenseBase = 7,
                             ExperienceBase = 826,
                             ForceBase = 9,
-                            MonsterId = 502,
                             Nom = "dewott",
                             PointDeVieBase = 25,
+                            PokemonId = 502,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/502.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 503,
+                            MonstreId = 503,
                             DefenseBase = 10,
                             ExperienceBase = 1056,
                             ForceBase = 12,
-                            MonsterId = 503,
                             Nom = "samurott",
                             PointDeVieBase = 31,
+                            PokemonId = 503,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 504,
-                            DefenseBase = 4,
+                            MonstreId = 504,
+                            DefenseBase = 5,
                             ExperienceBase = 510,
                             ForceBase = 6,
-                            MonsterId = 504,
                             Nom = "patrat",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 504,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/504.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 505,
+                            MonstreId = 505,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 10,
-                            MonsterId = 505,
                             Nom = "watchog",
                             PointDeVieBase = 20,
+                            PokemonId = 505,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/505.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 506,
+                            MonstreId = 506,
                             DefenseBase = 5,
                             ExperienceBase = 550,
                             ForceBase = 7,
-                            MonsterId = 506,
                             Nom = "lillipup",
                             PointDeVieBase = 15,
+                            PokemonId = 506,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/506.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 507,
+                            MonstreId = 507,
                             DefenseBase = 8,
                             ExperienceBase = 740,
                             ForceBase = 10,
-                            MonsterId = 507,
                             Nom = "herdier",
                             PointDeVieBase = 21,
+                            PokemonId = 507,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/507.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 508,
+                            MonstreId = 508,
                             DefenseBase = 11,
                             ExperienceBase = 1000,
                             ForceBase = 13,
-                            MonsterId = 508,
                             Nom = "stoutland",
                             PointDeVieBase = 28,
+                            PokemonId = 508,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/508.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 509,
-                            DefenseBase = 4,
+                            MonstreId = 509,
+                            DefenseBase = 5,
                             ExperienceBase = 562,
                             ForceBase = 6,
-                            MonsterId = 509,
                             Nom = "purrloin",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 509,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 510,
+                            MonstreId = 510,
                             DefenseBase = 6,
                             ExperienceBase = 892,
                             ForceBase = 11,
-                            MonsterId = 510,
                             Nom = "liepard",
                             PointDeVieBase = 21,
+                            PokemonId = 510,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/510.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 511,
+                            MonstreId = 511,
                             DefenseBase = 6,
                             ExperienceBase = 632,
                             ForceBase = 6,
-                            MonsterId = 511,
                             Nom = "pansage",
                             PointDeVieBase = 16,
+                            PokemonId = 511,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/511.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 512,
+                            MonstreId = 512,
                             DefenseBase = 7,
                             ExperienceBase = 996,
                             ForceBase = 12,
-                            MonsterId = 512,
                             Nom = "simisage",
                             PointDeVieBase = 25,
+                            PokemonId = 512,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/512.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 513,
+                            MonstreId = 513,
                             DefenseBase = 6,
                             ExperienceBase = 632,
                             ForceBase = 6,
-                            MonsterId = 513,
                             Nom = "pansear",
                             PointDeVieBase = 16,
+                            PokemonId = 513,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/513.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 514,
+                            MonstreId = 514,
                             DefenseBase = 7,
                             ExperienceBase = 996,
                             ForceBase = 12,
-                            MonsterId = 514,
                             Nom = "simisear",
                             PointDeVieBase = 25,
+                            PokemonId = 514,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/514.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 515,
+                            MonstreId = 515,
                             DefenseBase = 6,
                             ExperienceBase = 632,
                             ForceBase = 6,
-                            MonsterId = 515,
                             Nom = "panpour",
                             PointDeVieBase = 16,
+                            PokemonId = 515,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/515.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 516,
+                            MonstreId = 516,
                             DefenseBase = 7,
                             ExperienceBase = 996,
                             ForceBase = 12,
-                            MonsterId = 516,
                             Nom = "simipour",
                             PointDeVieBase = 25,
+                            PokemonId = 516,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/516.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 517,
+                            MonstreId = 517,
                             DefenseBase = 5,
                             ExperienceBase = 584,
                             ForceBase = 5,
-                            MonsterId = 517,
                             Nom = "munna",
                             PointDeVieBase = 25,
+                            PokemonId = 517,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/517.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 518,
+                            MonstreId = 518,
                             DefenseBase = 10,
                             ExperienceBase = 974,
                             ForceBase = 6,
-                            MonsterId = 518,
                             Nom = "musharna",
                             PointDeVieBase = 38,
+                            PokemonId = 518,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/518.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 519,
+                            MonstreId = 519,
                             DefenseBase = 6,
                             ExperienceBase = 528,
                             ForceBase = 6,
-                            MonsterId = 519,
                             Nom = "pidove",
                             PointDeVieBase = 16,
+                            PokemonId = 519,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 520,
+                            MonstreId = 520,
                             DefenseBase = 7,
                             ExperienceBase = 716,
                             ForceBase = 9,
-                            MonsterId = 520,
                             Nom = "tranquill",
                             PointDeVieBase = 20,
+                            PokemonId = 520,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 521,
+                            MonstreId = 521,
                             DefenseBase = 10,
                             ExperienceBase = 976,
                             ForceBase = 14,
-                            MonsterId = 521,
                             Nom = "unfezant",
                             PointDeVieBase = 26,
+                            PokemonId = 521,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/521.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 522,
-                            DefenseBase = 4,
+                            MonstreId = 522,
+                            DefenseBase = 5,
                             ExperienceBase = 590,
                             ForceBase = 7,
-                            MonsterId = 522,
                             Nom = "blitzle",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 522,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/522.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 523,
+                            MonstreId = 523,
                             DefenseBase = 7,
                             ExperienceBase = 994,
                             ForceBase = 12,
-                            MonsterId = 523,
                             Nom = "zebstrika",
                             PointDeVieBase = 25,
+                            PokemonId = 523,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/523.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 524,
+                            MonstreId = 524,
                             DefenseBase = 10,
                             ExperienceBase = 560,
                             ForceBase = 9,
-                            MonsterId = 524,
                             Nom = "roggenrola",
                             PointDeVieBase = 18,
+                            PokemonId = 524,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/524.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 525,
+                            MonstreId = 525,
                             DefenseBase = 13,
                             ExperienceBase = 780,
                             ForceBase = 13,
-                            MonsterId = 525,
                             Nom = "boldore",
                             PointDeVieBase = 23,
+                            PokemonId = 525,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/525.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 526,
+                            MonstreId = 526,
                             DefenseBase = 16,
                             ExperienceBase = 1030,
                             ForceBase = 16,
-                            MonsterId = 526,
                             Nom = "gigalith",
                             PointDeVieBase = 28,
+                            PokemonId = 526,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/526.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 527,
+                            MonstreId = 527,
                             DefenseBase = 5,
                             ExperienceBase = 646,
                             ForceBase = 5,
-                            MonsterId = 527,
                             Nom = "woobat",
                             PointDeVieBase = 21,
+                            PokemonId = 527,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/527.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 528,
+                            MonstreId = 528,
                             DefenseBase = 6,
                             ExperienceBase = 850,
                             ForceBase = 7,
-                            MonsterId = 528,
                             Nom = "swoobat",
                             PointDeVieBase = 22,
+                            PokemonId = 528,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/528.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 529,
+                            MonstreId = 529,
                             DefenseBase = 5,
                             ExperienceBase = 656,
                             ForceBase = 10,
-                            MonsterId = 529,
                             Nom = "drilbur",
                             PointDeVieBase = 20,
+                            PokemonId = 529,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/529.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 530,
+                            MonstreId = 530,
                             DefenseBase = 7,
                             ExperienceBase = 1016,
                             ForceBase = 16,
-                            MonsterId = 530,
                             Nom = "excadrill",
                             PointDeVieBase = 36,
+                            PokemonId = 530,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png",
                             Type1 = "ground",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 531,
+                            MonstreId = 531,
                             DefenseBase = 10,
                             ExperienceBase = 890,
                             ForceBase = 7,
-                            MonsterId = 531,
                             Nom = "audino",
                             PointDeVieBase = 34,
+                            PokemonId = 531,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 532,
+                            MonstreId = 532,
                             DefenseBase = 6,
                             ExperienceBase = 610,
                             ForceBase = 10,
-                            MonsterId = 532,
                             Nom = "timburr",
                             PointDeVieBase = 25,
+                            PokemonId = 532,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/532.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 533,
+                            MonstreId = 533,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 13,
-                            MonsterId = 533,
                             Nom = "gurdurr",
                             PointDeVieBase = 28,
+                            PokemonId = 533,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/533.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 534,
+                            MonstreId = 534,
                             DefenseBase = 11,
                             ExperienceBase = 1010,
                             ForceBase = 17,
-                            MonsterId = 534,
                             Nom = "conkeldurr",
                             PointDeVieBase = 35,
+                            PokemonId = 534,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 535,
+                            MonstreId = 535,
                             DefenseBase = 5,
                             ExperienceBase = 588,
                             ForceBase = 6,
-                            MonsterId = 535,
                             Nom = "tympole",
                             PointDeVieBase = 16,
+                            PokemonId = 535,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/535.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 536,
+                            MonstreId = 536,
                             DefenseBase = 6,
                             ExperienceBase = 768,
                             ForceBase = 8,
-                            MonsterId = 536,
                             Nom = "palpitoad",
                             PointDeVieBase = 25,
+                            PokemonId = 536,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 537,
+                            MonstreId = 537,
                             DefenseBase = 9,
                             ExperienceBase = 1018,
                             ForceBase = 11,
-                            MonsterId = 537,
                             Nom = "seismitoad",
                             PointDeVieBase = 35,
+                            PokemonId = 537,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/537.png",
                             Type1 = "water",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 538,
+                            MonstreId = 538,
                             DefenseBase = 10,
                             ExperienceBase = 930,
                             ForceBase = 12,
-                            MonsterId = 538,
                             Nom = "throh",
                             PointDeVieBase = 40,
+                            PokemonId = 538,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/538.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 539,
+                            MonstreId = 539,
                             DefenseBase = 9,
                             ExperienceBase = 930,
                             ForceBase = 15,
-                            MonsterId = 539,
                             Nom = "sawk",
                             PointDeVieBase = 25,
+                            PokemonId = 539,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/539.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 540,
+                            MonstreId = 540,
                             DefenseBase = 8,
                             ExperienceBase = 620,
                             ForceBase = 6,
-                            MonsterId = 540,
                             Nom = "sewaddle",
                             PointDeVieBase = 15,
+                            PokemonId = 540,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 541,
+                            MonstreId = 541,
                             DefenseBase = 11,
                             ExperienceBase = 760,
                             ForceBase = 7,
-                            MonsterId = 541,
                             Nom = "swadloon",
                             PointDeVieBase = 18,
+                            PokemonId = 541,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/541.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 542,
+                            MonstreId = 542,
                             DefenseBase = 10,
                             ExperienceBase = 1000,
                             ForceBase = 12,
-                            MonsterId = 542,
                             Nom = "leavanny",
                             PointDeVieBase = 25,
+                            PokemonId = 542,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/542.png",
                             Type1 = "bug",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 543,
+                            MonstreId = 543,
                             DefenseBase = 7,
                             ExperienceBase = 520,
                             ForceBase = 5,
-                            MonsterId = 543,
                             Nom = "venipede",
                             PointDeVieBase = 10,
+                            PokemonId = 543,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/543.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 544,
+                            MonstreId = 544,
                             DefenseBase = 12,
                             ExperienceBase = 720,
                             ForceBase = 6,
-                            MonsterId = 544,
                             Nom = "whirlipede",
                             PointDeVieBase = 13,
+                            PokemonId = 544,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 545,
+                            MonstreId = 545,
                             DefenseBase = 11,
                             ExperienceBase = 970,
                             ForceBase = 12,
-                            MonsterId = 545,
                             Nom = "scolipede",
                             PointDeVieBase = 20,
+                            PokemonId = 545,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/545.png",
                             Type1 = "bug",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 546,
+                            MonstreId = 546,
                             DefenseBase = 7,
                             ExperienceBase = 560,
                             ForceBase = 5,
-                            MonsterId = 546,
                             Nom = "cottonee",
                             PointDeVieBase = 13,
+                            PokemonId = 546,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/546.png",
                             Type1 = "grass",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 547,
+                            MonstreId = 547,
                             DefenseBase = 10,
                             ExperienceBase = 960,
                             ForceBase = 8,
-                            MonsterId = 547,
                             Nom = "whimsicott",
                             PointDeVieBase = 20,
+                            PokemonId = 547,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/547.png",
                             Type1 = "grass",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 548,
+                            MonstreId = 548,
                             DefenseBase = 6,
                             ExperienceBase = 560,
                             ForceBase = 5,
-                            MonsterId = 548,
                             Nom = "petilil",
                             PointDeVieBase = 15,
+                            PokemonId = 548,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/548.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 549,
+                            MonstreId = 549,
                             DefenseBase = 9,
                             ExperienceBase = 960,
                             ForceBase = 7,
-                            MonsterId = 549,
                             Nom = "lilligant",
                             PointDeVieBase = 23,
+                            PokemonId = 549,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 550,
+                            MonstreId = 550,
                             DefenseBase = 8,
                             ExperienceBase = 920,
                             ForceBase = 11,
-                            MonsterId = 550,
                             Nom = "basculin-red-striped",
                             PointDeVieBase = 23,
+                            PokemonId = 550,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 551,
-                            DefenseBase = 4,
+                            MonstreId = 551,
+                            DefenseBase = 5,
                             ExperienceBase = 584,
                             ForceBase = 9,
-                            MonsterId = 551,
                             Nom = "sandile",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 16,
+                            PokemonId = 551,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/551.png",
                             Type1 = "ground",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 552,
+                            MonstreId = 552,
                             DefenseBase = 5,
                             ExperienceBase = 702,
                             ForceBase = 10,
-                            MonsterId = 552,
                             Nom = "krokorok",
                             PointDeVieBase = 20,
+                            PokemonId = 552,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png",
                             Type1 = "ground",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 553,
+                            MonstreId = 553,
                             DefenseBase = 10,
                             ExperienceBase = 1038,
                             ForceBase = 14,
-                            MonsterId = 553,
                             Nom = "krookodile",
                             PointDeVieBase = 31,
+                            PokemonId = 553,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png",
                             Type1 = "ground",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 554,
+                            MonstreId = 554,
                             DefenseBase = 5,
                             ExperienceBase = 630,
                             ForceBase = 11,
-                            MonsterId = 554,
                             Nom = "darumaka",
                             PointDeVieBase = 23,
+                            PokemonId = 554,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 555,
+                            MonstreId = 555,
                             DefenseBase = 6,
                             ExperienceBase = 960,
                             ForceBase = 17,
-                            MonsterId = 555,
                             Nom = "darmanitan-standard",
                             PointDeVieBase = 35,
+                            PokemonId = 555,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 556,
+                            MonstreId = 556,
                             DefenseBase = 8,
                             ExperienceBase = 922,
                             ForceBase = 10,
-                            MonsterId = 556,
                             Nom = "maractus",
                             PointDeVieBase = 25,
+                            PokemonId = 556,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/556.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 557,
+                            MonstreId = 557,
                             DefenseBase = 10,
                             ExperienceBase = 650,
                             ForceBase = 8,
-                            MonsterId = 557,
                             Nom = "dwebble",
                             PointDeVieBase = 16,
+                            PokemonId = 557,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/557.png",
                             Type1 = "bug",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 558,
+                            MonstreId = 558,
                             DefenseBase = 15,
                             ExperienceBase = 970,
                             ForceBase = 13,
-                            MonsterId = 558,
                             Nom = "crustle",
                             PointDeVieBase = 23,
+                            PokemonId = 558,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/558.png",
                             Type1 = "bug",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 559,
+                            MonstreId = 559,
                             DefenseBase = 8,
                             ExperienceBase = 696,
                             ForceBase = 9,
-                            MonsterId = 559,
                             Nom = "scraggy",
                             PointDeVieBase = 16,
+                            PokemonId = 559,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/559.png",
                             Type1 = "dark",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 560,
+                            MonstreId = 560,
                             DefenseBase = 14,
                             ExperienceBase = 976,
                             ForceBase = 11,
-                            MonsterId = 560,
                             Nom = "scrafty",
                             PointDeVieBase = 21,
+                            PokemonId = 560,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png",
                             Type1 = "dark",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 561,
+                            MonstreId = 561,
                             DefenseBase = 10,
                             ExperienceBase = 980,
                             ForceBase = 7,
-                            MonsterId = 561,
                             Nom = "sigilyph",
                             PointDeVieBase = 24,
+                            PokemonId = 561,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/561.png",
                             Type1 = "psychic",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 562,
+                            MonstreId = 562,
                             DefenseBase = 10,
                             ExperienceBase = 606,
                             ForceBase = 5,
-                            MonsterId = 562,
                             Nom = "yamask",
                             PointDeVieBase = 12,
+                            PokemonId = 562,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 563,
+                            MonstreId = 563,
                             DefenseBase = 18,
                             ExperienceBase = 966,
                             ForceBase = 6,
-                            MonsterId = 563,
                             Nom = "cofagrigus",
                             PointDeVieBase = 19,
+                            PokemonId = 563,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png",
                             Type1 = "ghost",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 564,
+                            MonstreId = 564,
                             DefenseBase = 12,
                             ExperienceBase = 710,
                             ForceBase = 9,
-                            MonsterId = 564,
                             Nom = "tirtouga",
                             PointDeVieBase = 18,
+                            PokemonId = 564,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/564.png",
                             Type1 = "water",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 565,
+                            MonstreId = 565,
                             DefenseBase = 16,
                             ExperienceBase = 990,
                             ForceBase = 13,
-                            MonsterId = 565,
                             Nom = "carracosta",
                             PointDeVieBase = 24,
+                            PokemonId = 565,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/565.png",
                             Type1 = "water",
                             Type2 = "rock"
                         },
                         new
                         {
-                            Id = 566,
+                            MonstreId = 566,
                             DefenseBase = 5,
                             ExperienceBase = 802,
                             ForceBase = 14,
-                            MonsterId = 566,
                             Nom = "archen",
                             PointDeVieBase = 18,
+                            PokemonId = 566,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/566.png",
                             Type1 = "rock",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 567,
+                            MonstreId = 567,
                             DefenseBase = 8,
                             ExperienceBase = 1134,
                             ForceBase = 17,
-                            MonsterId = 567,
                             Nom = "archeops",
                             PointDeVieBase = 25,
+                            PokemonId = 567,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/567.png",
                             Type1 = "rock",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 568,
+                            MonstreId = 568,
                             DefenseBase = 7,
                             ExperienceBase = 658,
                             ForceBase = 6,
-                            MonsterId = 568,
                             Nom = "trubbish",
                             PointDeVieBase = 16,
+                            PokemonId = 568,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/568.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 569,
+                            MonstreId = 569,
                             DefenseBase = 10,
                             ExperienceBase = 948,
                             ForceBase = 11,
-                            MonsterId = 569,
                             Nom = "garbodor",
                             PointDeVieBase = 26,
+                            PokemonId = 569,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 570,
+                            MonstreId = 570,
                             DefenseBase = 5,
                             ExperienceBase = 660,
                             ForceBase = 8,
-                            MonsterId = 570,
                             Nom = "zorua",
                             PointDeVieBase = 13,
+                            PokemonId = 570,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/570.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 571,
+                            MonstreId = 571,
                             DefenseBase = 7,
                             ExperienceBase = 1020,
                             ForceBase = 13,
-                            MonsterId = 571,
                             Nom = "zoroark",
                             PointDeVieBase = 20,
+                            PokemonId = 571,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png",
                             Type1 = "dark",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 572,
+                            MonstreId = 572,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 572,
                             Nom = "minccino",
                             PointDeVieBase = 18,
+                            PokemonId = 572,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/572.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 573,
+                            MonstreId = 573,
                             DefenseBase = 7,
                             ExperienceBase = 940,
                             ForceBase = 11,
-                            MonsterId = 573,
                             Nom = "cinccino",
                             PointDeVieBase = 25,
+                            PokemonId = 573,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 574,
+                            MonstreId = 574,
                             DefenseBase = 6,
                             ExperienceBase = 580,
                             ForceBase = 5,
-                            MonsterId = 574,
                             Nom = "gothita",
                             PointDeVieBase = 15,
+                            PokemonId = 574,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/574.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 575,
+                            MonstreId = 575,
                             DefenseBase = 8,
                             ExperienceBase = 780,
                             ForceBase = 5,
-                            MonsterId = 575,
                             Nom = "gothorita",
                             PointDeVieBase = 20,
+                            PokemonId = 575,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 576,
+                            MonstreId = 576,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 6,
-                            MonsterId = 576,
                             Nom = "gothitelle",
                             PointDeVieBase = 23,
+                            PokemonId = 576,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 577,
+                            MonstreId = 577,
                             DefenseBase = 5,
                             ExperienceBase = 580,
                             ForceBase = 5,
-                            MonsterId = 577,
                             Nom = "solosis",
                             PointDeVieBase = 15,
+                            PokemonId = 577,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/577.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 578,
+                            MonstreId = 578,
                             DefenseBase = 6,
                             ExperienceBase = 740,
                             ForceBase = 5,
-                            MonsterId = 578,
                             Nom = "duosion",
                             PointDeVieBase = 21,
+                            PokemonId = 578,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/578.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 579,
+                            MonstreId = 579,
                             DefenseBase = 9,
                             ExperienceBase = 980,
                             ForceBase = 8,
-                            MonsterId = 579,
                             Nom = "reuniclus",
                             PointDeVieBase = 36,
+                            PokemonId = 579,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/579.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 580,
+                            MonstreId = 580,
                             DefenseBase = 6,
                             ExperienceBase = 610,
                             ForceBase = 5,
-                            MonsterId = 580,
                             Nom = "ducklett",
                             PointDeVieBase = 20,
+                            PokemonId = 580,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/580.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 581,
+                            MonstreId = 581,
                             DefenseBase = 7,
                             ExperienceBase = 946,
                             ForceBase = 10,
-                            MonsterId = 581,
                             Nom = "swanna",
                             PointDeVieBase = 25,
+                            PokemonId = 581,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/581.png",
                             Type1 = "water",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 582,
+                            MonstreId = 582,
                             DefenseBase = 6,
                             ExperienceBase = 610,
                             ForceBase = 6,
-                            MonsterId = 582,
                             Nom = "vanillite",
                             PointDeVieBase = 12,
+                            PokemonId = 582,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/582.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 583,
+                            MonstreId = 583,
                             DefenseBase = 8,
                             ExperienceBase = 790,
                             ForceBase = 8,
-                            MonsterId = 583,
                             Nom = "vanillish",
                             PointDeVieBase = 17,
+                            PokemonId = 583,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/583.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 584,
+                            MonstreId = 584,
                             DefenseBase = 10,
                             ExperienceBase = 1070,
                             ForceBase = 11,
-                            MonsterId = 584,
                             Nom = "vanilluxe",
                             PointDeVieBase = 23,
+                            PokemonId = 584,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/584.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 585,
+                            MonstreId = 585,
                             DefenseBase = 6,
                             ExperienceBase = 670,
                             ForceBase = 7,
-                            MonsterId = 585,
                             Nom = "deerling",
                             PointDeVieBase = 20,
+                            PokemonId = 585,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/585.png",
                             Type1 = "normal",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 586,
+                            MonstreId = 586,
                             DefenseBase = 8,
                             ExperienceBase = 950,
                             ForceBase = 12,
-                            MonsterId = 586,
                             Nom = "sawsbuck",
                             PointDeVieBase = 26,
+                            PokemonId = 586,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/586.png",
                             Type1 = "normal",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 587,
+                            MonstreId = 587,
                             DefenseBase = 7,
                             ExperienceBase = 856,
                             ForceBase = 9,
-                            MonsterId = 587,
                             Nom = "emolga",
                             PointDeVieBase = 18,
+                            PokemonId = 587,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/587.png",
                             Type1 = "electric",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 588,
+                            MonstreId = 588,
                             DefenseBase = 5,
                             ExperienceBase = 630,
                             ForceBase = 9,
-                            MonsterId = 588,
                             Nom = "karrablast",
                             PointDeVieBase = 16,
+                            PokemonId = 588,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/588.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 589,
+                            MonstreId = 589,
                             DefenseBase = 13,
                             ExperienceBase = 990,
                             ForceBase = 16,
-                            MonsterId = 589,
                             Nom = "escavalier",
                             PointDeVieBase = 23,
+                            PokemonId = 589,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png",
                             Type1 = "bug",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 590,
+                            MonstreId = 590,
                             DefenseBase = 5,
                             ExperienceBase = 588,
                             ForceBase = 6,
-                            MonsterId = 590,
                             Nom = "foongus",
                             PointDeVieBase = 23,
+                            PokemonId = 590,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/590.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 591,
+                            MonstreId = 591,
                             DefenseBase = 8,
                             ExperienceBase = 928,
                             ForceBase = 10,
-                            MonsterId = 591,
                             Nom = "amoonguss",
                             PointDeVieBase = 38,
+                            PokemonId = 591,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/591.png",
                             Type1 = "grass",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 592,
+                            MonstreId = 592,
                             DefenseBase = 6,
                             ExperienceBase = 670,
                             ForceBase = 5,
-                            MonsterId = 592,
                             Nom = "frillish-male",
                             PointDeVieBase = 18,
+                            PokemonId = 592,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/592.png",
                             Type1 = "water",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 593,
+                            MonstreId = 593,
                             DefenseBase = 8,
                             ExperienceBase = 960,
                             ForceBase = 7,
-                            MonsterId = 593,
                             Nom = "jellicent-male",
                             PointDeVieBase = 33,
+                            PokemonId = 593,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
                             Type1 = "water",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 594,
+                            MonstreId = 594,
                             DefenseBase = 10,
                             ExperienceBase = 940,
                             ForceBase = 9,
-                            MonsterId = 594,
                             Nom = "alomomola",
                             PointDeVieBase = 55,
+                            PokemonId = 594,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/594.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 595,
+                            MonstreId = 595,
                             DefenseBase = 6,
                             ExperienceBase = 638,
                             ForceBase = 5,
-                            MonsterId = 595,
                             Nom = "joltik",
                             PointDeVieBase = 16,
+                            PokemonId = 595,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/595.png",
                             Type1 = "bug",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 596,
+                            MonstreId = 596,
                             DefenseBase = 7,
                             ExperienceBase = 944,
                             ForceBase = 9,
-                            MonsterId = 596,
                             Nom = "galvantula",
                             PointDeVieBase = 23,
+                            PokemonId = 596,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/596.png",
                             Type1 = "bug",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 597,
+                            MonstreId = 597,
                             DefenseBase = 11,
                             ExperienceBase = 610,
                             ForceBase = 6,
-                            MonsterId = 597,
                             Nom = "ferroseed",
                             PointDeVieBase = 14,
+                            PokemonId = 597,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png",
                             Type1 = "grass",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 598,
+                            MonstreId = 598,
                             DefenseBase = 16,
                             ExperienceBase = 978,
                             ForceBase = 11,
-                            MonsterId = 598,
                             Nom = "ferrothorn",
                             PointDeVieBase = 24,
+                            PokemonId = 598,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/598.png",
                             Type1 = "grass",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 599,
+                            MonstreId = 599,
                             DefenseBase = 8,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 599,
                             Nom = "klink",
                             PointDeVieBase = 13,
+                            PokemonId = 599,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/599.png",
                             Type1 = "steel",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 600,
+                            MonstreId = 600,
                             DefenseBase = 11,
                             ExperienceBase = 880,
                             ForceBase = 10,
-                            MonsterId = 600,
                             Nom = "klang",
                             PointDeVieBase = 20,
+                            PokemonId = 600,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png",
                             Type1 = "steel",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 601,
+                            MonstreId = 601,
                             DefenseBase = 14,
                             ExperienceBase = 1040,
                             ForceBase = 12,
-                            MonsterId = 601,
                             Nom = "klinklang",
                             PointDeVieBase = 20,
+                            PokemonId = 601,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png",
                             Type1 = "steel",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 602,
+                            MonstreId = 602,
                             DefenseBase = 5,
                             ExperienceBase = 550,
                             ForceBase = 6,
-                            MonsterId = 602,
                             Nom = "tynamo",
                             PointDeVieBase = 11,
+                            PokemonId = 602,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 603,
+                            MonstreId = 603,
                             DefenseBase = 8,
                             ExperienceBase = 810,
                             ForceBase = 10,
-                            MonsterId = 603,
                             Nom = "eelektrik",
                             PointDeVieBase = 21,
+                            PokemonId = 603,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/603.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 604,
+                            MonstreId = 604,
                             DefenseBase = 10,
                             ExperienceBase = 1030,
                             ForceBase = 14,
-                            MonsterId = 604,
                             Nom = "eelektross",
                             PointDeVieBase = 28,
+                            PokemonId = 604,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/604.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 605,
+                            MonstreId = 605,
                             DefenseBase = 6,
                             ExperienceBase = 670,
                             ForceBase = 6,
-                            MonsterId = 605,
                             Nom = "elgyem",
                             PointDeVieBase = 18,
+                            PokemonId = 605,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/605.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 606,
+                            MonstreId = 606,
                             DefenseBase = 9,
                             ExperienceBase = 970,
                             ForceBase = 9,
-                            MonsterId = 606,
                             Nom = "beheeyem",
                             PointDeVieBase = 25,
+                            PokemonId = 606,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/606.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 607,
+                            MonstreId = 607,
                             DefenseBase = 6,
                             ExperienceBase = 550,
                             ForceBase = 5,
-                            MonsterId = 607,
                             Nom = "litwick",
                             PointDeVieBase = 16,
+                            PokemonId = 607,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/607.png",
                             Type1 = "ghost",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 608,
+                            MonstreId = 608,
                             DefenseBase = 7,
                             ExperienceBase = 740,
                             ForceBase = 5,
-                            MonsterId = 608,
                             Nom = "lampent",
                             PointDeVieBase = 20,
+                            PokemonId = 608,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/608.png",
                             Type1 = "ghost",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 609,
+                            MonstreId = 609,
                             DefenseBase = 11,
                             ExperienceBase = 1040,
                             ForceBase = 6,
-                            MonsterId = 609,
                             Nom = "chandelure",
                             PointDeVieBase = 20,
+                            PokemonId = 609,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png",
                             Type1 = "ghost",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 610,
+                            MonstreId = 610,
                             DefenseBase = 7,
                             ExperienceBase = 640,
                             ForceBase = 10,
-                            MonsterId = 610,
                             Nom = "axew",
                             PointDeVieBase = 15,
+                            PokemonId = 610,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 611,
+                            MonstreId = 611,
                             DefenseBase = 8,
                             ExperienceBase = 820,
                             ForceBase = 14,
-                            MonsterId = 611,
                             Nom = "fraxure",
                             PointDeVieBase = 22,
+                            PokemonId = 611,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/611.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 612,
+                            MonstreId = 612,
                             DefenseBase = 11,
                             ExperienceBase = 1080,
                             ForceBase = 18,
-                            MonsterId = 612,
                             Nom = "haxorus",
                             PointDeVieBase = 25,
+                            PokemonId = 612,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/612.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 613,
+                            MonstreId = 613,
                             DefenseBase = 5,
                             ExperienceBase = 610,
                             ForceBase = 8,
-                            MonsterId = 613,
                             Nom = "cubchoo",
                             PointDeVieBase = 18,
+                            PokemonId = 613,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/613.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 614,
+                            MonstreId = 614,
                             DefenseBase = 10,
                             ExperienceBase = 1010,
                             ForceBase = 16,
-                            MonsterId = 614,
                             Nom = "beartic",
                             PointDeVieBase = 31,
+                            PokemonId = 614,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 615,
+                            MonstreId = 615,
                             DefenseBase = 6,
                             ExperienceBase = 1030,
                             ForceBase = 6,
-                            MonsterId = 615,
                             Nom = "cryogonal",
                             PointDeVieBase = 26,
+                            PokemonId = 615,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/615.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 616,
+                            MonstreId = 616,
                             DefenseBase = 10,
                             ExperienceBase = 610,
                             ForceBase = 5,
-                            MonsterId = 616,
                             Nom = "shelmet",
                             PointDeVieBase = 16,
+                            PokemonId = 616,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/616.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 617,
+                            MonstreId = 617,
                             DefenseBase = 5,
                             ExperienceBase = 990,
                             ForceBase = 8,
-                            MonsterId = 617,
                             Nom = "accelgor",
                             PointDeVieBase = 26,
+                            PokemonId = 617,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/617.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 618,
+                            MonstreId = 618,
                             DefenseBase = 10,
                             ExperienceBase = 942,
                             ForceBase = 8,
-                            MonsterId = 618,
                             Nom = "stunfisk",
                             PointDeVieBase = 36,
+                            PokemonId = 618,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png",
                             Type1 = "ground",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 619,
+                            MonstreId = 619,
                             DefenseBase = 6,
                             ExperienceBase = 700,
                             ForceBase = 10,
-                            MonsterId = 619,
                             Nom = "mienfoo",
                             PointDeVieBase = 15,
+                            PokemonId = 619,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/619.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 620,
+                            MonstreId = 620,
                             DefenseBase = 7,
                             ExperienceBase = 1020,
                             ForceBase = 15,
-                            MonsterId = 620,
                             Nom = "mienshao",
                             PointDeVieBase = 21,
+                            PokemonId = 620,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/620.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 621,
+                            MonstreId = 621,
                             DefenseBase = 11,
                             ExperienceBase = 970,
                             ForceBase = 15,
-                            MonsterId = 621,
                             Nom = "druddigon",
                             PointDeVieBase = 25,
+                            PokemonId = 621,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/621.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 622,
+                            MonstreId = 622,
                             DefenseBase = 6,
                             ExperienceBase = 606,
                             ForceBase = 9,
-                            MonsterId = 622,
                             Nom = "golett",
                             PointDeVieBase = 19,
+                            PokemonId = 622,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/622.png",
                             Type1 = "ground",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 623,
+                            MonstreId = 623,
                             DefenseBase = 10,
                             ExperienceBase = 966,
                             ForceBase = 15,
-                            MonsterId = 623,
                             Nom = "golurk",
                             PointDeVieBase = 29,
+                            PokemonId = 623,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/623.png",
                             Type1 = "ground",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 624,
+                            MonstreId = 624,
                             DefenseBase = 8,
                             ExperienceBase = 680,
                             ForceBase = 10,
-                            MonsterId = 624,
                             Nom = "pawniard",
                             PointDeVieBase = 15,
+                            PokemonId = 624,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png",
                             Type1 = "dark",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 625,
+                            MonstreId = 625,
                             DefenseBase = 12,
                             ExperienceBase = 980,
                             ForceBase = 15,
-                            MonsterId = 625,
                             Nom = "bisharp",
                             PointDeVieBase = 21,
+                            PokemonId = 625,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/625.png",
                             Type1 = "dark",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 626,
+                            MonstreId = 626,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 13,
-                            MonsterId = 626,
                             Nom = "bouffalant",
                             PointDeVieBase = 31,
+                            PokemonId = 626,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 627,
+                            MonstreId = 627,
                             DefenseBase = 6,
                             ExperienceBase = 700,
                             ForceBase = 10,
-                            MonsterId = 627,
                             Nom = "rufflet",
                             PointDeVieBase = 23,
+                            PokemonId = 627,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/627.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 628,
+                            MonstreId = 628,
                             DefenseBase = 9,
                             ExperienceBase = 1020,
                             ForceBase = 15,
-                            MonsterId = 628,
                             Nom = "braviary",
                             PointDeVieBase = 33,
+                            PokemonId = 628,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/628.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 629,
+                            MonstreId = 629,
                             DefenseBase = 9,
                             ExperienceBase = 740,
                             ForceBase = 6,
-                            MonsterId = 629,
                             Nom = "vullaby",
                             PointDeVieBase = 23,
+                            PokemonId = 629,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/629.png",
                             Type1 = "dark",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 630,
+                            MonstreId = 630,
                             DefenseBase = 13,
                             ExperienceBase = 1020,
                             ForceBase = 8,
-                            MonsterId = 630,
                             Nom = "mandibuzz",
                             PointDeVieBase = 36,
+                            PokemonId = 630,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/630.png",
                             Type1 = "dark",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 631,
+                            MonstreId = 631,
                             DefenseBase = 8,
                             ExperienceBase = 968,
                             ForceBase = 12,
-                            MonsterId = 631,
                             Nom = "heatmor",
                             PointDeVieBase = 28,
+                            PokemonId = 631,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/631.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 632,
+                            MonstreId = 632,
                             DefenseBase = 14,
                             ExperienceBase = 968,
                             ForceBase = 13,
-                            MonsterId = 632,
                             Nom = "durant",
                             PointDeVieBase = 19,
+                            PokemonId = 632,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/632.png",
                             Type1 = "bug",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 633,
+                            MonstreId = 633,
                             DefenseBase = 6,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 633,
                             Nom = "deino",
                             PointDeVieBase = 17,
+                            PokemonId = 633,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png",
                             Type1 = "dark",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 634,
+                            MonstreId = 634,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 10,
-                            MonsterId = 634,
                             Nom = "zweilous",
                             PointDeVieBase = 24,
+                            PokemonId = 634,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/634.png",
                             Type1 = "dark",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 635,
+                            MonstreId = 635,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 13,
-                            MonsterId = 635,
                             Nom = "hydreigon",
                             PointDeVieBase = 30,
+                            PokemonId = 635,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png",
                             Type1 = "dark",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 636,
+                            MonstreId = 636,
                             DefenseBase = 6,
                             ExperienceBase = 720,
                             ForceBase = 10,
-                            MonsterId = 636,
                             Nom = "larvesta",
                             PointDeVieBase = 18,
+                            PokemonId = 636,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/636.png",
                             Type1 = "bug",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 637,
+                            MonstreId = 637,
                             DefenseBase = 8,
                             ExperienceBase = 1100,
                             ForceBase = 7,
-                            MonsterId = 637,
                             Nom = "volcarona",
                             PointDeVieBase = 28,
+                            PokemonId = 637,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png",
                             Type1 = "bug",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 638,
+                            MonstreId = 638,
                             DefenseBase = 16,
                             ExperienceBase = 1160,
                             ForceBase = 11,
-                            MonsterId = 638,
                             Nom = "cobalion",
                             PointDeVieBase = 30,
+                            PokemonId = 638,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/638.png",
                             Type1 = "steel",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 639,
+                            MonstreId = 639,
                             DefenseBase = 11,
                             ExperienceBase = 1160,
                             ForceBase = 16,
-                            MonsterId = 639,
                             Nom = "terrakion",
                             PointDeVieBase = 30,
+                            PokemonId = 639,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/639.png",
                             Type1 = "rock",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 640,
+                            MonstreId = 640,
                             DefenseBase = 9,
                             ExperienceBase = 1160,
                             ForceBase = 11,
-                            MonsterId = 640,
                             Nom = "virizion",
                             PointDeVieBase = 30,
+                            PokemonId = 640,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/640.png",
                             Type1 = "grass",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 641,
+                            MonstreId = 641,
                             DefenseBase = 8,
                             ExperienceBase = 1160,
                             ForceBase = 14,
-                            MonsterId = 641,
                             Nom = "tornadus-incarnate",
                             PointDeVieBase = 26,
+                            PokemonId = 641,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
                             Type1 = "flying",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 642,
+                            MonstreId = 642,
                             DefenseBase = 8,
                             ExperienceBase = 1160,
                             ForceBase = 14,
-                            MonsterId = 642,
                             Nom = "thundurus-incarnate",
                             PointDeVieBase = 26,
+                            PokemonId = 642,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
                             Type1 = "electric",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 643,
+                            MonstreId = 643,
                             DefenseBase = 12,
                             ExperienceBase = 1360,
                             ForceBase = 15,
-                            MonsterId = 643,
                             Nom = "reshiram",
                             PointDeVieBase = 33,
+                            PokemonId = 643,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png",
                             Type1 = "dragon",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 644,
+                            MonstreId = 644,
                             DefenseBase = 15,
                             ExperienceBase = 1360,
                             ForceBase = 18,
-                            MonsterId = 644,
                             Nom = "zekrom",
                             PointDeVieBase = 33,
+                            PokemonId = 644,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/644.png",
                             Type1 = "dragon",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 645,
+                            MonstreId = 645,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 15,
-                            MonsterId = 645,
                             Nom = "landorus-incarnate",
                             PointDeVieBase = 29,
+                            PokemonId = 645,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
                             Type1 = "ground",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 646,
+                            MonstreId = 646,
                             DefenseBase = 11,
                             ExperienceBase = 1320,
                             ForceBase = 16,
-                            MonsterId = 646,
                             Nom = "kyurem",
                             PointDeVieBase = 41,
+                            PokemonId = 646,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/646.png",
                             Type1 = "dragon",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 647,
+                            MonstreId = 647,
                             DefenseBase = 11,
                             ExperienceBase = 1160,
                             ForceBase = 9,
-                            MonsterId = 647,
                             Nom = "keldeo-ordinary",
                             PointDeVieBase = 30,
+                            PokemonId = 647,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
                             Type1 = "water",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 648,
+                            MonstreId = 648,
                             DefenseBase = 9,
                             ExperienceBase = 1200,
                             ForceBase = 9,
-                            MonsterId = 648,
                             Nom = "meloetta-aria",
                             PointDeVieBase = 33,
+                            PokemonId = 648,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png",
                             Type1 = "normal",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 649,
+                            MonstreId = 649,
                             DefenseBase = 11,
                             ExperienceBase = 1200,
                             ForceBase = 15,
-                            MonsterId = 649,
                             Nom = "genesect",
                             PointDeVieBase = 23,
+                            PokemonId = 649,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/649.png",
                             Type1 = "bug",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 650,
+                            MonstreId = 650,
                             DefenseBase = 8,
                             ExperienceBase = 626,
                             ForceBase = 7,
-                            MonsterId = 650,
                             Nom = "chespin",
                             PointDeVieBase = 18,
+                            PokemonId = 650,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 651,
+                            MonstreId = 651,
                             DefenseBase = 11,
                             ExperienceBase = 810,
                             ForceBase = 9,
-                            MonsterId = 651,
                             Nom = "quilladin",
                             PointDeVieBase = 20,
+                            PokemonId = 651,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/651.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 652,
+                            MonstreId = 652,
                             DefenseBase = 15,
                             ExperienceBase = 1060,
                             ForceBase = 13,
-                            MonsterId = 652,
                             Nom = "chesnaught",
                             PointDeVieBase = 29,
+                            PokemonId = 652,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/652.png",
                             Type1 = "grass",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 653,
+                            MonstreId = 653,
                             DefenseBase = 5,
                             ExperienceBase = 614,
                             ForceBase = 5,
-                            MonsterId = 653,
                             Nom = "fennekin",
                             PointDeVieBase = 13,
+                            PokemonId = 653,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/653.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 654,
+                            MonstreId = 654,
                             DefenseBase = 7,
                             ExperienceBase = 818,
                             ForceBase = 7,
-                            MonsterId = 654,
                             Nom = "braixen",
                             PointDeVieBase = 19,
+                            PokemonId = 654,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/654.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 655,
+                            MonstreId = 655,
                             DefenseBase = 9,
                             ExperienceBase = 1068,
                             ForceBase = 8,
-                            MonsterId = 655,
                             Nom = "delphox",
                             PointDeVieBase = 25,
+                            PokemonId = 655,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
                             Type1 = "fire",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 656,
+                            MonstreId = 656,
                             DefenseBase = 5,
                             ExperienceBase = 628,
                             ForceBase = 7,
-                            MonsterId = 656,
                             Nom = "froakie",
                             PointDeVieBase = 13,
+                            PokemonId = 656,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 657,
+                            MonstreId = 657,
                             DefenseBase = 6,
                             ExperienceBase = 810,
                             ForceBase = 7,
-                            MonsterId = 657,
                             Nom = "frogadier",
                             PointDeVieBase = 18,
+                            PokemonId = 657,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/657.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 658,
+                            MonstreId = 658,
                             DefenseBase = 8,
                             ExperienceBase = 1060,
                             ForceBase = 11,
-                            MonsterId = 658,
                             Nom = "greninja",
                             PointDeVieBase = 24,
+                            PokemonId = 658,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png",
                             Type1 = "water",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 659,
-                            DefenseBase = 4,
+                            MonstreId = 659,
+                            DefenseBase = 5,
                             ExperienceBase = 474,
                             ForceBase = 5,
-                            MonsterId = 659,
                             Nom = "bunnelby",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 12,
+                            PokemonId = 659,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 660,
+                            MonstreId = 660,
                             DefenseBase = 9,
                             ExperienceBase = 846,
                             ForceBase = 7,
-                            MonsterId = 660,
                             Nom = "diggersby",
                             PointDeVieBase = 28,
+                            PokemonId = 660,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/660.png",
                             Type1 = "normal",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 661,
+                            MonstreId = 661,
                             DefenseBase = 5,
                             ExperienceBase = 556,
                             ForceBase = 6,
-                            MonsterId = 661,
                             Nom = "fletchling",
                             PointDeVieBase = 15,
+                            PokemonId = 661,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/661.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 662,
+                            MonstreId = 662,
                             DefenseBase = 6,
                             ExperienceBase = 764,
                             ForceBase = 9,
-                            MonsterId = 662,
                             Nom = "fletchinder",
                             PointDeVieBase = 20,
+                            PokemonId = 662,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/662.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 663,
+                            MonstreId = 663,
                             DefenseBase = 8,
                             ExperienceBase = 998,
                             ForceBase = 10,
-                            MonsterId = 663,
                             Nom = "talonflame",
                             PointDeVieBase = 26,
+                            PokemonId = 663,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 664,
+                            MonstreId = 664,
                             DefenseBase = 5,
                             ExperienceBase = 400,
                             ForceBase = 5,
-                            MonsterId = 664,
                             Nom = "scatterbug",
                             PointDeVieBase = 12,
+                            PokemonId = 664,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/664.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 665,
+                            MonstreId = 665,
                             DefenseBase = 7,
                             ExperienceBase = 426,
                             ForceBase = 5,
-                            MonsterId = 665,
                             Nom = "spewpa",
                             PointDeVieBase = 15,
+                            PokemonId = 665,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 666,
+                            MonstreId = 666,
                             DefenseBase = 6,
                             ExperienceBase = 822,
                             ForceBase = 6,
-                            MonsterId = 666,
                             Nom = "vivillon",
                             PointDeVieBase = 26,
+                            PokemonId = 666,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png",
                             Type1 = "bug",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 667,
+                            MonstreId = 667,
                             DefenseBase = 7,
                             ExperienceBase = 738,
                             ForceBase = 6,
-                            MonsterId = 667,
                             Nom = "litleo",
                             PointDeVieBase = 20,
+                            PokemonId = 667,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
                             Type1 = "fire",
                             Type2 = "normal"
                         },
                         new
                         {
-                            Id = 668,
+                            MonstreId = 668,
                             DefenseBase = 9,
                             ExperienceBase = 1014,
                             ForceBase = 8,
-                            MonsterId = 668,
                             Nom = "pyroar-male",
                             PointDeVieBase = 28,
+                            PokemonId = 668,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/668.png",
                             Type1 = "fire",
                             Type2 = "normal"
                         },
                         new
                         {
-                            Id = 669,
-                            DefenseBase = 4,
+                            MonstreId = 669,
+                            DefenseBase = 5,
                             ExperienceBase = 606,
                             ForceBase = 5,
-                            MonsterId = 669,
                             Nom = "flabebe",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 14,
+                            PokemonId = 669,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/669.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 670,
+                            MonstreId = 670,
                             DefenseBase = 5,
                             ExperienceBase = 742,
                             ForceBase = 5,
-                            MonsterId = 670,
                             Nom = "floette",
                             PointDeVieBase = 18,
+                            PokemonId = 670,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/670.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 671,
+                            MonstreId = 671,
                             DefenseBase = 8,
                             ExperienceBase = 1104,
                             ForceBase = 8,
-                            MonsterId = 671,
                             Nom = "florges",
                             PointDeVieBase = 26,
+                            PokemonId = 671,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/671.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 672,
+                            MonstreId = 672,
                             DefenseBase = 6,
                             ExperienceBase = 700,
                             ForceBase = 8,
-                            MonsterId = 672,
                             Nom = "skiddo",
                             PointDeVieBase = 22,
+                            PokemonId = 672,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/672.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 673,
+                            MonstreId = 673,
                             DefenseBase = 7,
                             ExperienceBase = 1062,
                             ForceBase = 12,
-                            MonsterId = 673,
                             Nom = "gogoat",
                             PointDeVieBase = 41,
+                            PokemonId = 673,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/673.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 674,
+                            MonstreId = 674,
                             DefenseBase = 7,
                             ExperienceBase = 696,
                             ForceBase = 10,
-                            MonsterId = 674,
                             Nom = "pancham",
                             PointDeVieBase = 22,
+                            PokemonId = 674,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/674.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 675,
+                            MonstreId = 675,
                             DefenseBase = 9,
                             ExperienceBase = 990,
                             ForceBase = 15,
-                            MonsterId = 675,
                             Nom = "pangoro",
                             PointDeVieBase = 31,
+                            PokemonId = 675,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/675.png",
                             Type1 = "fighting",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 676,
+                            MonstreId = 676,
                             DefenseBase = 7,
                             ExperienceBase = 944,
                             ForceBase = 10,
-                            MonsterId = 676,
                             Nom = "furfrou",
                             PointDeVieBase = 25,
+                            PokemonId = 676,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/676.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 677,
+                            MonstreId = 677,
                             DefenseBase = 6,
                             ExperienceBase = 710,
                             ForceBase = 6,
-                            MonsterId = 677,
                             Nom = "espurr",
                             PointDeVieBase = 20,
+                            PokemonId = 677,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 678,
+                            MonstreId = 678,
                             DefenseBase = 9,
                             ExperienceBase = 932,
                             ForceBase = 6,
-                            MonsterId = 678,
                             Nom = "meowstic-male",
                             PointDeVieBase = 24,
+                            PokemonId = 678,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 679,
+                            MonstreId = 679,
                             DefenseBase = 12,
                             ExperienceBase = 650,
                             ForceBase = 10,
-                            MonsterId = 679,
                             Nom = "honedge",
                             PointDeVieBase = 15,
+                            PokemonId = 679,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/679.png",
                             Type1 = "steel",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 680,
+                            MonstreId = 680,
                             DefenseBase = 18,
                             ExperienceBase = 896,
                             ForceBase = 13,
-                            MonsterId = 680,
                             Nom = "doublade",
                             PointDeVieBase = 19,
+                            PokemonId = 680,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png",
                             Type1 = "steel",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 681,
+                            MonstreId = 681,
                             DefenseBase = 17,
                             ExperienceBase = 1000,
                             ForceBase = 6,
-                            MonsterId = 681,
                             Nom = "aegislash-shield",
                             PointDeVieBase = 20,
+                            PokemonId = 681,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png",
                             Type1 = "steel",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 682,
+                            MonstreId = 682,
                             DefenseBase = 7,
                             ExperienceBase = 682,
                             ForceBase = 6,
-                            MonsterId = 682,
                             Nom = "spritzee",
                             PointDeVieBase = 26,
+                            PokemonId = 682,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/682.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 683,
+                            MonstreId = 683,
                             DefenseBase = 9,
                             ExperienceBase = 924,
                             ForceBase = 9,
-                            MonsterId = 683,
                             Nom = "aromatisse",
                             PointDeVieBase = 33,
+                            PokemonId = 683,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 684,
+                            MonstreId = 684,
                             DefenseBase = 8,
                             ExperienceBase = 682,
                             ForceBase = 6,
-                            MonsterId = 684,
                             Nom = "swirlix",
                             PointDeVieBase = 20,
+                            PokemonId = 684,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/684.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 685,
+                            MonstreId = 685,
                             DefenseBase = 10,
                             ExperienceBase = 960,
                             ForceBase = 10,
-                            MonsterId = 685,
                             Nom = "slurpuff",
                             PointDeVieBase = 27,
+                            PokemonId = 685,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 686,
+                            MonstreId = 686,
                             DefenseBase = 6,
                             ExperienceBase = 576,
                             ForceBase = 6,
-                            MonsterId = 686,
                             Nom = "inkay",
                             PointDeVieBase = 17,
+                            PokemonId = 686,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/686.png",
                             Type1 = "dark",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 687,
+                            MonstreId = 687,
                             DefenseBase = 11,
                             ExperienceBase = 964,
                             ForceBase = 11,
-                            MonsterId = 687,
                             Nom = "malamar",
                             PointDeVieBase = 28,
+                            PokemonId = 687,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/687.png",
                             Type1 = "dark",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 688,
+                            MonstreId = 688,
                             DefenseBase = 8,
                             ExperienceBase = 612,
                             ForceBase = 6,
-                            MonsterId = 688,
                             Nom = "binacle",
                             PointDeVieBase = 14,
+                            PokemonId = 688,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/688.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 689,
+                            MonstreId = 689,
                             DefenseBase = 14,
                             ExperienceBase = 1000,
                             ForceBase = 13,
-                            MonsterId = 689,
                             Nom = "barbaracle",
                             PointDeVieBase = 24,
+                            PokemonId = 689,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png",
                             Type1 = "rock",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 690,
+                            MonstreId = 690,
                             DefenseBase = 7,
                             ExperienceBase = 640,
                             ForceBase = 7,
-                            MonsterId = 690,
                             Nom = "skrelp",
                             PointDeVieBase = 16,
+                            PokemonId = 690,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
                             Type1 = "poison",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 691,
+                            MonstreId = 691,
                             DefenseBase = 11,
                             ExperienceBase = 988,
                             ForceBase = 9,
-                            MonsterId = 691,
                             Nom = "dragalge",
                             PointDeVieBase = 21,
+                            PokemonId = 691,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/691.png",
                             Type1 = "poison",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 692,
+                            MonstreId = 692,
                             DefenseBase = 7,
                             ExperienceBase = 660,
                             ForceBase = 6,
-                            MonsterId = 692,
                             Nom = "clauncher",
                             PointDeVieBase = 16,
+                            PokemonId = 692,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/692.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 693,
+                            MonstreId = 693,
                             DefenseBase = 11,
                             ExperienceBase = 1000,
                             ForceBase = 9,
-                            MonsterId = 693,
                             Nom = "clawitzer",
                             PointDeVieBase = 23,
+                            PokemonId = 693,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 694,
-                            DefenseBase = 4,
+                            MonstreId = 694,
+                            DefenseBase = 5,
                             ExperienceBase = 578,
                             ForceBase = 5,
-                            MonsterId = 694,
                             Nom = "helioptile",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 14,
+                            PokemonId = 694,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/694.png",
                             Type1 = "electric",
                             Type2 = "normal"
                         },
                         new
                         {
-                            Id = 695,
+                            MonstreId = 695,
                             DefenseBase = 6,
                             ExperienceBase = 962,
                             ForceBase = 6,
-                            MonsterId = 695,
                             Nom = "heliolisk",
                             PointDeVieBase = 20,
+                            PokemonId = 695,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/695.png",
                             Type1 = "electric",
                             Type2 = "normal"
                         },
                         new
                         {
-                            Id = 696,
+                            MonstreId = 696,
                             DefenseBase = 9,
                             ExperienceBase = 724,
                             ForceBase = 11,
-                            MonsterId = 696,
                             Nom = "tyrunt",
                             PointDeVieBase = 19,
+                            PokemonId = 696,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/696.png",
                             Type1 = "rock",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 697,
+                            MonstreId = 697,
                             DefenseBase = 14,
                             ExperienceBase = 1042,
                             ForceBase = 15,
-                            MonsterId = 697,
                             Nom = "tyrantrum",
                             PointDeVieBase = 27,
+                            PokemonId = 697,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/697.png",
                             Type1 = "rock",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 698,
+                            MonstreId = 698,
                             DefenseBase = 6,
                             ExperienceBase = 724,
                             ForceBase = 7,
-                            MonsterId = 698,
                             Nom = "amaura",
                             PointDeVieBase = 25,
+                            PokemonId = 698,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/698.png",
                             Type1 = "rock",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 699,
+                            MonstreId = 699,
                             DefenseBase = 9,
                             ExperienceBase = 1042,
                             ForceBase = 9,
-                            MonsterId = 699,
                             Nom = "aurorus",
                             PointDeVieBase = 41,
+                            PokemonId = 699,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/699.png",
                             Type1 = "rock",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 700,
+                            MonstreId = 700,
                             DefenseBase = 8,
                             ExperienceBase = 1050,
                             ForceBase = 8,
-                            MonsterId = 700,
                             Nom = "sylveon",
                             PointDeVieBase = 31,
+                            PokemonId = 700,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 701,
+                            MonstreId = 701,
                             DefenseBase = 9,
                             ExperienceBase = 1000,
                             ForceBase = 11,
-                            MonsterId = 701,
                             Nom = "hawlucha",
                             PointDeVieBase = 26,
+                            PokemonId = 701,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png",
                             Type1 = "fighting",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 702,
+                            MonstreId = 702,
                             DefenseBase = 7,
                             ExperienceBase = 862,
                             ForceBase = 7,
-                            MonsterId = 702,
                             Nom = "dedenne",
                             PointDeVieBase = 22,
+                            PokemonId = 702,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/702.png",
                             Type1 = "electric",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 703,
+                            MonstreId = 703,
                             DefenseBase = 18,
                             ExperienceBase = 1000,
                             ForceBase = 6,
-                            MonsterId = 703,
                             Nom = "carbink",
                             PointDeVieBase = 16,
+                            PokemonId = 703,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/703.png",
                             Type1 = "rock",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 704,
-                            DefenseBase = 4,
+                            MonstreId = 704,
+                            DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 704,
                             Nom = "goomy",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 704,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 705,
+                            MonstreId = 705,
                             DefenseBase = 6,
                             ExperienceBase = 904,
                             ForceBase = 9,
-                            MonsterId = 705,
                             Nom = "sliggoo",
                             PointDeVieBase = 22,
+                            PokemonId = 705,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 706,
+                            MonstreId = 706,
                             DefenseBase = 8,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 706,
                             Nom = "goodra",
                             PointDeVieBase = 30,
+                            PokemonId = 706,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 707,
+                            MonstreId = 707,
                             DefenseBase = 11,
                             ExperienceBase = 940,
                             ForceBase = 10,
-                            MonsterId = 707,
                             Nom = "klefki",
                             PointDeVieBase = 19,
+                            PokemonId = 707,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png",
                             Type1 = "steel",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 708,
+                            MonstreId = 708,
                             DefenseBase = 6,
                             ExperienceBase = 618,
                             ForceBase = 8,
-                            MonsterId = 708,
                             Nom = "phantump",
                             PointDeVieBase = 14,
+                            PokemonId = 708,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/708.png",
                             Type1 = "ghost",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 709,
+                            MonstreId = 709,
                             DefenseBase = 9,
                             ExperienceBase = 948,
                             ForceBase = 13,
-                            MonsterId = 709,
                             Nom = "trevenant",
                             PointDeVieBase = 28,
+                            PokemonId = 709,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/709.png",
                             Type1 = "ghost",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 710,
+                            MonstreId = 710,
                             DefenseBase = 8,
                             ExperienceBase = 670,
                             ForceBase = 8,
-                            MonsterId = 710,
                             Nom = "pumpkaboo-average",
                             PointDeVieBase = 16,
+                            PokemonId = 710,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png",
                             Type1 = "ghost",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 711,
+                            MonstreId = 711,
                             DefenseBase = 15,
                             ExperienceBase = 988,
                             ForceBase = 11,
-                            MonsterId = 711,
                             Nom = "gourgeist-average",
                             PointDeVieBase = 21,
+                            PokemonId = 711,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png",
                             Type1 = "ghost",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 712,
+                            MonstreId = 712,
                             DefenseBase = 10,
                             ExperienceBase = 608,
                             ForceBase = 8,
-                            MonsterId = 712,
                             Nom = "bergmite",
                             PointDeVieBase = 18,
+                            PokemonId = 712,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/712.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 713,
+                            MonstreId = 713,
                             DefenseBase = 23,
                             ExperienceBase = 1028,
                             ForceBase = 14,
-                            MonsterId = 713,
                             Nom = "avalugg",
                             PointDeVieBase = 31,
+                            PokemonId = 713,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
                             Type1 = "ice",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 714,
-                            DefenseBase = 4,
+                            MonstreId = 714,
+                            DefenseBase = 5,
                             ExperienceBase = 490,
                             ForceBase = 5,
-                            MonsterId = 714,
                             Nom = "noibat",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 714,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/714.png",
                             Type1 = "flying",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 715,
+                            MonstreId = 715,
                             DefenseBase = 10,
                             ExperienceBase = 1070,
                             ForceBase = 8,
-                            MonsterId = 715,
                             Nom = "noivern",
                             PointDeVieBase = 28,
+                            PokemonId = 715,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png",
                             Type1 = "flying",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 716,
+                            MonstreId = 716,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 16,
-                            MonsterId = 716,
                             Nom = "xerneas",
                             PointDeVieBase = 42,
+                            PokemonId = 716,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/716.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 717,
+                            MonstreId = 717,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 16,
-                            MonsterId = 717,
                             Nom = "yveltal",
                             PointDeVieBase = 42,
+                            PokemonId = 717,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/717.png",
                             Type1 = "dark",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 718,
+                            MonstreId = 718,
                             DefenseBase = 15,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 718,
                             Nom = "zygarde-50",
                             PointDeVieBase = 36,
+                            PokemonId = 718,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png",
                             Type1 = "dragon",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 719,
+                            MonstreId = 719,
                             DefenseBase = 18,
                             ExperienceBase = 1200,
                             ForceBase = 12,
-                            MonsterId = 719,
                             Nom = "diancie",
                             PointDeVieBase = 16,
+                            PokemonId = 719,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/719.png",
                             Type1 = "rock",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 720,
+                            MonstreId = 720,
                             DefenseBase = 7,
                             ExperienceBase = 1200,
                             ForceBase = 13,
-                            MonsterId = 720,
                             Nom = "hoopa",
                             PointDeVieBase = 26,
+                            PokemonId = 720,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/720.png",
                             Type1 = "psychic",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 721,
+                            MonstreId = 721,
                             DefenseBase = 15,
                             ExperienceBase = 1200,
                             ForceBase = 13,
-                            MonsterId = 721,
                             Nom = "volcanion",
                             PointDeVieBase = 26,
+                            PokemonId = 721,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/721.png",
                             Type1 = "fire",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 722,
+                            MonstreId = 722,
                             DefenseBase = 6,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 722,
                             Nom = "rowlet",
                             PointDeVieBase = 22,
+                            PokemonId = 722,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 723,
+                            MonstreId = 723,
                             DefenseBase = 9,
                             ExperienceBase = 840,
                             ForceBase = 9,
-                            MonsterId = 723,
                             Nom = "dartrix",
                             PointDeVieBase = 26,
+                            PokemonId = 723,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/723.png",
                             Type1 = "grass",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 724,
+                            MonstreId = 724,
                             DefenseBase = 9,
                             ExperienceBase = 1060,
                             ForceBase = 13,
-                            MonsterId = 724,
                             Nom = "decidueye",
                             PointDeVieBase = 26,
+                            PokemonId = 724,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png",
                             Type1 = "grass",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 725,
+                            MonstreId = 725,
                             DefenseBase = 5,
                             ExperienceBase = 640,
                             ForceBase = 8,
-                            MonsterId = 725,
                             Nom = "litten",
                             PointDeVieBase = 15,
+                            PokemonId = 725,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/725.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 726,
+                            MonstreId = 726,
                             DefenseBase = 6,
                             ExperienceBase = 840,
                             ForceBase = 10,
-                            MonsterId = 726,
                             Nom = "torracat",
                             PointDeVieBase = 21,
+                            PokemonId = 726,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/726.png",
                             Type1 = "fire",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 727,
+                            MonstreId = 727,
                             DefenseBase = 11,
                             ExperienceBase = 1060,
                             ForceBase = 14,
-                            MonsterId = 727,
                             Nom = "incineroar",
                             PointDeVieBase = 31,
+                            PokemonId = 727,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/727.png",
                             Type1 = "fire",
                             Type2 = "dark"
                         },
                         new
                         {
-                            Id = 728,
+                            MonstreId = 728,
                             DefenseBase = 6,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 728,
                             Nom = "popplio",
                             PointDeVieBase = 16,
+                            PokemonId = 728,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/728.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 729,
+                            MonstreId = 729,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 8,
-                            MonsterId = 729,
                             Nom = "brionne",
                             PointDeVieBase = 20,
+                            PokemonId = 729,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/729.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 730,
+                            MonstreId = 730,
                             DefenseBase = 9,
                             ExperienceBase = 1060,
                             ForceBase = 9,
-                            MonsterId = 730,
                             Nom = "primarina",
                             PointDeVieBase = 26,
+                            PokemonId = 730,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/730.png",
                             Type1 = "water",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 731,
-                            DefenseBase = 3,
+                            MonstreId = 731,
+                            DefenseBase = 5,
                             ExperienceBase = 530,
                             ForceBase = 9,
-                            MonsterId = 731,
                             Nom = "pikipek",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 11,
+                            PokemonId = 731,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/731.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 732,
+                            MonstreId = 732,
                             DefenseBase = 6,
                             ExperienceBase = 710,
                             ForceBase = 10,
-                            MonsterId = 732,
                             Nom = "trumbeak",
                             PointDeVieBase = 18,
+                            PokemonId = 732,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/732.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 733,
+                            MonstreId = 733,
                             DefenseBase = 9,
                             ExperienceBase = 970,
                             ForceBase = 15,
-                            MonsterId = 733,
                             Nom = "toucannon",
                             PointDeVieBase = 26,
+                            PokemonId = 733,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/733.png",
                             Type1 = "normal",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 734,
-                            DefenseBase = 3,
+                            MonstreId = 734,
+                            DefenseBase = 5,
                             ExperienceBase = 506,
                             ForceBase = 8,
-                            MonsterId = 734,
                             Nom = "yungoos",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 16,
+                            PokemonId = 734,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/734.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 735,
+                            MonstreId = 735,
                             DefenseBase = 7,
                             ExperienceBase = 836,
                             ForceBase = 13,
-                            MonsterId = 735,
                             Nom = "gumshoos",
                             PointDeVieBase = 29,
+                            PokemonId = 735,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/735.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 736,
+                            MonstreId = 736,
                             DefenseBase = 5,
                             ExperienceBase = 600,
                             ForceBase = 7,
-                            MonsterId = 736,
                             Nom = "grubbin",
                             PointDeVieBase = 15,
+                            PokemonId = 736,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/736.png",
                             Type1 = "bug",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 737,
+                            MonstreId = 737,
                             DefenseBase = 11,
                             ExperienceBase = 800,
                             ForceBase = 10,
-                            MonsterId = 737,
                             Nom = "charjabug",
                             PointDeVieBase = 19,
+                            PokemonId = 737,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/737.png",
                             Type1 = "bug",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 738,
+                            MonstreId = 738,
                             DefenseBase = 11,
                             ExperienceBase = 1000,
                             ForceBase = 8,
-                            MonsterId = 738,
                             Nom = "vikavolt",
                             PointDeVieBase = 25,
+                            PokemonId = 738,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/738.png",
                             Type1 = "bug",
                             Type2 = "electric"
                         },
                         new
                         {
-                            Id = 739,
+                            MonstreId = 739,
                             DefenseBase = 7,
                             ExperienceBase = 676,
                             ForceBase = 10,
-                            MonsterId = 739,
                             Nom = "crabrawler",
                             PointDeVieBase = 15,
+                            PokemonId = 739,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/739.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 740,
+                            MonstreId = 740,
                             DefenseBase = 9,
                             ExperienceBase = 956,
                             ForceBase = 16,
-                            MonsterId = 740,
                             Nom = "crabominable",
                             PointDeVieBase = 32,
+                            PokemonId = 740,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/740.png",
                             Type1 = "fighting",
                             Type2 = "ice"
                         },
                         new
                         {
-                            Id = 741,
+                            MonstreId = 741,
                             DefenseBase = 8,
                             ExperienceBase = 952,
                             ForceBase = 8,
-                            MonsterId = 741,
                             Nom = "oricorio-baile",
                             PointDeVieBase = 25,
+                            PokemonId = 741,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/741.png",
                             Type1 = "fire",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 742,
+                            MonstreId = 742,
                             DefenseBase = 5,
                             ExperienceBase = 608,
                             ForceBase = 5,
-                            MonsterId = 742,
                             Nom = "cutiefly",
                             PointDeVieBase = 13,
+                            PokemonId = 742,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/742.png",
                             Type1 = "bug",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 743,
+                            MonstreId = 743,
                             DefenseBase = 7,
                             ExperienceBase = 928,
                             ForceBase = 6,
-                            MonsterId = 743,
                             Nom = "ribombee",
                             PointDeVieBase = 20,
+                            PokemonId = 743,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/743.png",
                             Type1 = "bug",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 744,
+                            MonstreId = 744,
                             DefenseBase = 5,
                             ExperienceBase = 560,
                             ForceBase = 8,
-                            MonsterId = 744,
                             Nom = "rockruff",
                             PointDeVieBase = 15,
+                            PokemonId = 744,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/744.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 745,
+                            MonstreId = 745,
                             DefenseBase = 8,
                             ExperienceBase = 974,
                             ForceBase = 14,
-                            MonsterId = 745,
                             Nom = "lycanroc-midday",
                             PointDeVieBase = 25,
+                            PokemonId = 745,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/745.png",
                             Type1 = "rock",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 746,
-                            DefenseBase = 2,
+                            MonstreId = 746,
+                            DefenseBase = 5,
                             ExperienceBase = 350,
                             ForceBase = 5,
-                            MonsterId = 746,
                             Nom = "wishiwashi-solo",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 15,
+                            PokemonId = 746,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/746.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 747,
+                            MonstreId = 747,
                             DefenseBase = 7,
                             ExperienceBase = 610,
                             ForceBase = 6,
-                            MonsterId = 747,
                             Nom = "mareanie",
                             PointDeVieBase = 16,
+                            PokemonId = 747,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/747.png",
                             Type1 = "poison",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 748,
+                            MonstreId = 748,
                             DefenseBase = 19,
                             ExperienceBase = 990,
                             ForceBase = 7,
-                            MonsterId = 748,
                             Nom = "toxapex",
                             PointDeVieBase = 16,
+                            PokemonId = 748,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/748.png",
                             Type1 = "poison",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 749,
+                            MonstreId = 749,
                             DefenseBase = 8,
                             ExperienceBase = 770,
                             ForceBase = 12,
-                            MonsterId = 749,
                             Nom = "mudbray",
                             PointDeVieBase = 23,
+                            PokemonId = 749,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/749.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 750,
+                            MonstreId = 750,
                             DefenseBase = 12,
                             ExperienceBase = 1000,
                             ForceBase = 15,
-                            MonsterId = 750,
                             Nom = "mudsdale",
                             PointDeVieBase = 33,
+                            PokemonId = 750,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/750.png",
                             Type1 = "ground",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 751,
+                            MonstreId = 751,
                             DefenseBase = 6,
                             ExperienceBase = 538,
                             ForceBase = 5,
-                            MonsterId = 751,
                             Nom = "dewpider",
                             PointDeVieBase = 12,
+                            PokemonId = 751,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/751.png",
                             Type1 = "water",
                             Type2 = "bug"
                         },
                         new
                         {
-                            Id = 752,
+                            MonstreId = 752,
                             DefenseBase = 11,
                             ExperienceBase = 908,
                             ForceBase = 8,
-                            MonsterId = 752,
                             Nom = "araquanid",
                             PointDeVieBase = 22,
+                            PokemonId = 752,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/752.png",
                             Type1 = "water",
                             Type2 = "bug"
                         },
                         new
                         {
-                            Id = 753,
-                            DefenseBase = 4,
+                            MonstreId = 753,
+                            DefenseBase = 5,
                             ExperienceBase = 500,
                             ForceBase = 6,
-                            MonsterId = 753,
                             Nom = "fomantis",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 13,
+                            PokemonId = 753,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/753.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 754,
+                            MonstreId = 754,
                             DefenseBase = 11,
                             ExperienceBase = 960,
                             ForceBase = 13,
-                            MonsterId = 754,
                             Nom = "lurantis",
                             PointDeVieBase = 23,
+                            PokemonId = 754,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/754.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 755,
+                            MonstreId = 755,
                             DefenseBase = 6,
                             ExperienceBase = 570,
                             ForceBase = 5,
-                            MonsterId = 755,
                             Nom = "morelull",
                             PointDeVieBase = 13,
+                            PokemonId = 755,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/755.png",
                             Type1 = "grass",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 756,
+                            MonstreId = 756,
                             DefenseBase = 10,
                             ExperienceBase = 810,
                             ForceBase = 5,
-                            MonsterId = 756,
                             Nom = "shiinotic",
                             PointDeVieBase = 20,
+                            PokemonId = 756,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/756.png",
                             Type1 = "grass",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 757,
+                            MonstreId = 757,
                             DefenseBase = 5,
                             ExperienceBase = 640,
                             ForceBase = 5,
-                            MonsterId = 757,
                             Nom = "salandit",
                             PointDeVieBase = 16,
+                            PokemonId = 757,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/757.png",
                             Type1 = "poison",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 758,
+                            MonstreId = 758,
                             DefenseBase = 7,
                             ExperienceBase = 960,
                             ForceBase = 8,
-                            MonsterId = 758,
                             Nom = "salazzle",
                             PointDeVieBase = 22,
+                            PokemonId = 758,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/758.png",
                             Type1 = "poison",
                             Type2 = "fire"
                         },
                         new
                         {
-                            Id = 759,
+                            MonstreId = 759,
                             DefenseBase = 6,
                             ExperienceBase = 680,
                             ForceBase = 9,
-                            MonsterId = 759,
                             Nom = "stufful",
                             PointDeVieBase = 23,
+                            PokemonId = 759,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/759.png",
                             Type1 = "normal",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 760,
+                            MonstreId = 760,
                             DefenseBase = 10,
                             ExperienceBase = 1000,
                             ForceBase = 15,
-                            MonsterId = 760,
                             Nom = "bewear",
                             PointDeVieBase = 40,
+                            PokemonId = 760,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/760.png",
                             Type1 = "normal",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 761,
-                            DefenseBase = 4,
+                            MonstreId = 761,
+                            DefenseBase = 5,
                             ExperienceBase = 420,
                             ForceBase = 5,
-                            MonsterId = 761,
                             Nom = "bounsweet",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 14,
+                            PokemonId = 761,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/761.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 762,
+                            MonstreId = 762,
                             DefenseBase = 6,
                             ExperienceBase = 580,
                             ForceBase = 5,
-                            MonsterId = 762,
                             Nom = "steenee",
                             PointDeVieBase = 17,
+                            PokemonId = 762,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/762.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 763,
+                            MonstreId = 763,
                             DefenseBase = 12,
                             ExperienceBase = 1020,
                             ForceBase = 15,
-                            MonsterId = 763,
                             Nom = "tsareena",
                             PointDeVieBase = 24,
+                            PokemonId = 763,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/763.png",
                             Type1 = "grass",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 764,
+                            MonstreId = 764,
                             DefenseBase = 11,
                             ExperienceBase = 970,
                             ForceBase = 6,
-                            MonsterId = 764,
                             Nom = "comfey",
                             PointDeVieBase = 17,
+                            PokemonId = 764,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/764.png",
                             Type1 = "fairy",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 765,
+                            MonstreId = 765,
                             DefenseBase = 10,
                             ExperienceBase = 980,
                             ForceBase = 7,
-                            MonsterId = 765,
                             Nom = "oranguru",
                             PointDeVieBase = 30,
+                            PokemonId = 765,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/765.png",
                             Type1 = "normal",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 766,
+                            MonstreId = 766,
                             DefenseBase = 11,
                             ExperienceBase = 980,
                             ForceBase = 15,
-                            MonsterId = 766,
                             Nom = "passimian",
                             PointDeVieBase = 33,
+                            PokemonId = 766,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/766.png",
                             Type1 = "fighting",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 767,
+                            MonstreId = 767,
                             DefenseBase = 5,
                             ExperienceBase = 460,
                             ForceBase = 5,
-                            MonsterId = 767,
                             Nom = "wimpod",
                             PointDeVieBase = 10,
+                            PokemonId = 767,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/767.png",
                             Type1 = "bug",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 768,
+                            MonstreId = 768,
                             DefenseBase = 17,
                             ExperienceBase = 1060,
                             ForceBase = 15,
-                            MonsterId = 768,
                             Nom = "golisopod",
                             PointDeVieBase = 25,
+                            PokemonId = 768,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/768.png",
                             Type1 = "bug",
                             Type2 = "water"
                         },
                         new
                         {
-                            Id = 769,
+                            MonstreId = 769,
                             DefenseBase = 10,
                             ExperienceBase = 640,
                             ForceBase = 6,
-                            MonsterId = 769,
                             Nom = "sandygast",
                             PointDeVieBase = 18,
+                            PokemonId = 769,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/769.png",
                             Type1 = "ghost",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 770,
+                            MonstreId = 770,
                             DefenseBase = 13,
                             ExperienceBase = 960,
                             ForceBase = 9,
-                            MonsterId = 770,
                             Nom = "palossand",
                             PointDeVieBase = 28,
+                            PokemonId = 770,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/770.png",
                             Type1 = "ghost",
                             Type2 = "ground"
                         },
                         new
                         {
-                            Id = 771,
+                            MonstreId = 771,
                             DefenseBase = 16,
                             ExperienceBase = 820,
                             ForceBase = 7,
-                            MonsterId = 771,
                             Nom = "pyukumuku",
                             PointDeVieBase = 18,
+                            PokemonId = 771,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/771.png",
                             Type1 = "water",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 772,
+                            MonstreId = 772,
                             DefenseBase = 11,
                             ExperienceBase = 1068,
                             ForceBase = 11,
-                            MonsterId = 772,
                             Nom = "type-null",
                             PointDeVieBase = 31,
+                            PokemonId = 772,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/772.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 773,
+                            MonstreId = 773,
                             DefenseBase = 11,
                             ExperienceBase = 1140,
                             ForceBase = 11,
-                            MonsterId = 773,
                             Nom = "silvally",
                             PointDeVieBase = 31,
+                            PokemonId = 773,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 774,
+                            MonstreId = 774,
                             DefenseBase = 12,
                             ExperienceBase = 880,
                             ForceBase = 7,
-                            MonsterId = 774,
                             Nom = "minior-red-meteor",
                             PointDeVieBase = 20,
+                            PokemonId = 774,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/774.png",
                             Type1 = "rock",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 775,
+                            MonstreId = 775,
                             DefenseBase = 8,
                             ExperienceBase = 960,
                             ForceBase = 14,
-                            MonsterId = 775,
                             Nom = "komala",
                             PointDeVieBase = 21,
+                            PokemonId = 775,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/775.png",
                             Type1 = "normal",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 776,
+                            MonstreId = 776,
                             DefenseBase = 16,
                             ExperienceBase = 970,
                             ForceBase = 9,
-                            MonsterId = 776,
                             Nom = "turtonator",
                             PointDeVieBase = 20,
+                            PokemonId = 776,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/776.png",
                             Type1 = "fire",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 777,
+                            MonstreId = 777,
                             DefenseBase = 7,
                             ExperienceBase = 870,
                             ForceBase = 12,
-                            MonsterId = 777,
                             Nom = "togedemaru",
                             PointDeVieBase = 21,
+                            PokemonId = 777,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/777.png",
                             Type1 = "electric",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 778,
+                            MonstreId = 778,
                             DefenseBase = 10,
                             ExperienceBase = 952,
                             ForceBase = 11,
-                            MonsterId = 778,
                             Nom = "mimikyu-disguised",
                             PointDeVieBase = 18,
+                            PokemonId = 778,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/778.png",
                             Type1 = "ghost",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 779,
+                            MonstreId = 779,
                             DefenseBase = 8,
                             ExperienceBase = 950,
                             ForceBase = 13,
-                            MonsterId = 779,
                             Nom = "bruxish",
                             PointDeVieBase = 22,
+                            PokemonId = 779,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/779.png",
                             Type1 = "water",
                             Type2 = "psychic"
                         },
                         new
                         {
-                            Id = 780,
+                            MonstreId = 780,
                             DefenseBase = 10,
                             ExperienceBase = 970,
                             ForceBase = 7,
-                            MonsterId = 780,
                             Nom = "drampa",
                             PointDeVieBase = 26,
+                            PokemonId = 780,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/780.png",
                             Type1 = "normal",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 781,
+                            MonstreId = 781,
                             DefenseBase = 12,
                             ExperienceBase = 1034,
                             ForceBase = 16,
-                            MonsterId = 781,
                             Nom = "dhelmise",
                             PointDeVieBase = 23,
+                            PokemonId = 781,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/781.png",
                             Type1 = "ghost",
                             Type2 = "grass"
                         },
                         new
                         {
-                            Id = 782,
+                            MonstreId = 782,
                             DefenseBase = 8,
                             ExperienceBase = 600,
                             ForceBase = 6,
-                            MonsterId = 782,
                             Nom = "jangmo-o",
                             PointDeVieBase = 15,
+                            PokemonId = 782,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/782.png",
                             Type1 = "dragon",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 783,
+                            MonstreId = 783,
                             DefenseBase = 11,
                             ExperienceBase = 840,
                             ForceBase = 9,
-                            MonsterId = 783,
                             Nom = "hakamo-o",
                             PointDeVieBase = 18,
+                            PokemonId = 783,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/783.png",
                             Type1 = "dragon",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 784,
+                            MonstreId = 784,
                             DefenseBase = 15,
                             ExperienceBase = 1200,
                             ForceBase = 13,
-                            MonsterId = 784,
                             Nom = "kommo-o",
                             PointDeVieBase = 25,
+                            PokemonId = 784,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784.png",
                             Type1 = "dragon",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 785,
+                            MonstreId = 785,
                             DefenseBase = 10,
                             ExperienceBase = 1140,
                             ForceBase = 14,
-                            MonsterId = 785,
                             Nom = "tapu-koko",
                             PointDeVieBase = 23,
+                            PokemonId = 785,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/785.png",
                             Type1 = "electric",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 786,
+                            MonstreId = 786,
                             DefenseBase = 9,
                             ExperienceBase = 1140,
                             ForceBase = 10,
-                            MonsterId = 786,
                             Nom = "tapu-lele",
                             PointDeVieBase = 23,
+                            PokemonId = 786,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/786.png",
                             Type1 = "psychic",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 787,
+                            MonstreId = 787,
                             DefenseBase = 14,
                             ExperienceBase = 1140,
                             ForceBase = 16,
-                            MonsterId = 787,
                             Nom = "tapu-bulu",
                             PointDeVieBase = 23,
+                            PokemonId = 787,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/787.png",
                             Type1 = "grass",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 788,
+                            MonstreId = 788,
                             DefenseBase = 14,
                             ExperienceBase = 1140,
                             ForceBase = 9,
-                            MonsterId = 788,
                             Nom = "tapu-fini",
                             PointDeVieBase = 23,
+                            PokemonId = 788,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/788.png",
                             Type1 = "water",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 789,
-                            DefenseBase = 3,
+                            MonstreId = 789,
+                            DefenseBase = 5,
                             ExperienceBase = 400,
                             ForceBase = 5,
-                            MonsterId = 789,
                             Nom = "cosmog",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 14,
+                            PokemonId = 789,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/789.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 790,
+                            MonstreId = 790,
                             DefenseBase = 16,
                             ExperienceBase = 800,
                             ForceBase = 5,
-                            MonsterId = 790,
                             Nom = "cosmoem",
                             PointDeVieBase = 14,
+                            PokemonId = 790,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/790.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 791,
+                            MonstreId = 791,
                             DefenseBase = 13,
                             ExperienceBase = 1360,
                             ForceBase = 17,
-                            MonsterId = 791,
                             Nom = "solgaleo",
                             PointDeVieBase = 45,
+                            PokemonId = 791,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/791.png",
                             Type1 = "psychic",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 792,
+                            MonstreId = 792,
                             DefenseBase = 11,
                             ExperienceBase = 1360,
                             ForceBase = 14,
-                            MonsterId = 792,
                             Nom = "lunala",
                             PointDeVieBase = 45,
+                            PokemonId = 792,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/792.png",
                             Type1 = "psychic",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 793,
+                            MonstreId = 793,
                             DefenseBase = 5,
                             ExperienceBase = 1140,
                             ForceBase = 6,
-                            MonsterId = 793,
                             Nom = "nihilego",
                             PointDeVieBase = 36,
+                            PokemonId = 793,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/793.png",
                             Type1 = "rock",
                             Type2 = "poison"
                         },
                         new
                         {
-                            Id = 794,
+                            MonstreId = 794,
                             DefenseBase = 17,
                             ExperienceBase = 1140,
                             ForceBase = 17,
-                            MonsterId = 794,
                             Nom = "buzzwole",
                             PointDeVieBase = 35,
+                            PokemonId = 794,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/794.png",
                             Type1 = "bug",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 795,
-                            DefenseBase = 4,
+                            MonstreId = 795,
+                            DefenseBase = 5,
                             ExperienceBase = 1140,
                             ForceBase = 17,
-                            MonsterId = 795,
                             Nom = "pheromosa",
-                            PointDeVieBase = 5,
+                            PointDeVieBase = 23,
+                            PokemonId = 795,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/795.png",
                             Type1 = "bug",
                             Type2 = "fighting"
                         },
                         new
                         {
-                            Id = 796,
+                            MonstreId = 796,
                             DefenseBase = 8,
                             ExperienceBase = 1140,
                             ForceBase = 11,
-                            MonsterId = 796,
                             Nom = "xurkitree",
                             PointDeVieBase = 27,
+                            PokemonId = 796,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/796.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 797,
+                            MonstreId = 797,
                             DefenseBase = 12,
                             ExperienceBase = 1140,
                             ForceBase = 12,
-                            MonsterId = 797,
                             Nom = "celesteela",
                             PointDeVieBase = 32,
+                            PokemonId = 797,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/797.png",
                             Type1 = "steel",
                             Type2 = "flying"
                         },
                         new
                         {
-                            Id = 798,
+                            MonstreId = 798,
                             DefenseBase = 16,
                             ExperienceBase = 1140,
                             ForceBase = 22,
-                            MonsterId = 798,
                             Nom = "kartana",
                             PointDeVieBase = 19,
+                            PokemonId = 798,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/798.png",
                             Type1 = "grass",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 799,
+                            MonstreId = 799,
                             DefenseBase = 6,
                             ExperienceBase = 1140,
                             ForceBase = 12,
-                            MonsterId = 799,
                             Nom = "guzzlord",
                             PointDeVieBase = 74,
+                            PokemonId = 799,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/799.png",
                             Type1 = "dark",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 800,
+                            MonstreId = 800,
                             DefenseBase = 12,
                             ExperienceBase = 1200,
                             ForceBase = 13,
-                            MonsterId = 800,
                             Nom = "necrozma",
                             PointDeVieBase = 32,
+                            PokemonId = 800,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/800.png",
                             Type1 = "psychic",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 801,
+                            MonstreId = 801,
                             DefenseBase = 14,
                             ExperienceBase = 1200,
                             ForceBase = 11,
-                            MonsterId = 801,
                             Nom = "magearna",
                             PointDeVieBase = 26,
+                            PokemonId = 801,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/801.png",
                             Type1 = "steel",
                             Type2 = "fairy"
                         },
                         new
                         {
-                            Id = 802,
+                            MonstreId = 802,
                             DefenseBase = 10,
                             ExperienceBase = 1200,
                             ForceBase = 15,
-                            MonsterId = 802,
                             Nom = "marshadow",
                             PointDeVieBase = 30,
+                            PokemonId = 802,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/802.png",
                             Type1 = "fighting",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 803,
+                            MonstreId = 803,
                             DefenseBase = 8,
                             ExperienceBase = 840,
                             ForceBase = 9,
-                            MonsterId = 803,
                             Nom = "poipole",
                             PointDeVieBase = 22,
+                            PokemonId = 803,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/803.png",
                             Type1 = "poison",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 804,
+                            MonstreId = 804,
                             DefenseBase = 9,
                             ExperienceBase = 1080,
                             ForceBase = 9,
-                            MonsterId = 804,
                             Nom = "naganadel",
                             PointDeVieBase = 24,
+                            PokemonId = 804,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/804.png",
                             Type1 = "poison",
                             Type2 = "dragon"
                         },
                         new
                         {
-                            Id = 805,
+                            MonstreId = 805,
                             DefenseBase = 26,
                             ExperienceBase = 1140,
                             ForceBase = 16,
-                            MonsterId = 805,
                             Nom = "stakataka",
                             PointDeVieBase = 20,
+                            PokemonId = 805,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/805.png",
                             Type1 = "rock",
                             Type2 = "steel"
                         },
                         new
                         {
-                            Id = 806,
+                            MonstreId = 806,
                             DefenseBase = 6,
                             ExperienceBase = 1140,
                             ForceBase = 15,
-                            MonsterId = 806,
                             Nom = "blacephalon",
                             PointDeVieBase = 17,
+                            PokemonId = 806,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/806.png",
                             Type1 = "fire",
                             Type2 = "ghost"
                         },
                         new
                         {
-                            Id = 807,
+                            MonstreId = 807,
                             DefenseBase = 9,
                             ExperienceBase = 1200,
                             ForceBase = 14,
-                            MonsterId = 807,
                             Nom = "zeraora",
                             PointDeVieBase = 29,
+                            PokemonId = 807,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/807.png",
                             Type1 = "electric",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 808,
+                            MonstreId = 808,
                             DefenseBase = 8,
                             ExperienceBase = 600,
                             ForceBase = 8,
-                            MonsterId = 808,
                             Nom = "meltan",
                             PointDeVieBase = 15,
+                            PokemonId = 808,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/808.png",
                             Type1 = "steel",
                             Type2 = ""
                         },
                         new
                         {
-                            Id = 809,
+                            MonstreId = 809,
                             DefenseBase = 17,
                             ExperienceBase = 1200,
                             ForceBase = 17,
-                            MonsterId = 809,
                             Nom = "melmetal",
                             PointDeVieBase = 45,
+                            PokemonId = 809,
                             SpriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png",
                             Type1 = "steel",
                             Type2 = ""

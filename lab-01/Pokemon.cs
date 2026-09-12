@@ -39,16 +39,22 @@ namespace lab_01
         private string? type2; // Second type du Pokémon
 
         [JsonProperty("id")]
+        public int MonsterId
+        {
+            get => pokemonId;
+            set { Id = value; }
+        }
         public int Id
         {
             get => pokemonId;
             set
             {
-                if (value == 0)
-                {
-                    pokemonId = value;
-                }
-                else throw new ArgumentException("Id can't be 0");
+                //if (value == 0)
+                //{
+                //    pokemonId = value;
+                //}
+                //else throw new ArgumentException("Id can't be 0");
+                pokemonId = value;
             }
         }
 
@@ -69,7 +75,7 @@ namespace lab_01
             set => pointDeVieBase = value;
         }
 
-        public int ConvertPv(int value)
+        public static int ConvertPv(int value)
         {
             int pv = value / 3;
             if (pv < 10)
@@ -86,7 +92,7 @@ namespace lab_01
             set => forceBase = value;
         }
 
-        public int ConvertForce(int value)
+        public static int ConvertForce(int value)
         {
             int force = value / 8;
             if (force < 5)
@@ -103,7 +109,7 @@ namespace lab_01
             set => defenseBase = value;
         }
 
-        public int ConvertDefense(int value)
+        public static int ConvertDefense(int value)
         {
             int defense = value / 8;
             if (defense < 5)
@@ -120,7 +126,7 @@ namespace lab_01
             set => experienceBase = value;
         }
 
-        public int ConvertExp(int value)
+        public static int ConvertExp(int value)
             => value < 0 ? 0 : value * 2;
 
         [JsonProperty("spriteUrl")]
@@ -164,7 +170,6 @@ namespace lab_01
         }
 
         // From PokeAPI
-
         public Pokemon(int _pokemonId, string _name,
             Dictionary<string, int> _stats, string _spriteUrl,
             string _type1, string? _type2)
@@ -200,16 +205,18 @@ namespace lab_01
             type2 = _type2;
         }
 
+
+
         public static Pokemon MissingNo()
         {
             return new Pokemon
             (
-                0,
+                -1,
                 "MissingNo.",
-                33,
-                136,
-                0,
-                33 + 136 + 0 + 1 + 1 + 29 + 6,
+                ConvertPv(33),
+                ConvertForce(136),
+                ConvertForce(0),
+                ConvertExp(33 + 136 + 0 + 1 + 1 + 29 + 6),
                 "https://www.pokepedia.fr/images/9/91/%2C_%27M_%2800%29.png",
                 "normal",
                 null
@@ -219,6 +226,7 @@ namespace lab_01
         public override string ToString()
             => JsonConvert.SerializeObject(this);
     }
+}
 
     // 1        normal     
     // 2        fighting   
@@ -240,4 +248,3 @@ namespace lab_01
     // 18       fairy      
     // 19       stellar    
     // 10001    unknown    
-}
