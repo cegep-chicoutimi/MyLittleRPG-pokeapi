@@ -5,23 +5,23 @@ using lab_01_e02_pokeapi_api.Data.Context;
 
 [Route("api/[controller]")]
 [ApiController]
-public class MonstresController : ControllerBase
+public class MonstreController : ControllerBase
 {
     private readonly PokeContext _context;
-    public MonstresController(PokeContext context)
+    public MonstreController(PokeContext context)
     {
         _context = context;
     }
 
-    // GET: api/Monstres
+    // GET: api/Monstre
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Monstre>>> GetMonstre()
     {
         return await _context.Monstres.ToListAsync();
     }
 
-    // GET: api/Monstres/5
-    [HttpGet("{id}")]
+    // GET: api/Monstre/5
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Monstre>> GetMonstre(int id)
     {
         var monstre = await _context.Monstres.FindAsync(id);
@@ -34,7 +34,7 @@ public class MonstresController : ControllerBase
         return monstre;
     }
 
-    // PUT: api/Monstres/5
+    // PUT: api/Monstre/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
     public async Task<IActionResult> PutMonstre(int? id, Monstre monstre)
@@ -65,7 +65,7 @@ public class MonstresController : ControllerBase
         return NoContent();
     }
 
-    // POST: api/Monstres
+    // POST: api/Monstre
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
     public async Task<ActionResult<Monstre>> PostMonstre(Monstre monstre)
@@ -76,7 +76,7 @@ public class MonstresController : ControllerBase
         return CreatedAtAction("GetMonstre", new { id = monstre.MonstreId }, monstre);
     }
 
-    // DELETE: api/Monstres/5
+    // DELETE: api/Monstre/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMonstre(int? id)
     {
@@ -95,5 +95,18 @@ public class MonstresController : ControllerBase
     private bool MonstreExists(int? id)
     {
         return _context.Monstres.Any(e => e.MonstreId == id);
+    }
+
+    [HttpGet("{name}")]
+    public async Task<ActionResult<Monstre>> GetMonstre(string name)
+    {
+        var monstre = await _context.Monstres.FirstOrDefaultAsync(m => m.Nom.ToLower() == name.ToLower());
+
+        if (monstre == null)
+        {
+            return NotFound();
+        }
+
+        return monstre;
     }
 }
