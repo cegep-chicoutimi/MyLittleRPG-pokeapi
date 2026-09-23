@@ -78,31 +78,6 @@ main {
     opacity: 1 !important;
 }
 
-
-#ig_game_grid .b-forest {
-    background-image: url(../Assets/Forest.png);
-}
-
-#ig_game_grid .b-mountain {
-    background-image: url(../Assets/Mountain.png);
-}
-
-#ig_game_grid .b-plains {
-    background-image: url(../Assets/Plains.png);
-}
-
-#ig_game_grid .b-river {
-    background-image: url(../Assets/River.png);
-}
-
-#ig_game_grid .b-road {
-    background-image: url(../Assets/Road.png);
-}
-
-#ig_game_grid .b-town {
-    background-image: url(../Assets/Town.png);
-}
-
 #ig_game_grid #player {
     display: block !important;
     position: absolute;
