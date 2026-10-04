@@ -1,0 +1,225 @@
+main {
+    background-color: var(--ui-light-grey) !important;
+}
+
+#ig_game_grid {
+    position: relative;
+
+    width: 48vw;
+    height: 48vw;
+    max-width: 72vh;
+    max-height: 72vh;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+
+    border-collapse: separate;
+    border: 0.5rem solid var(--ui-white);
+    border-radius: 5%;
+    border-spacing: 0;
+
+    background-color: var(--ui-black);
+
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+#ig_game_grid * {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#ig_game_grid tr {
+    height: 15%;
+}
+
+#ig_game_grid td {
+    align-items: center;
+    justify-content: center;
+
+    width: 10%;
+    border: 3px solid var(--ui-white);
+}
+
+#ig_game_grid td:hover {
+    border: 7px solid var(--ui-red);
+}
+
+#ig_game_grid .box {
+    display: flex;
+    opacity: 0;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transform: scale(102%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    z-index: 0;
+}
+
+#ig_game_grid .box * {
+    display: block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin: 0 auto;
+}
+
+#ig_game_grid .explored {
+    opacity: 1 !important;
+}
+
+#ig_game_grid #player {
+    display: block !important;
+    position: absolute;
+
+    width: 50%;
+    height: 50%;
+
+    top: 25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-image: url(../Assets/ingame/nc_320-resized_player.png);
+    text-shadow: 0 0 3px #000000;;
+
+    z-index: 10;
+}
+
+
+#ig_game_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+#ig_moving {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.ig_btn_move {
+
+    border: 4px solid var(--ui-white);
+    border-radius: 10px;
+    
+    background-color: var(--ui-red);
+    background-size: contain;
+    background-size: 100%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ig_btn_move:hover {
+    background-color: var(--ui-pink);
+}
+
+#ig_btn_move:focus {
+  box-shadow: 0 0 5px var(--ui-pink);
+}
+
+#ig_shoot {
+    -webkit-appearance: none;
+    appearance: none;
+
+    background-image : url("../Assets/cursors/resized_tile_0055.png");
+}
+
+#ig_shoot:checked {
+    background-color: var(--ui-black);
+    background-image : url("../Assets/cursors/resized_tile_0126.png");
+}
+
+
+#ig_btn_move-top
+{
+    background-image: url("../Assets/cursors/resized_tile_0070.png");
+}
+
+#ig_btn_move-bot
+{
+    background-image: url("../Assets/cursors/resized_tile_0071.png");
+}
+
+#ig_btn_move-left
+{
+    background-image: url("../Assets/cursors/resized_tile_0073.png");
+}
+
+#ig_btn_move-right
+{
+    background-image: url("../Assets/cursors/resized_tile_0072.png");
+}
+
+@media only screen and (aspect-ratio > 5.5/5) {
+	#ig_game_container {
+        flex-direction: row;
+    }
+
+    #ig_moving {
+        flex-direction: column;
+        
+        width: 12vw;
+        max-width: 18vh;
+        height: 48vw;
+        max-height: 72vh;
+
+        border-radius: 0 20px 20px 0;
+    }
+
+    .ig_btn_move {
+        width: 8vw;
+        height: 8vw;
+        aspect-ratio: 1;
+        max-width: 13vh;
+        max-height: 13vh;
+
+        margin: min(0.8vw, 1.2vh) min(1.6vw, 2.4vh);
+        padding: min(0.4vw, 0.6vh) min(0.8vw, 1.2vh);
+    }
+}
+
+@media screen and (aspect-ratio <= 5.5/5) {
+    #ig_game_container {
+        flex-direction: column;
+    }
+
+    #ig_moving {
+        flex-direction: row;
+
+        width: 64vw;
+        max-width: 96vh;
+        height: 15vw;
+        max-height: 22vh;
+
+        border-radius: 20px 0 0 20px;
+    }
+
+    .ig_btn_move {
+        width: 12vw;
+        height: 12vw;
+        aspect-ratio: 1;
+        max-width: 16vh;
+        max-height: 16vh;
+
+        margin: min(1.6vw, 2.4vh) min(0.8vw, 1.2vh);
+        padding: min(0.8vw, 1.2vh) min(0.4vw, 0.6vh);
+    }
+}
