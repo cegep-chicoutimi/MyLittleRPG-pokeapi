@@ -13,8 +13,8 @@ main {
     flex-shrink: 0;
 
     border-collapse: separate;
-    border: 10px solid var(--ui-white);
-    border-radius: 20px;
+    border: 0.5rem solid var(--ui-white);
+    border-radius: 5%;
     border-spacing: 0;
 
     background-color: var(--ui-black);

@@ -2,4 +2,5 @@
   <Project Path="lab-01-e01-json/lab-01-e01-json.csproj" />
   <Project Path="lab-01-e02-pokeapi-api/lab-01-e02-pokeapi-api.csproj" />
   <Project Path="lab-01-e03-pokeapi-api/lab-01-e03-pokeapi-api.csproj" />
+  <Project Path="lab-01-e04-pokeapi-api/lab-01-e04-pokeapi-api.csproj" />
 </Solution>
