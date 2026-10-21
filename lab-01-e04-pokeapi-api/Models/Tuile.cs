@@ -7,12 +7,12 @@ namespace lab_01_e04_pokeapi_api.Models
     public class Tuile
     {
         private static List<(int, bool, string, int)> tuilesListe = new List<(int, bool, string, int)>{
-            (0, true, "../Assets/Forest.png", 15),
-            (1, false, "../Assets/Mountain.png", 15),
-            (2, true, "../Assets/Plains.png", 20),
-            (3, false, "../Assets/River.png", 10),
-            (4, true, "../Assets/Road.png", 35),
-            (5, true, "../Assets/Town.png", 5) 
+            (0, true, "../assets/Forest.png", 15),
+            (1, false, "../assets/Mountain.png", 15),
+            (2, true, "../assets/Plains.png", 20),
+            (3, false, "../assets/River.png", 10),
+            (4, true, "../assets/Road.png", 35),
+            (5, true, "../assets/Town.png", 5) 
         };
 
 		private int posX;

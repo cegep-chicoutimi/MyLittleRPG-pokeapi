@@ -3,7 +3,7 @@ const BASE_URL = `https://localhost:7002/`;
 let NX = 5;
 let NY = 5;
 
-let liste_tuiles;
+let listeTuiles;
 
 let carteHtml = [];
 
@@ -19,13 +19,24 @@ for(var y = 0 ; y <= 50 ; y++)
 
 const caseJoueur = {y:1, x:1};
 
+let movementTop = 'jsp'
+let movementBot = 'jsp'
+let movementLeft = 'jsp'
+let movementRight = 'jsp'
+let switchShoot = 'jsp'
+
 window.onload = async function() {
 
-    liste_tuiles = await recupListeTuiles(BASE_URL);
-    initCssDepuisApi(liste_tuiles);
+    listeTuiles = await recupListeTuiles(BASE_URL);
+    initCssDepuisApi(listeTuiles);
+    console.log(listeTuiles);
     
     let colonnesHTML = document.querySelectorAll("#ig_game_grid > tbody > tr");
     NY = colonnesHTML.length;
+
+    document.onkeydown = (event) => {
+		pressKey(event);
+	};
 
     for (let y = 0 ; y < NY ; y++) {
         let lignesTML = colonnesHTML[y].querySelectorAll(".box");
@@ -38,7 +49,7 @@ window.onload = async function() {
 
             caseHTML.addEventListener("click", async function(e) {
                 await visiterUneCase(caseHTML, caseJoueur.y + y - 2, caseJoueur.x + x - 2, true);
-                // caseHTML.className = "box explored " + intToCaseType(generateNumber(liste_tuiles), liste_tuiles);
+                // caseHTML.className = "box explored " + intToCaseType(generateNumber(listeTuiles), listeTuiles);
             });
         }
         carteHtml.push(ligne);
@@ -46,35 +57,38 @@ window.onload = async function() {
     await actualiserCarte();
 
     await visiterAutourJoueur();
-    document.getElementById("ig_btn_move-top").addEventListener('click', e => {
+
+    listBtnMoveIg = document.querySelectorAll(".ig_btn_move");
+
+    listBtnMoveIg[0].addEventListener('click', e => {
         deplacerJoueur(0, -1);
     })
 
-    document.getElementById("ig_btn_move-bot").addEventListener('click', e => {
+    listBtnMoveIg[1].addEventListener('click', e => {
         deplacerJoueur(0, 1);
     })
 
-    document.getElementById("ig_btn_move-left").addEventListener('click', e => {
+    listBtnMoveIg[2].addEventListener('click', e => {
         deplacerJoueur(-1, 0);
     })
 
-    document.getElementById("ig_btn_move-right").addEventListener('click', e => {
+    listBtnMoveIg[3].addEventListener('click', e => {
         deplacerJoueur(1, 0);
     })
 
+    initLegende(listeTuiles);
 
     // for()
     // {
     //     trCarte[i].addEventListener("click", (e) => {
-    //         trCarte[i].className = "box explored " + intToCaseType(generateNumber(liste_tuiles) , liste_tuiles);
+    //         trCarte[i].className = "box explored " + intToCaseType(generateNumber(listeTuiles) , listeTuiles);
     //          console.error(i);
 
     //     });
     // }
 }
 
-async function initCssDepuisApi(liste)
-{
+async function initCssDepuisApi(liste) {
     let style = document.createElement('style');
     
     liste.forEach(tuile => {
@@ -84,13 +98,30 @@ async function initCssDepuisApi(liste)
         );
         
         style.innerHTML += 
-            '#ig_game_grid .b-' + tuile.nom +
-            '{ background-image: var(--url-image-' + tuile.nom + '); }';
+            '.b-' + tuile.nom +
+            '{ background-image: var(--url-image-' + tuile.nom + '); }\n';
     });
-    style.innerHTML += "#ig_game_grid .b-limit { background-color:var(--ui-red);}"
+    style.innerHTML += ".b-limit { background-color:var(--ui-red);}"
 
     document.head.appendChild(style);
     style = null;
+}
+
+function initLegende(liste) {
+    let legende = document.createElement('ul');
+    liste.forEach(t => {
+        var li = document.createElement('li');
+        li.className = "li-legend"
+        var img = document.createElement('div');
+        img.className = "legend-img b-" + t.nom;
+        // img.style.setProperty("height", "32px");
+        li.appendChild(img);
+        var span = document.createElement("span");
+        span.textContent = t.nom;
+        li.appendChild(span);
+        legende.appendChild(li);
+    });
+    document.getElementById("side-tile-list").appendChild(legende);
 }
 
 async function recupListeTuiles(siteUrl) {
@@ -156,7 +187,7 @@ async function visiterUneCase(carreHTML, y, x, clique=false)
         }
 
         if (tuile != null) {
-            var typeTuile = liste_tuiles.find(t =>
+            var typeTuile = listeTuiles.find(t =>
                 t.type == tuile.type
             );
             ajouteText = typeTuile.nom;
@@ -188,4 +219,28 @@ async function actualiserCarte(){
     //         await visiterUneCase(carteHtml[y - caseJoueur.y + 2][x - caseJoueur.x + 2], x, y);
     //     }
     // }
+}
+
+function pressKey(event)
+{
+    if(event.key === 'ArrowUp' || event.key === movementTop)
+    {
+        event.preventDefault();
+        listBtnMoveIg[0].click();
+    }
+    else if(event.key === 'ArrowDown' || event.key === movementBot)
+    {
+        event.preventDefault();
+        listBtnMoveIg[1].click();
+    }
+    else if(event.key === 'ArrowLeft' || event.key === movementLeft)
+    {
+        event.preventDefault();
+        listBtnMoveIg[2].click();
+    }
+    else if(event.key === 'ArrowRight' || event.key === movementRight)
+    {
+        event.preventDefault();
+        listBtnMoveIg[3].click();
+    }
 }

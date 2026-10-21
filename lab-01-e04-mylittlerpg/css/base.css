@@ -9,7 +9,6 @@
 	--ui-light-yellow : #ffee9b;
 	--ui-pink : #ff9999;
 	--ui-red : #FF6B6B;
-
 }
 
 /* FONTS */
@@ -40,6 +39,7 @@
     margin: 0;
     font-weight: normal;
     box-sizing: border-box;
+    image-rendering: pixelated;
 }
 
 html, body {
@@ -212,4 +212,4 @@ footer {
     .main-sidebar {
         flex-direction: column;
     }
-} 
+}

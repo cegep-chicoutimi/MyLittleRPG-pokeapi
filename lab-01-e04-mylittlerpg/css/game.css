@@ -2,6 +2,21 @@ main {
     background-color: var(--ui-light-grey) !important;
 }
 
+.li-legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.legend-img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    margin: 5px;
+}
+
 #ig_game_grid {
     position: relative;
 
@@ -82,16 +97,16 @@ main {
     display: block !important;
     position: absolute;
 
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
 
-    top: 25%;
+    top: 12.5%;
     left: 0;
     bottom: 0;
     right: 0;
 
-    background-image: url(../Assets/ingame/nc_320-resized_player.png);
-    text-shadow: 0 0 3px #000000;;
+    background-image: url(../assets/Hero.png);
+    text-shadow: 0 0 3px #000000;
 
     z-index: 10;
 }
@@ -167,6 +182,8 @@ main {
 {
     background-image: url("../Assets/cursors/resized_tile_0072.png");
 }
+
+
 
 @media only screen and (aspect-ratio > 5.5/5) {
 	#ig_game_container {
