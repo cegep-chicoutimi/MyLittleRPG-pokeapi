@@ -3,15 +3,17 @@ const BASE_URL = `https://localhost:7002/`;
 let NX = 5;
 let NY = 5;
 
-let listeTuiles;
+let listeTuiles = null;
 
 let carteHtml = [];
 
-const carte = new Array(51);
-for(var y = 0 ; y <= 50 ; y++)
+const sizeMap = {x:50, y:50};
+
+const carte = new Array(sizeMap.y + 1);
+for(var y = 0 ; y <= sizeMap.y ; y++)
 {
-    carte[y] = new Array(50);
-    for(var x = 0 ; x <= 50 ; x++)
+    carte[y] = new Array(sizeMap.x + 1);
+    for(var x = 0 ; x <= sizeMap.x ; x++)
     {
         carte[y][x] = 0;
     }
@@ -27,9 +29,15 @@ let switchShoot = 'jsp'
 
 window.onload = async function() {
 
-    listeTuiles = await recupListeTuiles(BASE_URL);
-    initCssDepuisApi(listeTuiles);
-    console.log(listeTuiles);
+    try 
+    {
+        listeTuiles = await recupListeTuiles(BASE_URL);
+        initCssDepuisApi(listeTuiles);
+        console.log(listeTuiles);
+    }
+    catch(error) {
+        listeTuiles = null;
+    }
     
     let colonnesHTML = document.querySelectorAll("#ig_game_grid > tbody > tr");
     NY = colonnesHTML.length;
@@ -54,27 +62,29 @@ window.onload = async function() {
         }
         carteHtml.push(ligne);
     }
-    await actualiserCarte();
+    await actualiserCarte(caseJoueur);
 
-    await visiterAutourJoueur();
+    await visiterAutourJoueur(caseJoueur);
 
     listBtnMoveIg = document.querySelectorAll(".ig_btn_move");
 
     listBtnMoveIg[0].addEventListener('click', e => {
-        deplacerJoueur(0, -1);
+        deplacerJoueur(carte, caseJoueur, 0, -1);
     })
 
     listBtnMoveIg[1].addEventListener('click', e => {
-        deplacerJoueur(0, 1);
+        deplacerJoueur(carte, caseJoueur, 0, 1);
     })
 
     listBtnMoveIg[2].addEventListener('click', e => {
-        deplacerJoueur(-1, 0);
+        deplacerJoueur(carte, caseJoueur, -1, 0);
     })
 
     listBtnMoveIg[3].addEventListener('click', e => {
-        deplacerJoueur(1, 0);
+        deplacerJoueur(carte, caseJoueur, 1, 0);
     })
+
+    document.addEventListener("keypress", e => {pressKey(e, listBtnMoveIg);});
 
     initLegende(listeTuiles);
 
@@ -88,19 +98,50 @@ window.onload = async function() {
     // }
 }
 
+function pressKey(event, listMoveBtn)
+{
+    if(event.key === 'ArrowUp' || event.key === movementTop)
+    {
+        event.preventDefault();
+        listMoveBtn[0].click();
+    }
+    else if(event.key === 'ArrowDown' || event.key === movementBot)
+    {
+        event.preventDefault();
+        listMoveBtn[1].click();
+    }
+    else if(event.key === 'ArrowLeft' || event.key === movementLeft)
+    {
+        event.preventDefault();
+        listMoveBtn[2].click();
+    }
+    else if(event.key === 'ArrowRight' || event.key === movementRight)
+    {
+        event.preventDefault();
+        listMoveBtn[3].click();
+    }
+    // else if(event.key === 'CapsLock' || event.key === movementRight)
+    // {
+    //     event.preventDefault();
+    //     listMoveBtn[2].click();
+    // }
+}
+
+
 async function initCssDepuisApi(liste) {
     let style = document.createElement('style');
-    
-    liste.forEach(tuile => {
-        document.documentElement.style.setProperty(
-            '--url-image-' + tuile.nom ,
-            'url('+ tuile.url +')'
-        );
-        
-        style.innerHTML += 
-            '.b-' + tuile.nom +
-            '{ background-image: var(--url-image-' + tuile.nom + '); }\n';
-    });
+    if(liste != null) {
+        liste.forEach(tuile => {
+            document.documentElement.style.setProperty(
+                '--url-image-' + tuile.nom ,
+                'url('+ tuile.url +')'
+            );
+            
+            style.innerHTML += 
+                '.b-' + tuile.nom +
+                '{ background-image: var(--url-image-' + tuile.nom + '); }\n';
+        });
+    }
     style.innerHTML += ".b-limit { background-color:var(--ui-red);}"
 
     document.head.appendChild(style);
@@ -109,18 +150,20 @@ async function initCssDepuisApi(liste) {
 
 function initLegende(liste) {
     let legende = document.createElement('ul');
-    liste.forEach(t => {
-        var li = document.createElement('li');
-        li.className = "li-legend"
-        var img = document.createElement('div');
-        img.className = "legend-img b-" + t.nom;
-        // img.style.setProperty("height", "32px");
-        li.appendChild(img);
-        var span = document.createElement("span");
-        span.textContent = t.nom;
-        li.appendChild(span);
-        legende.appendChild(li);
-    });
+    if(liste != null) {
+        liste.forEach(t => {
+            var li = document.createElement('li');
+            li.className = "li-legend"
+            var img = document.createElement('div');
+            img.className = "legend-img b-" + t.nom;
+            // img.style.setProperty("height", "32px");
+            li.appendChild(img);
+            var span = document.createElement("span");
+            span.textContent = t.nom;
+            li.appendChild(span);
+            legende.appendChild(li);
+        });
+    }
     document.getElementById("side-tile-list").appendChild(legende);
 }
 
@@ -137,13 +180,14 @@ async function recupListeTuiles(siteUrl) {
         return tuiles;
 
     } catch (error) {
-        console.error('Erreur lors du chargement:', error);
+        // console.error('Erreur lors du chargement:', error);
     }
 }
 
 async function avoirTuile(siteUrl, x, y) {
     try {
         var url = siteUrl + `api/Tuile/`+(x+1)+`/`+(y+1);
+        console.log(url);
         let response = await fetch(url);
         
         if (!response.ok) {
@@ -154,23 +198,23 @@ async function avoirTuile(siteUrl, x, y) {
         return tuile;
         
     } catch (error) {
-        console.error('Erreur lors du chargement:', error);
+        // console.error('Erreur lors du chargement:', error);
     }
 }
 
-async function visiterAutourJoueur()
+async function visiterAutourJoueur(joueur)
 {
-    for (let y = caseJoueur.y - 1 ; y < caseJoueur.y + 2 ; y++) {
-        for (let x = caseJoueur.x - 1 ; x < caseJoueur.x + 2 ; x++) {
-            // console.log((y - caseJoueur.y + 2) + " | " + (x - caseJoueur.x + 2))
-            await visiterUneCase(carteHtml[y - caseJoueur.y + 2][x - caseJoueur.x + 2], y, x, true);
+    for (let y = joueur.y - 1 ; y < joueur.y + 2 ; y++) {
+        for (let x = joueur.x - 1 ; x < joueur.x + 2 ; x++) {
+            // console.log((y - joueur.y + 2) + " | " + (x - joueur.x + 2))
+            await visiterUneCase(carteHtml[y - joueur.y + 2][x - joueur.x + 2], y, x, true);
         }
     }
 }
 
 async function visiterUneCase(carreHTML, y, x, clique=false)
 {
-    if(x < 0 || y < 0  || x > 50 || y > 50) {
+    if( estHorsMap(y, x) || listeTuiles == null) {
         carreHTML.className = "box explored b-limit";
     }
     else {
@@ -196,23 +240,33 @@ async function visiterUneCase(carreHTML, y, x, clique=false)
     }
 }
 
-async function deplacerJoueur(depX, depY) {
+function estHorsMap(x, y) {
+    return x < 0 || y < 0  || x > sizeMap.x || y > sizeMap.y;
+}
+
+async function deplacerJoueur(carteJeu, joueur, depX, depY) {
     if ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1) ) {
-        caseJoueur.x += depX;
-        caseJoueur.y += depY;
-        // console.error("JOUEUR : " + caseJoueur.y + " | " + caseJoueur.x);
-        await actualiserCarte();
+        var postDeplX = joueur.x + depX;
+        var postDeplY = joueur.y + depY;
+
+        if (!estHorsMap(postDeplX, postDeplY) && carteJeu[postDeplY][postDeplX].estTraversable) {
+            joueur.x = postDeplX;
+            joueur.y = postDeplY;
+            console.log(joueur)
+            // console.error("JOUEUR : " + caseJoueur.y + " | " + caseJoueur.x);
+            await actualiserCarte(joueur);
+        }
     }
 }
 
-async function actualiserCarte(){
-    for (let y = caseJoueur.y - 2 ; y < caseJoueur.y + 3 ; y++) {
-        for (let x = caseJoueur.x - 2 ; x < caseJoueur.x + 3 ; x++) {
-            // console.log((y - caseJoueur.y + 2) + " | " + (x - caseJoueur.x + 2))
-            await visiterUneCase(carteHtml[y - caseJoueur.y + 2][x - caseJoueur.x + 2], y, x);
+async function actualiserCarte(joueur){
+    for (let y = joueur.y - 2 ; y < joueur.y + 3 ; y++) {
+        for (let x = joueur.x - 2 ; x < joueur.x + 3 ; x++) {
+            // console.log((y - joueur.y + 2) + " | " + (x - joueur.x + 2))
+            await visiterUneCase(carteHtml[y - joueur.y + 2][x - joueur.x + 2], y, x);
         }
     }
-    await visiterAutourJoueur();
+    await visiterAutourJoueur(joueur);
 
     // for (let y = caseJoueur.y - 2 ; y < caseJoueur.y + NY - 2 ; y++) {
     //     for (let x = caseJoueur.x - 2 ; x < caseJoueur.x + NX - 2 ; x++) {
