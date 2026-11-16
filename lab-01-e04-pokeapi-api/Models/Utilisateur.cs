@@ -6,15 +6,17 @@ namespace lab_01_e04_pokeapi_api.Models
 {
     public class Utilisateur
     {
-        private int idUtilisateur;
+        private string idUtilisateur;
         private string email = "";
         private string motDePasse = "";
         private string pseudo = "";
         private DateTime dateInscription;
 
+        private List<Personnage> personnages = new List<Personnage>();
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdUtilisateur
+        public string IdUtilisateur
         {
             get => idUtilisateur;
             set { idUtilisateur = value; }
@@ -53,10 +55,17 @@ namespace lab_01_e04_pokeapi_api.Models
             set => dateInscription = value;
         }
 
+        public List<Personnage> Personnages 
+        {
+            get => personnages;
+            set => personnages = value;
+        }
+
         public Utilisateur() { }
 
         public Utilisateur(string _email, string _motDePasse, string _pseudo)
         {
+            IdUtilisateur = Guid.NewGuid().ToString();
             Email = _email;
             MotDePasse = _motDePasse;
             Pseudo = _pseudo;
@@ -64,14 +73,15 @@ namespace lab_01_e04_pokeapi_api.Models
         }
 
         // From Json
-        private Utilisateur(int _idUtilisateur, string _email,
-            string _motDePasse, string _pseudo, DateTime _dateInscription)
+        private Utilisateur(string _idUtilisateur, string _email,
+            string _motDePasse, string _pseudo, DateTime _dateInscription, List<Personnage> _personnages)
         {
             idUtilisateur = _idUtilisateur;
             email = _email;
             motDePasse = _motDePasse;
             pseudo = _pseudo;
             dateInscription = _dateInscription;
+            personnages = _personnages;
         }
 
         public override string ToString()

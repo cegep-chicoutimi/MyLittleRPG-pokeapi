@@ -20,21 +20,54 @@ public class TuileController : ControllerBase
         return await _context.Tuiles.ToListAsync();
     }
 
-    // GET: api/Tuile/10/10
+
+    private static bool DansChampDeVision(int persoX, int persoY, int x, int y)
+        => Math.Abs(x - persoX) <= Personnage.VISION && Math.Abs(y - persoY) <= Personnage.VISION;
+
+    // GET: api/Tuile/100/10/10
+    [HttpGet("{idPersonnage:int}/{x:int}/{y:int}")]
+    public async Task<ActionResult<Tuile>> AvoirTuile(int idPersonnage, int x, int y)
+    {
+        string? idUser = HttpContext.Session.GetString("SessionConnexion");
+        if (idUser != null)
+        {
+            Personnage? personnage = await _context.Personnages.Include(p => p.UtilisateurId).FirstOrDefaultAsync(p => p.IdPersonnage == idPersonnage);
+
+            if (personnage != null && personnage.UtilisateurId.IdUtilisateur == idUser)
+            {
+                if (DansChampDeVision(personnage.PositionX, personnage.PositionY, x, y))
+                {
+                    return await RecupTuileContext(x, y);
+                }
+            }
+        }
+        return BadRequest();
+    }
+
     [HttpGet("{x:int}/{y:int}")]
-    public async Task<ActionResult<Tuile>> AvoirTuile(int x, int y)
+    public async Task<ActionResult<Tuile>> AvoirTuileHorsConnexion(int x, int y) 
+        => await RecupTuileContext(x, y);
+
+
+    private async Task<ActionResult<Tuile>> RecupTuileContext(int x, int y)
     {
         try
         {
             var tuile = await _context.Tuiles.FindAsync(x, y);
 
-            if (tuile == null)
+            while (tuile == null)
             {
                 tuile = new Tuile(x, y, Tuile.GenererTuile());
-                _context.Tuiles.Add(tuile);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    _context.Tuiles.Add(tuile);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateException)
+                {
+                    tuile = await _context.Tuiles.FindAsync(x, y);
+                }
             }
-
             return tuile;
         }
         catch (ArgumentOutOfRangeException)

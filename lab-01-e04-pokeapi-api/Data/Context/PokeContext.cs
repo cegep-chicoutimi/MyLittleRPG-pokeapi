@@ -9,6 +9,8 @@ namespace lab_01_e04_pokeapi_api.Data.Context
     {
         public DbSet<Monstre> Monstres { get; set; }
         public DbSet<Tuile> Tuiles { get; set; }
+        public DbSet<Personnage> Personnages { get; set; }
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
 
         public PokeContext(DbContextOptions<PokeContext> options) : base(options) { }
 

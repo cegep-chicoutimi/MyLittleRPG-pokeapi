@@ -33,8 +33,20 @@ namespace lab_01_e04_pokeapi_api
                         return (uri.Host == "127.0.0.1" || uri.Host == "localhost");
                     })
                     .AllowAnyHeader()
-                    .AllowAnyMethod();
+                    .AllowAnyMethod()
+                    .AllowCredentials(); // car api
                 });
+            });
+
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                options.Cookie.SameSite = SameSiteMode.None; // car api
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // car api
             });
 
             var app = builder.Build();
@@ -50,6 +62,8 @@ namespace lab_01_e04_pokeapi_api
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseCors("AllowFrontend"); // pour liveserver
 

@@ -17,14 +17,14 @@ namespace lab_01_e04_pokeapi_api.Models
         {
             get 
             {
-                List<TuileJS> liste = new List<TuileJS>();
+                List<TuileJS> list = new List<TuileJS>();
                 foreach(var tuile in Tuile.ToutesTuiles)
                 {
-                    liste.Add(new TuileJS(
+                    list.Add(new TuileJS(
                         tuile.Item1, tuile.Item2, tuile.Item3, Path.GetFileNameWithoutExtension(tuile.Item3)
                         ));  
                 }
-                return liste;
+                return list;
             }
         }
 

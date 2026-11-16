@@ -1,10 +1,10 @@
 :root {
 	--ui-black : #292F36;
-    --ui-grey : #6d7176;
-    --ui-light-grey : #9b9fa0;
-    --ui-white : #F7FFF7;
-    --ui-bue : #4ECDC4;
-    --ui-light-blue : #91e0da;
+  --ui-grey : #6d7176;
+  --ui-light-grey : #9b9fa0;
+  --ui-white : #F7FFF7;
+  --ui-bue : #4ECDC4;
+  --ui-light-blue : #91e0da;
 	--ui-yellow : #FFE66D;
 	--ui-light-yellow : #ffee9b;
 	--ui-pink : #ff9999;
@@ -12,34 +12,38 @@
 }
 
 /* FONTS */
-@font-face {
+/* @font-face {
 	font-family: basic;
 	src: url('../assets/fonts/xlmonoalt.ttf');
-    color: var(--ui-black);
+  color: var(--ui-black);
 }
 
 @font-face {
 	font-family: titles;
 	src: url('../assets/fonts/night_wolf.ttf');
-}
-
-@font-face {
-	font-family: main-title;
-	src: url('../assets/fonts/funky_star.ttf');
-}
-
-@font-face /* Police rétro */
-{
-	font-family: retro;
-	src : url('../assets/fonts/PressStart2P-Regular.ttf')
-}
+} */
 
 * {
-    padding: 0;
-    margin: 0;
-    font-weight: normal;
-    box-sizing: border-box;
-    image-rendering: pixelated;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+.dflex-row {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.dflex-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.dflex-center {
+  align-items: center;
+  justify-content: center;
 }
 
 html, body {
@@ -49,7 +53,7 @@ html, body {
 }
 
 h1 {
-    font-family: main-title;
+  font-family: main-title;
 	font-size: 50px;
 }
 
@@ -59,20 +63,20 @@ a {
 
 .content {
 	display: flex;
-    flex-direction: column;
+  flex-direction: column;
 
 	position: relative;
 
 	width: 100%;
 	min-height: 100vh;
 
-    background-color: var(--ui-yellow);
+  background-color: var(--ui-white);
 }
 
 
 header {
 	display: flex;
-    align-content: center;
+  align-content: center;
 	flex-wrap: wrap;
 
 	position: relative;
@@ -81,7 +85,7 @@ header {
 
 	background-color: var(--ui-black);
 
-    color: var(--ui-white);
+  color: var(--ui-white);
 }
 
 header h1 {
@@ -96,14 +100,14 @@ header hr {
 
 header>div {
 	display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
 
-    width: 70%;
-    height: 85%;
-    max-height: 500px;
+  width: 70%;
+  height: 85%;
+  max-height: 500px;
 
-    margin: 5px auto;
+  margin: 5px auto;
 
 	border-collapse: collapse;
 }
@@ -113,58 +117,65 @@ header div a {
 	justify-content: center;
 	align-items: center;
 
-    min-width: fit-content;
-    width: 30%;
-    height: 8%;
+  min-width: fit-content;
+  width: 30%;
+  height: 8%;
 
-    margin: 20px 0;
+  margin: 20px 0;
 
 	text-align: center;
 	font-family: titles;
 	font-size: 2.5rem;
 
-    transition: transform 50ms;
+  transition: transform 50ms;
 }
 
 .head_here, header div a:hover {
-    color: var(--ui-red);
-    transform: scale(1.1);
-    font-weight: 500;
+  color: var(--ui-red);
+  transform: scale(1.1);
+  font-weight: 500;
 }
 
-.main-sidebar {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+#main-sidebar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
 	position: relative;
 
-    width: 100%;
-    height: 100%;
-    flex: 1;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+#main-sidebar>span {
+  font-size: 5rem;
+  align-self: center;
+  font-weight: 800;
+  color: var(--ui-red);
 }
 
 main {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 	align-self: stretch;
 
 	position: relative;
 
-    width: 70%;
-    min-height: 80%;
+  width: 70%;
+  min-height: 80%;
 
-    margin: 15px auto;
-    padding: 30px;
+  margin: 15px auto;
+  padding: 30px;
 }
 
 .sidebar {
-    width: 20%;
-    min-height: 100%;
+  width: 20%;
+  min-height: 100%;
 
-    background-color: var(--ui-grey);
+  background-color: var(--ui-grey);
 
-    padding: 10px;
+  padding: 10px;
 }
 
 footer {
@@ -209,7 +220,11 @@ footer {
 		flex-grow: 1;
 	}
 
-    .main-sidebar {
-        flex-direction: column;
-    }
+  #main-sidebar {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
 }

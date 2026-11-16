@@ -6,6 +6,7 @@ namespace lab_01_e04_pokeapi_api.Models
 {
     public class Personnage
     {
+        public const int VISION = 2;
         private int idPersonnage;
         private string nom = "";
         private int niveau;
@@ -89,8 +90,19 @@ namespace lab_01_e04_pokeapi_api.Models
             set => dateCreation = value;
         }
 
-        public Personnage()
+        public Personnage() { }
+        public Personnage(string _nom, Utilisateur user) 
         {
+            Nom = _nom;
+            Niveau = 1;
+            PointDeVieMax = 10;
+            PointsDeVie = 10;
+            Force = 5;
+            Defense = 5;
+            PositionX = 1;
+            PositionY = 1;
+            UtilisateurId = user;
+            DateCreation = DateTime.UtcNow;
         }
 
         public Personnage(string _nom, int _niveau, int _pointDeVieMax,

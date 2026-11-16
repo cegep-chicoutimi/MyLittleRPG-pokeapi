@@ -1,300 +1,294 @@
 const BASE_URL = `https://localhost:7002/`;
 
+let CONNECTED = 0;
+
 let NX = 5;
 let NY = 5;
+const CENTER_X = Math.floor(NX / 2);
+const CENTER_Y = Math.floor(NY / 2);
+const sizeMap = {x:49, y:49};
 
-let listeTuiles = null;
+const PLAYER_VIEW = 1;
+const playerPosition = {y:0, x:0};
 
-let carteHtml = [];
 
-const sizeMap = {x:50, y:50};
+let tileList = null;
+let playableChar = null;
 
-const carte = new Array(sizeMap.y + 1);
+let mapHtml = [];
+
+
+let mapJS = new Array(sizeMap.y + 1);
 for(var y = 0 ; y <= sizeMap.y ; y++)
 {
-    carte[y] = new Array(sizeMap.x + 1);
-    for(var x = 0 ; x <= sizeMap.x ; x++)
-    {
-        carte[y][x] = 0;
-    }
+  mapJS[y] = new Array(sizeMap.x + 1);
+  for(var x = 0 ; x <= sizeMap.x ; x++)
+  {
+    mapJS[y][x] = 0;
+  }
 }
 
-const caseJoueur = {y:1, x:1};
+let moveTop = 'jsp'
+let moveBot = 'jsp'
+let moveLeft = 'jsp'
+let moveRight = 'jsp'
 
-let movementTop = 'jsp'
-let movementBot = 'jsp'
-let movementLeft = 'jsp'
-let movementRight = 'jsp'
-let switchShoot = 'jsp'
+window.onpagehide = () => {
+  if(CONNECTED != 0) localStorage.setItem('map', JSON.stringify(mapJS));
+}
 
 window.onload = async function() {
+  var jsonLocalStorage = JSON.parse(localStorage.getItem('map') ?? 'null');
+  mapJS = jsonLocalStorage ?? mapJS;
 
-    try 
+  
+  try {
+    CONNECTED = await isConnected(BASE_URL);
+    if(CONNECTED === 0)
     {
-        listeTuiles = await recupListeTuiles(BASE_URL);
-        initCssDepuisApi(listeTuiles);
-        console.log(listeTuiles);
+      await partialView("partial/select-login.html", document.getElementById("main-sidebar"));
     }
-    catch(error) {
-        listeTuiles = null;
+    else if (CONNECTED === 1)
+    {
+      playableChar = await getActualCharacter(BASE_URL);
+      // console.log(playableChar);
+      await initGame();
+      playerPosition.x = playableChar.positionX -1;
+      playerPosition.y = playableChar.positionY -1;
+      await refreshMap(BASE_URL, playerPosition, mapHtml, mapJS);
+      await goAroundPlayer(BASE_URL, playerPosition, mapHtml, mapJS);
+      drawWindow(mapJS, mapHtml, playerPosition);
     }
+  }
+  catch {
+    serverIsDown();
+  }
+      
+  if(tileList != null) {
     
-    let colonnesHTML = document.querySelectorAll("#ig_game_grid > tbody > tr");
-    NY = colonnesHTML.length;
 
-    document.onkeydown = (event) => {
-		pressKey(event);
-	};
+    // let colonnesHTML = document.querySelectorAll("#ig_game_grid > tbody > tr");
+    // NY = colonnesHTML.length;
 
-    for (let y = 0 ; y < NY ; y++) {
-        let lignesTML = colonnesHTML[y].querySelectorAll(".box");
-        NX = lignesTML.length;
-        let ligne = [];
+    // for (let y = 0 ; y < NY ; y++) {
+    //   let lignesTML = colonnesHTML[y].querySelectorAll(".box");
+    //   NX = lignesTML.length;
+    //   let ligne = [];
 
-        for (let x = 0 ; x < NX ; x++) {
-            let caseHTML = lignesTML[x];
-            ligne.push(caseHTML);
+    //   for (let x = 0 ; x < NX ; x++) {
+    //     let caseHTML = lignesTML[x];
+    //     ligne.push(caseHTML);
 
-            caseHTML.addEventListener("click", async function(e) {
-                await visiterUneCase(caseHTML, caseJoueur.y + y - 2, caseJoueur.x + x - 2, true);
-                // caseHTML.className = "box explored " + intToCaseType(generateNumber(listeTuiles), listeTuiles);
-            });
-        }
-        carteHtml.push(ligne);
-    }
-    await actualiserCarte(caseJoueur);
-
-    await visiterAutourJoueur(caseJoueur);
-
-    listBtnMoveIg = document.querySelectorAll(".ig_btn_move");
-
-    listBtnMoveIg[0].addEventListener('click', e => {
-        deplacerJoueur(carte, caseJoueur, 0, -1);
-    })
-
-    listBtnMoveIg[1].addEventListener('click', e => {
-        deplacerJoueur(carte, caseJoueur, 0, 1);
-    })
-
-    listBtnMoveIg[2].addEventListener('click', e => {
-        deplacerJoueur(carte, caseJoueur, -1, 0);
-    })
-
-    listBtnMoveIg[3].addEventListener('click', e => {
-        deplacerJoueur(carte, caseJoueur, 1, 0);
-    })
-
-    document.addEventListener("keypress", e => {pressKey(e, listBtnMoveIg);});
-
-    initLegende(listeTuiles);
-
-    // for()
-    // {
-    //     trCarte[i].addEventListener("click", (e) => {
-    //         trCarte[i].className = "box explored " + intToCaseType(generateNumber(listeTuiles) , listeTuiles);
-    //          console.error(i);
-
+    //     caseHTML.addEventListener("click", async function(e) {
+    //       await visiterUneCase(caseHTML, playerPosition.y + y - 2, playerPosition.x + x - 2, BASE_URL, true);
     //     });
+    //   }
+    //   mapHtml.push(ligne);
     // }
+  }
+}
+
+async function partialView(url, toEdit) {
+  var response = await fetch(url);
+  if (!response.ok) {
+    console.error("Contenu inchargeable");
+  }
+  toEdit.innerHTML = await response.text();
 }
 
 function pressKey(event, listMoveBtn)
 {
-    if(event.key === 'ArrowUp' || event.key === movementTop)
-    {
-        event.preventDefault();
-        listMoveBtn[0].click();
-    }
-    else if(event.key === 'ArrowDown' || event.key === movementBot)
-    {
-        event.preventDefault();
-        listMoveBtn[1].click();
-    }
-    else if(event.key === 'ArrowLeft' || event.key === movementLeft)
-    {
-        event.preventDefault();
-        listMoveBtn[2].click();
-    }
-    else if(event.key === 'ArrowRight' || event.key === movementRight)
-    {
-        event.preventDefault();
-        listMoveBtn[3].click();
-    }
-    // else if(event.key === 'CapsLock' || event.key === movementRight)
-    // {
-    //     event.preventDefault();
-    //     listMoveBtn[2].click();
-    // }
+  if(event.key === 'ArrowUp' || event.key === moveTop)
+  {
+    event.preventDefault();
+    listMoveBtn[0].click();
+  }
+  else if(event.key === 'ArrowDown' || event.key === moveBot)
+  {
+    event.preventDefault();
+    listMoveBtn[1].click();
+  }
+  else if(event.key === 'ArrowLeft' || event.key === moveLeft)
+  {
+    event.preventDefault();
+    listMoveBtn[2].click();
+  }
+  else if(event.key === 'ArrowRight' || event.key === moveRight)
+  {
+    event.preventDefault();
+    listMoveBtn[3].click();
+  }
+  // else if(event.key === 'CapsLock' || event.key === moveRight)
+  // {
+  //   event.preventDefault();
+  //   listMoveBtn[2].click();
+  // }
 }
 
+async function initCssFromApi(list) {
+  let style = document.createElement('style');
+  let styleRoot = document.createElement('style');
+  if(list != null) {
+    styleRoot.innerHTML = ":root {\n";
+    list.forEach(tuile => {
+      styleRoot.innerHTML += `--url-image-${tuile.nom} : url(${tuile.url});\n`
+      style.innerHTML +=
+        `.b-${tuile.nom}
+        { background-image: var(--url-image-${tuile.nom}); }\n`;
+    });
+  }
+  style.innerHTML += ".b-limit { background-color:var(--ui-red);}";
+  styleRoot.innerHTML += "}";
+  document.head.appendChild(styleRoot);
+  document.head.appendChild(style);
+  style = null;
+}
 
-async function initCssDepuisApi(liste) {
-    let style = document.createElement('style');
-    if(liste != null) {
-        liste.forEach(tuile => {
-            document.documentElement.style.setProperty(
-                '--url-image-' + tuile.nom ,
-                'url('+ tuile.url +')'
-            );
-            
-            style.innerHTML += 
-                '.b-' + tuile.nom +
-                '{ background-image: var(--url-image-' + tuile.nom + '); }\n';
+function initLegend(list) {
+  let legend = document.createElement('ul');
+  legend.className = "legend-tile-list"
+  var h2 = document.createElement('h2');
+  h2.textContent = "Tuiles :"
+  if(list != null) {
+    list.forEach(t => {
+      // console.log(t);
+      var li = document.createElement('li');
+      li.className = "li-legend"
+      var img = document.createElement('div');
+      img.className = "legend-img b-" + t.nom;
+      li.appendChild(img);
+
+      var ulDetail = document.createElement('ul');
+      var liTitle = document.createElement("span");
+      liTitle.textContent = t.nom;
+      ulDetail.appendChild(liTitle);
+
+      var liToward = document.createElement('li');
+      var liText;
+      if(t.estTraversable) {
+        liText = "Case traversable";
+      }
+      else {
+        liText = "Case non traversable";
+      }
+      liToward.textContent = liText;
+      ulDetail.appendChild(liToward);
+
+      li.appendChild(ulDetail);
+      legend.appendChild(li);
+    });
+  }
+  document.getElementById("side-tile-list").appendChild(h2);
+  document.getElementById("side-tile-list").appendChild(legend);
+}
+
+async function initGame() {
+  tileList = await getTileList(BASE_URL);
+  initCssFromApi(tileList);
+
+  await partialView("partial/game.html", document.getElementById("main-sidebar"));
+  var gridHtml = document.getElementById("ig_game_grid");
+
+  for(let y = 0 ; y < NY ; y++) {
+    let tr = document.createElement("tr");
+    let line = [];
+    for (let x = 0 ; x < NX ; x++) {
+      let td = document.createElement("td");
+      let div = document.createElement("div");
+      div.className = "box";
+      td.appendChild(div);
+      // if (CONNECTED === 1){
+      // }
+      // else
+      if (CONNECTED === -1 || CONNECTED === 1) {
+        td.addEventListener("click", async function(e) {
+          await goToOneTile(mapJS, div, playerPosition.y + y - CENTER_Y, playerPosition.x + x - CENTER_X, BASE_URL, true);
         });
-    }
-    style.innerHTML += ".b-limit { background-color:var(--ui-red);}"
+      }
 
-    document.head.appendChild(style);
-    style = null;
+      line.push(div);
+      tr.appendChild(td);
+    }
+    mapHtml.push(line);
+    gridHtml.appendChild(tr);
+  }
+  var divPlayer = document.createElement("div");
+  divPlayer.id = "player";
+  mapHtml[CENTER_Y][CENTER_X].appendChild(divPlayer);
+
+  listBtnMoveIg = document.querySelectorAll(".ig_btn_move");
+
+  
+  if (CONNECTED === 1) {
+    listBtnMoveIg[0].addEventListener('click', e => {
+      moveCharacter(mapJS, mapHtml, playableChar, playerPosition, -1, 0, BASE_URL);
+    })
+
+    listBtnMoveIg[1].addEventListener('click', e => {
+      moveCharacter(mapJS, mapHtml, playableChar, playerPosition, 1, 0, BASE_URL);
+    })
+
+    listBtnMoveIg[2].addEventListener('click', e => {
+      moveCharacter(mapJS, mapHtml, playableChar, playerPosition, 0, -1, BASE_URL);
+    })
+
+    listBtnMoveIg[3].addEventListener('click', e => {
+      moveCharacter(mapJS, mapHtml, playableChar, playerPosition, 0, 1, BASE_URL);
+    })
+  }
+
+
+  else if (CONNECTED === -1) {
+    listBtnMoveIg[0].addEventListener('click', e => {
+      movePlayer(mapJS, mapHtml, playerPosition, -1, 0, BASE_URL);
+    })
+
+    listBtnMoveIg[1].addEventListener('click', e => {
+      movePlayer(mapJS, mapHtml, playerPosition, 1, 0, BASE_URL);
+    })
+
+    listBtnMoveIg[2].addEventListener('click', e => {
+      movePlayer(mapJS, mapHtml, playerPosition, 0, -1, BASE_URL);
+    })
+
+    listBtnMoveIg[3].addEventListener('click', e => {
+      movePlayer(mapJS, mapHtml, playerPosition, 0, 1, BASE_URL);
+    })
+  }
+
+  document.addEventListener("keydown", e => {pressKey(e, listBtnMoveIg);});
+
+  initLegend(tileList);
 }
 
-function initLegende(liste) {
-    let legende = document.createElement('ul');
-    if(liste != null) {
-        liste.forEach(t => {
-            var li = document.createElement('li');
-            li.className = "li-legend"
-            var img = document.createElement('div');
-            img.className = "legend-img b-" + t.nom;
-            // img.style.setProperty("height", "32px");
-            li.appendChild(img);
-            var span = document.createElement("span");
-            span.textContent = t.nom;
-            li.appendChild(span);
-            legende.appendChild(li);
-        });
-    }
-    document.getElementById("side-tile-list").appendChild(legende);
+async function serverIsDown() {
+  CONNECTED = 0;
+  tileList = null;
+  localStorage.clear();
+  await partialView("partial/erreur503.html", document.getElementById("main-sidebar"));
 }
 
-async function recupListeTuiles(siteUrl) {
-    try {
-        var url = siteUrl + `api/Tuile/all`;
-        let response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error(`Erreur HTTP: ${response.status}`);
-        }
-
-        var tuiles = await response.json();
-        return tuiles;
-
-    } catch (error) {
-        // console.error('Erreur lors du chargement:', error);
-    }
+function playOffline() {
+  CONNECTED = -1;
+  makeStartingChoice();
 }
 
-async function avoirTuile(siteUrl, x, y) {
-    try {
-        var url = siteUrl + `api/Tuile/`+(x+1)+`/`+(y+1);
-        console.log(url);
-        let response = await fetch(url);
-        
-        if (!response.ok) {
-        throw new Error(`Erreur HTTP: ${response.status}`);
-        }
-        
-        var tuile = await response.json();
-        return tuile;
-        
-    } catch (error) {
-        // console.error('Erreur lors du chargement:', error);
-    }
+async function makeStartingChoice() {
+  console.log(CONNECTED);
+  switch(CONNECTED) {
+    case -1 :
+      await initGame();
+      await refreshMap(BASE_URL, playerPosition, mapHtml, mapJS);
+      await goAroundPlayer(BASE_URL, playerPosition, mapHtml, mapJS);
+      break;
+    case 1 :
+      break;
+  }
 }
 
-async function visiterAutourJoueur(joueur)
-{
-    for (let y = joueur.y - 1 ; y < joueur.y + 2 ; y++) {
-        for (let x = joueur.x - 1 ; x < joueur.x + 2 ; x++) {
-            // console.log((y - joueur.y + 2) + " | " + (x - joueur.x + 2))
-            await visiterUneCase(carteHtml[y - joueur.y + 2][x - joueur.x + 2], y, x, true);
-        }
-    }
-}
-
-async function visiterUneCase(carreHTML, y, x, clique=false)
-{
-    if( estHorsMap(y, x) || listeTuiles == null) {
-        carreHTML.className = "box explored b-limit";
-    }
-    else {
-        let tuile = null;
-        var ajouteText = "";
-        if (carte[y][x] == 0) {
-            if (clique) {
-                tuile = await avoirTuile(BASE_URL, x, y);
-                carte[y][x] = tuile;
-            }
-        }
-        else {
-            tuile = carte[y][x];
-        }
-
-        if (tuile != null) {
-            var typeTuile = listeTuiles.find(t =>
-                t.type == tuile.type
-            );
-            ajouteText = typeTuile.nom;
-        }
-        carreHTML.className = "box explored b-" + ajouteText;
-    }
-}
-
-function estHorsMap(x, y) {
-    return x < 0 || y < 0  || x > sizeMap.x || y > sizeMap.y;
-}
-
-async function deplacerJoueur(carteJeu, joueur, depX, depY) {
-    if ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1) ) {
-        var postDeplX = joueur.x + depX;
-        var postDeplY = joueur.y + depY;
-
-        if (!estHorsMap(postDeplX, postDeplY) && carteJeu[postDeplY][postDeplX].estTraversable) {
-            joueur.x = postDeplX;
-            joueur.y = postDeplY;
-            console.log(joueur)
-            // console.error("JOUEUR : " + caseJoueur.y + " | " + caseJoueur.x);
-            await actualiserCarte(joueur);
-        }
-    }
-}
-
-async function actualiserCarte(joueur){
-    for (let y = joueur.y - 2 ; y < joueur.y + 3 ; y++) {
-        for (let x = joueur.x - 2 ; x < joueur.x + 3 ; x++) {
-            // console.log((y - joueur.y + 2) + " | " + (x - joueur.x + 2))
-            await visiterUneCase(carteHtml[y - joueur.y + 2][x - joueur.x + 2], y, x);
-        }
-    }
-    await visiterAutourJoueur(joueur);
-
-    // for (let y = caseJoueur.y - 2 ; y < caseJoueur.y + NY - 2 ; y++) {
-    //     for (let x = caseJoueur.x - 2 ; x < caseJoueur.x + NX - 2 ; x++) {
-    //         await visiterUneCase(carteHtml[y - caseJoueur.y + 2][x - caseJoueur.x + 2], x, y);
-    //     }
-    // }
-}
-
-function pressKey(event)
-{
-    if(event.key === 'ArrowUp' || event.key === movementTop)
-    {
-        event.preventDefault();
-        listBtnMoveIg[0].click();
-    }
-    else if(event.key === 'ArrowDown' || event.key === movementBot)
-    {
-        event.preventDefault();
-        listBtnMoveIg[1].click();
-    }
-    else if(event.key === 'ArrowLeft' || event.key === movementLeft)
-    {
-        event.preventDefault();
-        listBtnMoveIg[2].click();
-    }
-    else if(event.key === 'ArrowRight' || event.key === movementRight)
-    {
-        event.preventDefault();
-        listBtnMoveIg[3].click();
-    }
+async function disconnect() {
+  await disconnectApi(BASE_URL);
+  CONNECTED = 0;
+  localStorage.clear();
+  window.location.reload();
 }

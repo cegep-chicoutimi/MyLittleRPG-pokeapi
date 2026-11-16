@@ -6,13 +6,16 @@ namespace lab_01_e04_pokeapi_api.Models
 
     public class Tuile
     {
+        public const int MIN = 1;
+        public const int MAX = 50;
+
         private static List<(int, bool, string, int)> tuilesListe = new List<(int, bool, string, int)>{
-            (0, true, "../assets/Forest.png", 15),
-            (1, false, "../assets/Mountain.png", 15),
-            (2, true, "../assets/Plains.png", 20),
-            (3, false, "../assets/River.png", 10),
-            (4, true, "../assets/Road.png", 35),
-            (5, true, "../assets/Town.png", 5) 
+            (0, true, "../assets/Forêt.png", 15),
+            (1, false, "../assets/Montagne.png", 15),
+            (2, true, "../assets/Plaine.png", 20),
+            (3, false, "../assets/Rivière.png", 10),
+            (4, true, "../assets/Route.png", 35),
+            (5, true, "../assets/Ville.png", 5) 
         };
 
 		private int posX;
@@ -26,9 +29,9 @@ namespace lab_01_e04_pokeapi_api.Models
 			get { return posX; }
 			set 
 			{
-				if(value < 1 || value > 51)
+				if(value < MIN || value > MAX)
 				{
-					throw new ArgumentOutOfRangeException("Must be between 1 and 50");
+					throw new ArgumentOutOfRangeException($"Must be between {MIN} and {MAX}");
 				}
 				posX = value;
 			}
@@ -39,9 +42,9 @@ namespace lab_01_e04_pokeapi_api.Models
 			get { return posY; }
 			set
             {
-                if (value < 1 || value > 51)
+                if (value < MIN || value > MAX)
                 {
-                    throw new ArgumentOutOfRangeException("Must be between 1 and 50");
+                    throw new ArgumentOutOfRangeException($"Must be between {MIN} and {MAX}");
                 }
                 posY = value;
 			}
