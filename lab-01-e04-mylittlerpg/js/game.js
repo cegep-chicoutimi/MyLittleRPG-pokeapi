@@ -13,7 +13,7 @@ async function goToOneTile(jsMap, divBoxHtml, y, x, siteUrl, clique=false) {
     else {
         let tile = null;
         var textToAdd = "";
-        if (jsMap[y][x] == 0) {
+        if (jsMap[y][x] === null) {
             if (clique) {
                 try {
                     if(CONNECTED === -1) {

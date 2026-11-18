@@ -1,7 +1,4 @@
-﻿using System.Security.Policy;
-using System.IO;
-
-namespace lab_01_e04_pokeapi_api.Models
+﻿namespace lab_01_e04_pokeapi_api.Models
 {
     public class TuileJS
     {

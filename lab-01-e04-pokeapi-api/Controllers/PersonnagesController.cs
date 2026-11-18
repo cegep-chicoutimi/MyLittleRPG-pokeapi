@@ -21,7 +21,7 @@ public class PersonnagesController : ControllerBase
         string? idUser = HttpContext.Session.GetString("SessionConnexion");
         if(idUser != null)
         {
-            return await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).ToListAsync();
+            return await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).OrderBy(p => p.DateCreation).ToListAsync();
         }
         return Unauthorized();
     }
@@ -43,9 +43,10 @@ public class PersonnagesController : ControllerBase
                 personnage.UtilisateurId = new Utilisateur();
                 return personnage;
             }
+            return NoContent();
         }
 
-        return BadRequest();
+        return Unauthorized();
     }
 
 
@@ -61,10 +62,7 @@ public class PersonnagesController : ControllerBase
 
             if (personnage != null && personnage.UtilisateurId.IdUtilisateur == idUser)
             {
-                //string persoEnJeu = JsonConvert.SerializeObject(personnage);
-                //HttpContext.Session.SetString("SessionPersonnageEnJeu", persoEnJeu);
                 HttpContext.Session.SetInt32("SessionPersoSelect", personnage.IdPersonnage);
-                Console.WriteLine($"\n\n\n\n\n\n PERSO : {personnage.IdPersonnage}\n\n\n\n\n\n\n\n");
                 return 1;
             }
             else 
@@ -73,6 +71,7 @@ public class PersonnagesController : ControllerBase
         else
             return Unauthorized();
     }
+
     // POST: api/Personnages/create
     [HttpPost("create")]
     public async Task<ActionResult<int>> CreatePersonnage([FromForm] string name)
@@ -88,8 +87,8 @@ public class PersonnagesController : ControllerBase
                 await _context.SaveChangesAsync();
 
                 HttpContext.Session.SetInt32("SessionPersoSelect", personnage.IdPersonnage);
+                return 1;
             }
-            return 1;
         }
         return Unauthorized();
     }

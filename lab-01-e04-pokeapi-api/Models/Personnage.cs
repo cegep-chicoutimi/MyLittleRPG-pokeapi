@@ -142,5 +142,8 @@ namespace lab_01_e04_pokeapi_api.Models
 
         public override string ToString()
             => JsonConvert.SerializeObject(this);
+
+        public PersonnageDTO ToDTO()
+            => new PersonnageDTO(idPersonnage, nom, niveau, pointsDeVie, pointDeVieMax, force, defense, posX, posY, dateCreation);
     }
 }

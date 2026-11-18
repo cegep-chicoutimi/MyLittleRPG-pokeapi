@@ -14,16 +14,16 @@ public class DeplacementController : ControllerBase
         _context = context;
     }
 
-    private bool DeplacementPossible(int pX, int pY, int destiX, int destiY)
+    private bool DeplacementPossible(int prevX, int prevY, int destiX, int destiY)
     {
-        int depX = pX - destiX;
-        int depY = pY - destiY;
+        int depX = prevX - destiX;
+        int depY = prevY - destiY;
 
         return ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1));
     }
 
     [HttpGet("{idPersonnage:int}/{x:int}/{y:int}")]
-    public async Task<ActionResult<DeplacementResult>> AutourJoueur(int idPersonnage, int x, int y)
+    public async Task<ActionResult<DeplacementDTO>> AutourJoueur(int idPersonnage, int x, int y)
     {
         string? idUser = HttpContext.Session.GetString("SessionConnexion");
         if (idUser != null)
@@ -60,18 +60,18 @@ public class DeplacementController : ControllerBase
                             //tuiles.ForEach(t => {
                             //    tuilesResult.Add(t.PositionX);
                             //});
-                            return new DeplacementResult()
+                            return new DeplacementDTO()
                             {
                                 EstValide = true,
                                 FinalX = personnage.PositionX,
                                 FinalY = personnage.PositionY,
-                                Tuiles = tuiles
+                                Tuiles = TuileDTO.ListToDTO(tuiles)
                             };
                         }
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        return new DeplacementResult()
+                        return new DeplacementDTO()
                         {
                             EstValide = false,
                             FinalX = personnage.PositionX,
@@ -82,7 +82,7 @@ public class DeplacementController : ControllerBase
                 }
                 else
                 {
-                    return new DeplacementResult()
+                    return new DeplacementDTO()
                     {
                         EstValide = false,
                         FinalX = personnage.PositionX,

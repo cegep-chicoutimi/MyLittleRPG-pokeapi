@@ -13,20 +13,19 @@ public class TuileController : ControllerBase
         _context = context;
     }
 
-    // GET: api/Tuile
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Tuile>>> AvoirMap()
+    // GET: api/Tuile/map
+    [HttpGet("map")]
+    public async Task<ActionResult<IEnumerable<TuileDTO>>> AvoirMap()
     {
-        return await _context.Tuiles.ToListAsync();
+        return TuileDTO.ListToDTO(await _context.Tuiles.ToListAsync());
     }
-
 
     private static bool DansChampDeVision(int persoX, int persoY, int x, int y)
         => Math.Abs(x - persoX) <= Personnage.VISION && Math.Abs(y - persoY) <= Personnage.VISION;
 
     // GET: api/Tuile/100/10/10
     [HttpGet("{idPersonnage:int}/{x:int}/{y:int}")]
-    public async Task<ActionResult<Tuile>> AvoirTuile(int idPersonnage, int x, int y)
+    public async Task<ActionResult<TuileDTO>> AvoirTuile(int idPersonnage, int x, int y)
     {
         string? idUser = HttpContext.Session.GetString("SessionConnexion");
         if (idUser != null)
@@ -45,11 +44,11 @@ public class TuileController : ControllerBase
     }
 
     [HttpGet("{x:int}/{y:int}")]
-    public async Task<ActionResult<Tuile>> AvoirTuileHorsConnexion(int x, int y) 
+    public async Task<ActionResult<TuileDTO>> AvoirTuileHorsConnexion(int x, int y) 
         => await RecupTuileContext(x, y);
 
 
-    private async Task<ActionResult<Tuile>> RecupTuileContext(int x, int y)
+    private async Task<ActionResult<TuileDTO>> RecupTuileContext(int x, int y)
     {
         try
         {
@@ -68,7 +67,7 @@ public class TuileController : ControllerBase
                     tuile = await _context.Tuiles.FindAsync(x, y);
                 }
             }
-            return tuile;
+            return tuile.ToDTO();
         }
         catch (ArgumentOutOfRangeException)
         {
