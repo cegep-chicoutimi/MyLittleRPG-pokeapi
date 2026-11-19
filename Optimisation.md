@@ -15,6 +15,7 @@
 - **Langue** : tout ce qui touche le client (DTO, JS) est en anglais, le reste de l'API reste en français. Le JS a été renommé pour correspondre aux DTO (voir la partie traductions)
 - **Codes HTTP plus précis :** AvoirPersonnage renvoie NoContent() ou Unauthorized() au lieu de BadRequest(). CreatePersonnage ne renvoie 1 qu'en cas de succès, sinon Unauthorized().
 - **Nettoyage** : code commenté et Console.WriteLine de débogage retirés, using inutiles retirés, paramètres de DeplacementPossible clarifiés (pX → prevX), liste des personnages triée par date de création.
+- **Context** : mise à jour du context : le HasKey est mis avant le HasData. Ça permet qu'Entity Framework ne crache pas s'il ne trouve pas le json du HasData.
 
 ## Fichiers modifiés
 
