@@ -117,7 +117,7 @@ async function moveCharacter(jsMap, htmlMap, character, player, depY, depX, site
     if ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1) ) {
         var postDeplY = player.y + depY;
         var postDeplX = player.x + depX;
-        console.log(jsMap[postDeplY][postDeplX].canGoThrough)
+        // console.log(jsMap[postDeplY][postDeplX].canGoThrough)
         if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
             isMoving = true;
             try {
@@ -130,7 +130,7 @@ async function moveCharacter(jsMap, htmlMap, character, player, depY, depX, site
                 player.y = result.finalY - 1;
                 player.x = result.finalX - 1;
 
-                console.log(result);
+                // console.log(result);
 
                 if (result.isCorrect && result.tiles != null) {
                     applyTilesToMap(jsMap, result.tiles);

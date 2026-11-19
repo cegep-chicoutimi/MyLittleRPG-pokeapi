@@ -184,7 +184,7 @@ function initLegend(list) {
 
 async function initGame() {
   tileList = await getTileList(BASE_URL);
-  console.log(tileList);
+  // console.log(tileList);
   initCssFromApi(tileList);
 
   await partialView("partial/game.html", document.getElementById("main-sidebar"));
@@ -275,7 +275,7 @@ function playOffline() {
 }
 
 async function makeStartingChoice() {
-  console.log(CONNECTED);
+  // console.log(CONNECTED);
   switch(CONNECTED) {
     case -1 :
       await initGame();

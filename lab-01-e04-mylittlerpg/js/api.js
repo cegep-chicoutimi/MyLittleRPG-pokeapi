@@ -51,7 +51,7 @@ async function connect(siteUrl, data) {
         }
 
         var goodConnect = await response.json();
-        console.log(response)
+        // console.log(response)
         return goodConnect;
 
     } catch (error) {
@@ -75,7 +75,7 @@ async function register(siteUrl, data) {
         }
 
         var registered = await response.json();
-        console.log(response)
+        // console.log(response)
         return registered;
 
     } catch (error) {
@@ -126,7 +126,7 @@ async function createCharacter(siteUrl, data) {
         }
 
         var created = await response.json();
-        console.log(response)
+        // console.log(response)
         return created;
     } 
     catch (error) {
@@ -153,7 +153,7 @@ async function selectCharacter(siteUrl, id) {
     if (!response.ok) {
         throw new Error(`Erreur HTTP: ${response.status}`);
     }
-    console.log(response);
+    // console.log(response);
     return await response.text();
 }
 
@@ -185,7 +185,7 @@ async function disconnectApi(siteUrl) {
         }
 
         var disconnecteds = await response.text();
-        console.log(response)
+        // console.log(response)
         return disconnecteds;
 
     } catch (error) {
@@ -198,7 +198,7 @@ async function moveCharApi(siteUrl, player, characterId) {
     var url = siteUrl + 
     `api/Deplacement/${characterId}/${player.x +1}/${player.y +1}`;
 
-    console.log(url);
+    // console.log(url);
     let response = await fetch(url, {
         method: 'get',
         credentials: 'include',
@@ -217,7 +217,7 @@ async function getTileArounCharApi(siteUrl, characterId, y, x) {
     var url = siteUrl + 
     `api/Tuile/${characterId}/${x +1}/${y +1}`;
 
-    console.log(url);
+    // console.log(url);
     let response = await fetch(url, {
         method: 'get',
         credentials: 'include',
