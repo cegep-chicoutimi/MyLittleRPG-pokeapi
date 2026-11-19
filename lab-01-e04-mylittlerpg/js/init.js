@@ -24,7 +24,7 @@ for(var y = 0 ; y <= sizeMap.y ; y++)
   mapJS[y] = new Array(sizeMap.x + 1);
   for(var x = 0 ; x <= sizeMap.x ; x++)
   {
-    mapJS[y][x] = 0;
+    mapJS[y][x] = null;
   }
 }
 

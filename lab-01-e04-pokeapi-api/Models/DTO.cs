@@ -8,9 +8,9 @@
             Y = y;
             Type = type;
         }
-        public int X;
-        public int Y;
-        public int Type;
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Type { get; set; }
 
         public static List<TuileDTO> ListToDTO(List<Tuile> tuiles)
         {
@@ -33,16 +33,16 @@
 
     public class PersonnageDTO
     {
-        public int Id;
-        public string Name = "";
-        public int Level;
-        public int Hp;
-        public int MaxHp;
-        public int Strength;
-        public int Defense;
-        public int PosX;
-        public int PosY;
-        public DateTime CreationDate;
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public int Level { get; set; }
+        public int Hp { get; set; }
+        public int MaxHp { get; set; }
+        public int Strength { get; set; }
+        public int Defense { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
+        public DateTime CreationDate { get; set; }
 
         public PersonnageDTO(int idPersonnage, string nom, int niveau, int pointsDeVie, int pointDeVieMax, int force, int defense, 
                              int posX, int posY, DateTime dateCreation)
@@ -57,6 +57,18 @@
             PosX = posX;
             PosY = posY;
             CreationDate = dateCreation;
+        }
+
+
+
+        public static List<PersonnageDTO> ListToDTO(List<Personnage> persos)
+        {
+            List<PersonnageDTO> resultat = new List<PersonnageDTO>();
+            persos.ForEach(p =>
+            {
+                resultat.Add(p.ToDTO());
+            });
+            return resultat;
         }
     }
 

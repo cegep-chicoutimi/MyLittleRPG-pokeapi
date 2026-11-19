@@ -20,7 +20,7 @@ async function goToOneTile(jsMap, divBoxHtml, y, x, siteUrl, clique=false) {
                         tile = await getOneTile(siteUrl, y, x);
                     }
                     else if(CONNECTED === 1) {
-                        tile = await getTileArounCharApi(siteUrl, playableChar.idPersonnage, y, x);
+                        tile = await getTileArounCharApi(siteUrl, playableChar.id, y, x);
                     }
                         
                 }
@@ -39,7 +39,7 @@ async function goToOneTile(jsMap, divBoxHtml, y, x, siteUrl, clique=false) {
             var typetile = tileList.find(t =>
                 t.type == tile.type
             );
-            textToAdd = typetile.nom;
+            textToAdd = typetile.name;
         }
         divBoxHtml.className = "box explored b-" + textToAdd;
     }

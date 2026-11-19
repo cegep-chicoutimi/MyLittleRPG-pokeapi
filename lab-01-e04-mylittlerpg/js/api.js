@@ -208,9 +208,9 @@ async function moveCharApi(siteUrl, player, characterId) {
         throw new Error(`Erreur HTTP: ${response.status}`);
     }
     
-    var tile = await response.json();
+    var tiles = await response.json();
     // console.log(tile);
-    return tile;
+    return tiles;
 }
 
 async function getTileArounCharApi(siteUrl, characterId, y, x) {

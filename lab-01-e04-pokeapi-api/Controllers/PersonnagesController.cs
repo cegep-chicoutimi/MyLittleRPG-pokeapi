@@ -16,19 +16,19 @@ public class PersonnagesController : ControllerBase
 
     // GET: api/Personnages
     [HttpGet("all")]
-    public async Task<ActionResult<IEnumerable<Personnage>>> ListePersonnages()
+    public async Task<ActionResult<IEnumerable<PersonnageDTO>>> ListePersonnages()
     {
         string? idUser = HttpContext.Session.GetString("SessionConnexion");
         if(idUser != null)
         {
-            return await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).OrderBy(p => p.DateCreation).ToListAsync();
+            return PersonnageDTO.ListToDTO(await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).OrderBy(p => p.DateCreation).ToListAsync());
         }
         return Unauthorized();
     }
 
     // GET: api/Personnages/actual
     [HttpGet("actual")]
-    public async Task<ActionResult<Personnage>> AvoirPersonnage()
+    public async Task<ActionResult<PersonnageDTO>> AvoirPersonnage()
     {
         string? idUser = HttpContext.Session.GetString("SessionConnexion");
         int? idPersonnage = HttpContext.Session.GetInt32("SessionPersoSelect");
@@ -41,7 +41,7 @@ public class PersonnagesController : ControllerBase
                 //string persoEnJeu = JsonConvert.SerializeObject(personnage);
                 //HttpContext.Session.SetString("SessionPersonnageEnJeu", persoEnJeu);
                 personnage.UtilisateurId = new Utilisateur();
-                return personnage;
+                return personnage.ToDTO();
             }
             return NoContent();
         }

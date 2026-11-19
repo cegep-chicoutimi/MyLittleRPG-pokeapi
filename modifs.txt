@@ -1,0 +1,574 @@
+diff --git a/Etape_4_Optimisation.docx b/Etape_4_Optimisation.docx
+new file mode 100644
+index 0000000..8ccffdc
+Binary files /dev/null and b/Etape_4_Optimisation.docx differ
+diff --git a/lab-01-e04-mylittlerpg/.vscode/settings.json b/lab-01-e04-mylittlerpg/.vscode/settings.json
+deleted file mode 100644
+index 6f3a291..0000000
+--- a/lab-01-e04-mylittlerpg/.vscode/settings.json
++++ /dev/null
+@@ -1,3 +0,0 @@
+-{
+-    "liveServer.settings.port": 5501
+-}
+\ No newline at end of file
+diff --git a/lab-01-e04-mylittlerpg/js/api.js b/lab-01-e04-mylittlerpg/js/api.js
+index ab7702f..1742c46 100644
+--- a/lab-01-e04-mylittlerpg/js/api.js
++++ b/lab-01-e04-mylittlerpg/js/api.js
+@@ -10,8 +10,8 @@ async function getTileList(siteUrl) {
+             throw new Error(`Erreur HTTP: ${response.status}`);
+         }
+ 
+-        var tuiles = await response.json();
+-        return tuiles;
++        var tiles = await response.json();
++        return tiles;
+ 
+     } catch (error) {
+         ('Erreur fetch :', error);
+@@ -32,8 +32,8 @@ async function getOneTile(siteUrl, y, x) {
+         throw new Error(`Erreur HTTP: ${response.status}`);
+     }
+     
+-    var tuile = await response.json();
+-    return tuile;
++    var tile = await response.json();
++    return tile;
+ }
+ 
+ async function connect(siteUrl, data) {
+@@ -50,9 +50,9 @@ async function connect(siteUrl, data) {
+             throw new Error(`Erreur HTTP: ${response.status}`);
+         }
+ 
+-        var reussite = await response.json();
++        var goodConnect = await response.json();
+         console.log(response)
+-        return reussite;
++        return goodConnect;
+ 
+     } catch (error) {
+         console.error('Erreur fetch :', error);
+@@ -74,9 +74,9 @@ async function register(siteUrl, data) {
+             throw new Error(`Erreur HTTP: ${response.status}`);
+         }
+ 
+-        var reussite = await response.json();
++        var registered = await response.json();
+         console.log(response)
+-        return reussite;
++        return registered;
+ 
+     } catch (error) {
+         console.error('Erreur fetch :', error);
+@@ -125,9 +125,9 @@ async function createCharacter(siteUrl, data) {
+             throw new Error(`Erreur HTTP: ${response.status}`);
+         }
+ 
+-        var reussite = await response.json();
++        var created = await response.json();
+         console.log(response)
+-        return reussite;
++        return created;
+     } 
+     catch (error) {
+         console.error('Erreur fetch :', error);
+@@ -184,9 +184,9 @@ async function disconnectApi(siteUrl) {
+             throw new Error(`Erreur HTTP: ${response.status}`);
+         }
+ 
+-        var reussite = await response.text();
++        var disconnecteds = await response.text();
+         console.log(response)
+-        return reussite;
++        return disconnecteds;
+ 
+     } catch (error) {
+         console.error('Erreur fetch :', error);
+@@ -208,9 +208,9 @@ async function moveCharApi(siteUrl, player, characterId) {
+         throw new Error(`Erreur HTTP: ${response.status}`);
+     }
+     
+-    var tuile = await response.json();
+-    // console.log(tuile);
+-    return tuile;
++    var tile = await response.json();
++    // console.log(tile);
++    return tile;
+ }
+ 
+ async function getTileArounCharApi(siteUrl, characterId, y, x) {
+@@ -227,7 +227,7 @@ async function getTileArounCharApi(siteUrl, characterId, y, x) {
+         throw new Error(`Erreur HTTP: ${response.status}`);
+     }
+     
+-    var tuile = await response.json();
+-    // console.log(tuile);
+-    return tuile;
++    var tile = await response.json();
++    // console.log(tile);
++    return tile;
+ }
+\ No newline at end of file
+diff --git a/lab-01-e04-mylittlerpg/js/game.js b/lab-01-e04-mylittlerpg/js/game.js
+index a5124e3..5f15357 100644
+--- a/lab-01-e04-mylittlerpg/js/game.js
++++ b/lab-01-e04-mylittlerpg/js/game.js
+@@ -13,7 +13,7 @@ async function goToOneTile(jsMap, divBoxHtml, y, x, siteUrl, clique=false) {
+     else {
+         let tile = null;
+         var textToAdd = "";
+-        if (jsMap[y][x] == 0) {
++        if (jsMap[y][x] === null) {
+             if (clique) {
+                 try {
+                     if(CONNECTED === -1) {
+@@ -54,7 +54,7 @@ async function movePlayer(jsMap, htmlMap, player, depY, depX, siteUrl) {
+         var postDeplY = player.y + depY;
+         var postDeplX = player.x + depX;
+ 
+-        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].estTraversable) {
++        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
+             player.y = postDeplY;
+             player.x = postDeplX;
+             await refreshMap(siteUrl, player, htmlMap, jsMap);
+@@ -91,7 +91,7 @@ function drawTile(divBoxHtml, tile) {
+ // Écrit les tuiles renvoyées par l'API dans jsMap (API en base 1, jsMap en base 0)
+ function applyTilesToMap(jsMap, tiles) {
+     tiles.forEach(t => {
+-        jsMap[t.positionY - 1][t.positionX - 1] = t;
++        jsMap[t.y - 1][t.x - 1] = t;
+     });
+ }
+ 
+@@ -121,19 +121,19 @@ async function moveCharacter(jsMap, htmlMap, character, player, depY, depX, site
+         var postDeplY = player.y + depY;
+         var postDeplX = player.x + depX;
+ 
+-        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].estTraversable) {
++        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
+             isMoving = true;
+             try {
+-                var result = await moveCharApi(siteUrl, {y: postDeplY, x: postDeplX}, character.idPersonnage);
++                var result = await moveCharApi(siteUrl, {y: postDeplY, x: postDeplX}, character.id);
+ 
+                 // Le serveur fait foi (API en base 1, player en base 0)
+-                character.positionY = result.finalY;
+-                character.positionX = result.finalX;
++                character.posY = result.finalY;
++                character.posX = result.finalX;
+                 player.y = result.finalY - 1;
+                 player.x = result.finalX - 1;
+ 
+-                if (result.estValide && result.tuiles != null) {
+-                    applyTilesToMap(jsMap, result.tuiles);
++                if (result.isCorrect && result.tiles != null) {
++                    applyTilesToMap(jsMap, result.tiles);
+                 }
+ 
+                 drawWindow(jsMap, htmlMap, player);
+diff --git a/lab-01-e04-mylittlerpg/js/init.js b/lab-01-e04-mylittlerpg/js/init.js
+index ea1bb84..63d7433 100644
+--- a/lab-01-e04-mylittlerpg/js/init.js
++++ b/lab-01-e04-mylittlerpg/js/init.js
+@@ -53,8 +53,8 @@ window.onload = async function() {
+       playableChar = await getActualCharacter(BASE_URL);
+       // console.log(playableChar);
+       await initGame();
+-      playerPosition.x = playableChar.positionX -1;
+-      playerPosition.y = playableChar.positionY -1;
++      playerPosition.x = playableChar.posX -1;
++      playerPosition.y = playableChar.posY -1;
+       await refreshMap(BASE_URL, playerPosition, mapHtml, mapJS);
+       await goAroundPlayer(BASE_URL, playerPosition, mapHtml, mapJS);
+       drawWindow(mapJS, mapHtml, playerPosition);
+@@ -130,11 +130,11 @@ async function initCssFromApi(list) {
+   let styleRoot = document.createElement('style');
+   if(list != null) {
+     styleRoot.innerHTML = ":root {\n";
+-    list.forEach(tuile => {
+-      styleRoot.innerHTML += `--url-image-${tuile.nom} : url(${tuile.url});\n`
++    list.forEach(tile => {
++      styleRoot.innerHTML += `--url-image-${tile.name} : url(${tile.url});\n`
+       style.innerHTML +=
+-        `.b-${tuile.nom}
+-        { background-image: var(--url-image-${tuile.nom}); }\n`;
++        `.b-${tile.name}
++        { background-image: var(--url-image-${tile.name}); }\n`;
+     });
+   }
+   style.innerHTML += ".b-limit { background-color:var(--ui-red);}";
+@@ -155,17 +155,17 @@ function initLegend(list) {
+       var li = document.createElement('li');
+       li.className = "li-legend"
+       var img = document.createElement('div');
+-      img.className = "legend-img b-" + t.nom;
++      img.className = "legend-img b-" + t.name;
+       li.appendChild(img);
+ 
+       var ulDetail = document.createElement('ul');
+       var liTitle = document.createElement("span");
+-      liTitle.textContent = t.nom;
++      liTitle.textContent = t.name;
+       ulDetail.appendChild(liTitle);
+ 
+       var liToward = document.createElement('li');
+       var liText;
+-      if(t.estTraversable) {
++      if(t.canGoThrough) {
+         liText = "Case traversable";
+       }
+       else {
+diff --git a/lab-01-e04-mylittlerpg/js/select-character.js b/lab-01-e04-mylittlerpg/js/select-character.js
+index 60ddb3d..723e5fb 100644
+--- a/lab-01-e04-mylittlerpg/js/select-character.js
++++ b/lab-01-e04-mylittlerpg/js/select-character.js
+@@ -17,8 +17,8 @@ window.onload = async () => {
+             result.forEach(res => {
+                 resLi = document.createElement("li");
+                 console.log(res);
+-                resLi.textContent = `${res.idPersonnage} : ${res.nom} de niveau ${res.niveau}`;
+-                resLi.onclick = () => clickToSelect(res.idPersonnage);
++                resLi.textContent = `${res.id} : ${res.name} de niveau ${res.level}`;
++                resLi.onclick = () => clickToSelect(res.id);
+                 ulHtml.appendChild(resLi);
+             });
+         }
+diff --git a/lab-01-e04-pokeapi-api/Controllers/DeplacementController.cs b/lab-01-e04-pokeapi-api/Controllers/DeplacementController.cs
+index 8df5a20..d82a0ab 100644
+--- a/lab-01-e04-pokeapi-api/Controllers/DeplacementController.cs
++++ b/lab-01-e04-pokeapi-api/Controllers/DeplacementController.cs
+@@ -14,16 +14,16 @@ public class DeplacementController : ControllerBase
+         _context = context;
+     }
+ 
+-    private bool DeplacementPossible(int pX, int pY, int destiX, int destiY)
++    private bool DeplacementPossible(int prevX, int prevY, int destiX, int destiY)
+     {
+-        int depX = pX - destiX;
+-        int depY = pY - destiY;
++        int depX = prevX - destiX;
++        int depY = prevY - destiY;
+ 
+         return ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1));
+     }
+ 
+     [HttpGet("{idPersonnage:int}/{x:int}/{y:int}")]
+-    public async Task<ActionResult<DeplacementResult>> AutourJoueur(int idPersonnage, int x, int y)
++    public async Task<ActionResult<DeplacementDTO>> AutourJoueur(int idPersonnage, int x, int y)
+     {
+         string? idUser = HttpContext.Session.GetString("SessionConnexion");
+         if (idUser != null)
+@@ -60,34 +60,34 @@ public class DeplacementController : ControllerBase
+                             //tuiles.ForEach(t => {
+                             //    tuilesResult.Add(t.PositionX);
+                             //});
+-                            return new DeplacementResult()
++                            return new DeplacementDTO()
+                             {
+-                                EstValide = true,
++                                IsCorrect = true,
+                                 FinalX = personnage.PositionX,
+                                 FinalY = personnage.PositionY,
+-                                Tuiles = tuiles
++                                Tiles = TuileDTO.ListToDTO(tuiles)
+                             };
+                         }
+                     }
+                     catch (ArgumentOutOfRangeException)
+                     {
+-                        return new DeplacementResult()
++                        return new DeplacementDTO()
+                         {
+-                            EstValide = false,
++                            IsCorrect = false,
+                             FinalX = personnage.PositionX,
+                             FinalY = personnage.PositionY,
+-                            Tuiles = null
++                            Tiles = null
+                         };
+                     }
+                 }
+                 else
+                 {
+-                    return new DeplacementResult()
++                    return new DeplacementDTO()
+                     {
+-                        EstValide = false,
++                        IsCorrect = false,
+                         FinalX = personnage.PositionX,
+                         FinalY = personnage.PositionY,
+-                        Tuiles = null
++                        Tiles = null
+                     };
+                 }
+             }
+diff --git a/lab-01-e04-pokeapi-api/Controllers/PersonnagesController.cs b/lab-01-e04-pokeapi-api/Controllers/PersonnagesController.cs
+index fe8451a..f374308 100644
+--- a/lab-01-e04-pokeapi-api/Controllers/PersonnagesController.cs
++++ b/lab-01-e04-pokeapi-api/Controllers/PersonnagesController.cs
+@@ -21,7 +21,7 @@ public class PersonnagesController : ControllerBase
+         string? idUser = HttpContext.Session.GetString("SessionConnexion");
+         if(idUser != null)
+         {
+-            return await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).ToListAsync();
++            return await _context.Personnages.Where(p => p.UtilisateurId.IdUtilisateur == idUser).OrderBy(p => p.DateCreation).ToListAsync();
+         }
+         return Unauthorized();
+     }
+@@ -43,9 +43,10 @@ public class PersonnagesController : ControllerBase
+                 personnage.UtilisateurId = new Utilisateur();
+                 return personnage;
+             }
++            return NoContent();
+         }
+ 
+-        return BadRequest();
++        return Unauthorized();
+     }
+ 
+ 
+@@ -61,10 +62,7 @@ public class PersonnagesController : ControllerBase
+ 
+             if (personnage != null && personnage.UtilisateurId.IdUtilisateur == idUser)
+             {
+-                //string persoEnJeu = JsonConvert.SerializeObject(personnage);
+-                //HttpContext.Session.SetString("SessionPersonnageEnJeu", persoEnJeu);
+                 HttpContext.Session.SetInt32("SessionPersoSelect", personnage.IdPersonnage);
+-                Console.WriteLine($"\n\n\n\n\n\n PERSO : {personnage.IdPersonnage}\n\n\n\n\n\n\n\n");
+                 return 1;
+             }
+             else 
+@@ -73,6 +71,7 @@ public class PersonnagesController : ControllerBase
+         else
+             return Unauthorized();
+     }
++
+     // POST: api/Personnages/create
+     [HttpPost("create")]
+     public async Task<ActionResult<int>> CreatePersonnage([FromForm] string name)
+@@ -88,8 +87,8 @@ public class PersonnagesController : ControllerBase
+                 await _context.SaveChangesAsync();
+ 
+                 HttpContext.Session.SetInt32("SessionPersoSelect", personnage.IdPersonnage);
++                return 1;
+             }
+-            return 1;
+         }
+         return Unauthorized();
+     }
+diff --git a/lab-01-e04-pokeapi-api/Controllers/TuileController.cs b/lab-01-e04-pokeapi-api/Controllers/TuileController.cs
+index 8e87e23..12be3ec 100644
+--- a/lab-01-e04-pokeapi-api/Controllers/TuileController.cs
++++ b/lab-01-e04-pokeapi-api/Controllers/TuileController.cs
+@@ -13,20 +13,19 @@ public class TuileController : ControllerBase
+         _context = context;
+     }
+ 
+-    // GET: api/Tuile
+-    [HttpGet]
+-    public async Task<ActionResult<IEnumerable<Tuile>>> AvoirMap()
++    // GET: api/Tuile/map
++    [HttpGet("map")]
++    public async Task<ActionResult<IEnumerable<TuileDTO>>> AvoirMap()
+     {
+-        return await _context.Tuiles.ToListAsync();
++        return TuileDTO.ListToDTO(await _context.Tuiles.ToListAsync());
+     }
+ 
+-
+     private static bool DansChampDeVision(int persoX, int persoY, int x, int y)
+         => Math.Abs(x - persoX) <= Personnage.VISION && Math.Abs(y - persoY) <= Personnage.VISION;
+ 
+     // GET: api/Tuile/100/10/10
+     [HttpGet("{idPersonnage:int}/{x:int}/{y:int}")]
+-    public async Task<ActionResult<Tuile>> AvoirTuile(int idPersonnage, int x, int y)
++    public async Task<ActionResult<TuileDTO>> AvoirTuile(int idPersonnage, int x, int y)
+     {
+         string? idUser = HttpContext.Session.GetString("SessionConnexion");
+         if (idUser != null)
+@@ -45,11 +44,11 @@ public class TuileController : ControllerBase
+     }
+ 
+     [HttpGet("{x:int}/{y:int}")]
+-    public async Task<ActionResult<Tuile>> AvoirTuileHorsConnexion(int x, int y) 
++    public async Task<ActionResult<TuileDTO>> AvoirTuileHorsConnexion(int x, int y) 
+         => await RecupTuileContext(x, y);
+ 
+ 
+-    private async Task<ActionResult<Tuile>> RecupTuileContext(int x, int y)
++    private async Task<ActionResult<TuileDTO>> RecupTuileContext(int x, int y)
+     {
+         try
+         {
+@@ -68,7 +67,7 @@ public class TuileController : ControllerBase
+                     tuile = await _context.Tuiles.FindAsync(x, y);
+                 }
+             }
+-            return tuile;
++            return tuile.ToDTO();
+         }
+         catch (ArgumentOutOfRangeException)
+         {
+@@ -101,4 +100,4 @@ public class TuileController : ControllerBase
+ 
+     //    return monstre;
+     //}
+-}
++}
+\ No newline at end of file
+diff --git a/lab-01-e04-pokeapi-api/Models/DTO.cs b/lab-01-e04-pokeapi-api/Models/DTO.cs
+new file mode 100644
+index 0000000..65c7243
+--- /dev/null
++++ b/lab-01-e04-pokeapi-api/Models/DTO.cs
+@@ -0,0 +1,67 @@
++﻿namespace lab_01_e04_pokeapi_api.Models
++{
++    public class TuileDTO
++    {
++        public TuileDTO(int x, int y, int type)
++        {
++            X = x;
++            Y = y;
++            Type = type;
++        }
++        public int X;
++        public int Y;
++        public int Type;
++
++        public static List<TuileDTO> ListToDTO(List<Tuile> tuiles)
++        {
++            List<TuileDTO> resultat = new List<TuileDTO>();
++            tuiles.ForEach(t =>
++            {
++                resultat.Add(t.ToDTO());
++            });
++            return resultat;
++        }
++    }
++
++    public class DeplacementDTO
++    {
++        public bool IsCorrect { get; set; }
++        public int FinalX { get; set; }
++        public int FinalY { get; set; }
++        public List<TuileDTO>? Tiles { get; set; } = null;
++    }
++
++    public class PersonnageDTO
++    {
++        public int Id;
++        public string Name = "";
++        public int Level;
++        public int Hp;
++        public int MaxHp;
++        public int Strength;
++        public int Defense;
++        public int PosX;
++        public int PosY;
++        public DateTime CreationDate;
++
++        public PersonnageDTO(int idPersonnage, string nom, int niveau, int pointsDeVie, int pointDeVieMax, int force, int defense, 
++                             int posX, int posY, DateTime dateCreation)
++        {
++            Id = idPersonnage;
++            Name = nom;
++            Level = niveau;
++            Hp = pointsDeVie;
++            MaxHp = pointDeVieMax;
++            Strength = force;
++            Defense = defense;
++            PosX = posX;
++            PosY = posY;
++            CreationDate = dateCreation;
++        }
++    }
++
++    public class DTO
++    {
++
++    }
++}
+diff --git a/lab-01-e04-pokeapi-api/Models/DeplacementResult.cs b/lab-01-e04-pokeapi-api/Models/DeplacementResult.cs
+deleted file mode 100644
+index d411a91..0000000
+--- a/lab-01-e04-pokeapi-api/Models/DeplacementResult.cs
++++ /dev/null
+@@ -1,10 +0,0 @@
+-﻿namespace lab_01_e04_pokeapi_api.Models
+-{
+-    public class DeplacementResult
+-    {
+-        public bool EstValide { get; set; }
+-        public int FinalX { get; set; }
+-        public int FinalY { get; set; }
+-        public List<Tuile>? Tuiles { get; set; } = new List<Tuile>();
+-    }
+-}
+diff --git a/lab-01-e04-pokeapi-api/Models/Personnage.cs b/lab-01-e04-pokeapi-api/Models/Personnage.cs
+index 076e695..c3fde4a 100644
+--- a/lab-01-e04-pokeapi-api/Models/Personnage.cs
++++ b/lab-01-e04-pokeapi-api/Models/Personnage.cs
+@@ -142,5 +142,8 @@ namespace lab_01_e04_pokeapi_api.Models
+ 
+         public override string ToString()
+             => JsonConvert.SerializeObject(this);
++
++        public PersonnageDTO ToDTO()
++            => new PersonnageDTO(idPersonnage, nom, niveau, pointsDeVie, pointDeVieMax, force, defense, posX, posY, dateCreation);
+     }
+ }
+diff --git a/lab-01-e04-pokeapi-api/Models/Tuile.cs b/lab-01-e04-pokeapi-api/Models/Tuile.cs
+index a0c0f41..7d13524 100644
+--- a/lab-01-e04-pokeapi-api/Models/Tuile.cs
++++ b/lab-01-e04-pokeapi-api/Models/Tuile.cs
+@@ -116,5 +116,10 @@ namespace lab_01_e04_pokeapi_api.Models
+             EstTraversable = false;
+             ImageUrl = "";
+         }
++
++        public TuileDTO ToDTO()
++        {
++            return new TuileDTO(PositionX, PositionY, Type);
++        }
+     }
+ }
+\ No newline at end of file
+diff --git a/lab-01-e04-pokeapi-api/Models/TuileJS.cs b/lab-01-e04-pokeapi-api/Models/TuileJS.cs
+index 95d6626..5f41719 100644
+--- a/lab-01-e04-pokeapi-api/Models/TuileJS.cs
++++ b/lab-01-e04-pokeapi-api/Models/TuileJS.cs
+@@ -1,7 +1,4 @@
+-﻿using System.Security.Policy;
+-using System.IO;
+-
+-namespace lab_01_e04_pokeapi_api.Models
++﻿namespace lab_01_e04_pokeapi_api.Models
+ {
+     public class TuileJS
+     {
+@@ -9,9 +6,9 @@ namespace lab_01_e04_pokeapi_api.Models
+ 
+         public string Url { get; set; } = string.Empty;
+ 
+-        public bool EstTraversable { get; set; }
++        public bool CanGoThrough { get; set; }
+ 
+-        public string Nom { get; set; } = string.Empty;
++        public string Name { get; set; } = string.Empty;
+ 
+         public static List<TuileJS> Liste
+         {
+@@ -34,8 +31,8 @@ namespace lab_01_e04_pokeapi_api.Models
+         { 
+             Type = type;
+             Url = url;
+-            EstTraversable = estTraversable;
+-            Nom = nom;
++            CanGoThrough = estTraversable;
++            Name = nom;
+         }
+     }
+ }
