@@ -85,7 +85,7 @@ function drawTile(divBoxHtml, tile) {
         return;
     }
     var typeTile = tileList.find(t => t.type == tile.type);
-    divBoxHtml.className = "box explored b-" + (typeTile ? typeTile.nom : "");
+    divBoxHtml.className = "box explored b-" + (typeTile ? typeTile.name : "");
 }
 
 // Écrit les tuiles renvoyées par l'API dans jsMap (API en base 1, jsMap en base 0)

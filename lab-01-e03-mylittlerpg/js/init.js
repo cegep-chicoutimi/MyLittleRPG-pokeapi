@@ -40,7 +40,7 @@ window.onload = async function() {
                 typeTuile = liste_tuiles.find(t =>
                     t.type == tuile.type
                 )
-                caseHTML.className = "box explored b-" + typeTuile.nom;
+                caseHTML.className = "box explored b-" + typeTuile.name;
                 // caseHTML.className = "box explored " + intToCaseType(generateNumber(liste_tuiles), liste_tuiles);
                 console.log(x + ' | ' + y);
                 console.log(carte);
@@ -66,7 +66,7 @@ function generateNumber(liste)
 
 function intToCaseType(n)
 {
-    return 'b-' + liste_tuiles[n].nom;
+    return 'b-' + liste_tuiles[n].name;
 }
 
 async function initCssDepuisApi(liste)
@@ -75,13 +75,13 @@ async function initCssDepuisApi(liste)
     
     liste.forEach(tuile => {
         document.documentElement.style.setProperty(
-            '--url-image-' + tuile.nom ,
+            '--url-image-' + tuile.name ,
             'url('+ tuile.url +')'
         );
         
         style.innerHTML += 
-            '#ig_game_grid .b-' + tuile.nom +
-            '{ background-image: var(--url-image-' + tuile.nom + '); }';
+            '#ig_game_grid .b-' + tuile.name +
+            '{ background-image: var(--url-image-' + tuile.name + '); }';
     });
 
     document.head.appendChild(style);
