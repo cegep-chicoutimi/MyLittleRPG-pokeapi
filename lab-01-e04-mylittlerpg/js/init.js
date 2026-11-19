@@ -53,8 +53,8 @@ window.onload = async function() {
       playableChar = await getActualCharacter(BASE_URL);
       // console.log(playableChar);
       await initGame();
-      playerPosition.x = playableChar.positionX -1;
-      playerPosition.y = playableChar.positionY -1;
+      playerPosition.x = playableChar.posX -1;
+      playerPosition.y = playableChar.posY -1;
       await refreshMap(BASE_URL, playerPosition, mapHtml, mapJS);
       await goAroundPlayer(BASE_URL, playerPosition, mapHtml, mapJS);
       drawWindow(mapJS, mapHtml, playerPosition);
@@ -130,11 +130,11 @@ async function initCssFromApi(list) {
   let styleRoot = document.createElement('style');
   if(list != null) {
     styleRoot.innerHTML = ":root {\n";
-    list.forEach(tuile => {
-      styleRoot.innerHTML += `--url-image-${tuile.nom} : url(${tuile.url});\n`
+    list.forEach(tile => {
+      styleRoot.innerHTML += `--url-image-${tile.name} : url(${tile.url});\n`
       style.innerHTML +=
-        `.b-${tuile.nom}
-        { background-image: var(--url-image-${tuile.nom}); }\n`;
+        `.b-${tile.name}
+        { background-image: var(--url-image-${tile.name}); }\n`;
     });
   }
   style.innerHTML += ".b-limit { background-color:var(--ui-red);}";
@@ -155,17 +155,17 @@ function initLegend(list) {
       var li = document.createElement('li');
       li.className = "li-legend"
       var img = document.createElement('div');
-      img.className = "legend-img b-" + t.nom;
+      img.className = "legend-img b-" + t.name;
       li.appendChild(img);
 
       var ulDetail = document.createElement('ul');
       var liTitle = document.createElement("span");
-      liTitle.textContent = t.nom;
+      liTitle.textContent = t.name;
       ulDetail.appendChild(liTitle);
 
       var liToward = document.createElement('li');
       var liText;
-      if(t.estTraversable) {
+      if(t.canGoThrough) {
         liText = "Case traversable";
       }
       else {

@@ -62,10 +62,10 @@ public class DeplacementController : ControllerBase
                             //});
                             return new DeplacementDTO()
                             {
-                                EstValide = true,
+                                IsCorrect = true,
                                 FinalX = personnage.PositionX,
                                 FinalY = personnage.PositionY,
-                                Tuiles = TuileDTO.ListToDTO(tuiles)
+                                Tiles = TuileDTO.ListToDTO(tuiles)
                             };
                         }
                     }
@@ -73,10 +73,10 @@ public class DeplacementController : ControllerBase
                     {
                         return new DeplacementDTO()
                         {
-                            EstValide = false,
+                            IsCorrect = false,
                             FinalX = personnage.PositionX,
                             FinalY = personnage.PositionY,
-                            Tuiles = null
+                            Tiles = null
                         };
                     }
                 }
@@ -84,10 +84,10 @@ public class DeplacementController : ControllerBase
                 {
                     return new DeplacementDTO()
                     {
-                        EstValide = false,
+                        IsCorrect = false,
                         FinalX = personnage.PositionX,
                         FinalY = personnage.PositionY,
-                        Tuiles = null
+                        Tiles = null
                     };
                 }
             }

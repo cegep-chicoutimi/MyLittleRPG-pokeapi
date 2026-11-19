@@ -17,8 +17,8 @@ window.onload = async () => {
             result.forEach(res => {
                 resLi = document.createElement("li");
                 console.log(res);
-                resLi.textContent = `${res.idPersonnage} : ${res.nom} de niveau ${res.niveau}`;
-                resLi.onclick = () => clickToSelect(res.idPersonnage);
+                resLi.textContent = `${res.id} : ${res.name} de niveau ${res.level}`;
+                resLi.onclick = () => clickToSelect(res.id);
                 ulHtml.appendChild(resLi);
             });
         }

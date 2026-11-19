@@ -54,7 +54,7 @@ async function movePlayer(jsMap, htmlMap, player, depY, depX, siteUrl) {
         var postDeplY = player.y + depY;
         var postDeplX = player.x + depX;
 
-        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].estTraversable) {
+        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
             player.y = postDeplY;
             player.x = postDeplX;
             await refreshMap(siteUrl, player, htmlMap, jsMap);
@@ -91,7 +91,7 @@ function drawTile(divBoxHtml, tile) {
 // Écrit les tuiles renvoyées par l'API dans jsMap (API en base 1, jsMap en base 0)
 function applyTilesToMap(jsMap, tiles) {
     tiles.forEach(t => {
-        jsMap[t.positionY - 1][t.positionX - 1] = t;
+        jsMap[t.y - 1][t.x - 1] = t;
     });
 }
 
@@ -121,19 +121,19 @@ async function moveCharacter(jsMap, htmlMap, character, player, depY, depX, site
         var postDeplY = player.y + depY;
         var postDeplX = player.x + depX;
 
-        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].estTraversable) {
+        if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
             isMoving = true;
             try {
-                var result = await moveCharApi(siteUrl, {y: postDeplY, x: postDeplX}, character.idPersonnage);
+                var result = await moveCharApi(siteUrl, {y: postDeplY, x: postDeplX}, character.id);
 
                 // Le serveur fait foi (API en base 1, player en base 0)
-                character.positionY = result.finalY;
-                character.positionX = result.finalX;
+                character.posY = result.finalY;
+                character.posX = result.finalX;
                 player.y = result.finalY - 1;
                 player.x = result.finalX - 1;
 
-                if (result.estValide && result.tuiles != null) {
-                    applyTilesToMap(jsMap, result.tuiles);
+                if (result.isCorrect && result.tiles != null) {
+                    applyTilesToMap(jsMap, result.tiles);
                 }
 
                 drawWindow(jsMap, htmlMap, player);

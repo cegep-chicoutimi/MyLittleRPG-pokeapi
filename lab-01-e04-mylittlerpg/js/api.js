@@ -10,8 +10,8 @@ async function getTileList(siteUrl) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
 
-        var tuiles = await response.json();
-        return tuiles;
+        var tiles = await response.json();
+        return tiles;
 
     } catch (error) {
         ('Erreur fetch :', error);
@@ -32,8 +32,8 @@ async function getOneTile(siteUrl, y, x) {
         throw new Error(`Erreur HTTP: ${response.status}`);
     }
     
-    var tuile = await response.json();
-    return tuile;
+    var tile = await response.json();
+    return tile;
 }
 
 async function connect(siteUrl, data) {
@@ -50,9 +50,9 @@ async function connect(siteUrl, data) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
 
-        var reussite = await response.json();
+        var goodConnect = await response.json();
         console.log(response)
-        return reussite;
+        return goodConnect;
 
     } catch (error) {
         console.error('Erreur fetch :', error);
@@ -74,9 +74,9 @@ async function register(siteUrl, data) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
 
-        var reussite = await response.json();
+        var registered = await response.json();
         console.log(response)
-        return reussite;
+        return registered;
 
     } catch (error) {
         console.error('Erreur fetch :', error);
@@ -125,9 +125,9 @@ async function createCharacter(siteUrl, data) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
 
-        var reussite = await response.json();
+        var created = await response.json();
         console.log(response)
-        return reussite;
+        return created;
     } 
     catch (error) {
         console.error('Erreur fetch :', error);
@@ -184,9 +184,9 @@ async function disconnectApi(siteUrl) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
 
-        var reussite = await response.text();
+        var disconnecteds = await response.text();
         console.log(response)
-        return reussite;
+        return disconnecteds;
 
     } catch (error) {
         console.error('Erreur fetch :', error);
@@ -208,9 +208,9 @@ async function moveCharApi(siteUrl, player, characterId) {
         throw new Error(`Erreur HTTP: ${response.status}`);
     }
     
-    var tuile = await response.json();
-    // console.log(tuile);
-    return tuile;
+    var tile = await response.json();
+    // console.log(tile);
+    return tile;
 }
 
 async function getTileArounCharApi(siteUrl, characterId, y, x) {
@@ -227,7 +227,7 @@ async function getTileArounCharApi(siteUrl, characterId, y, x) {
         throw new Error(`Erreur HTTP: ${response.status}`);
     }
     
-    var tuile = await response.json();
-    // console.log(tuile);
-    return tuile;
+    var tile = await response.json();
+    // console.log(tile);
+    return tile;
 }

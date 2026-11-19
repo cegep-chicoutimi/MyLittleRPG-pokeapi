@@ -6,9 +6,9 @@
 
         public string Url { get; set; } = string.Empty;
 
-        public bool EstTraversable { get; set; }
+        public bool CanGoThrough { get; set; }
 
-        public string Nom { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         public static List<TuileJS> Liste
         {
@@ -31,8 +31,8 @@
         { 
             Type = type;
             Url = url;
-            EstTraversable = estTraversable;
-            Nom = nom;
+            CanGoThrough = estTraversable;
+            Name = nom;
         }
     }
 }
