@@ -20,6 +20,7 @@ namespace lab_01_e04_pokeapi_api.Data.Context
 
             try
             {
+                modelBuilder.Entity<Tuile>().HasKey(t => new { t.PositionX, t.PositionY });
                 StreamReader sr = new StreamReader("../pokemons.json");
 
                 string line = sr.ReadToEnd();
@@ -29,7 +30,6 @@ namespace lab_01_e04_pokeapi_api.Data.Context
                 foreach(Monstre m in monstres) { m.MonstreId = m.PokemonId; }
 
                 modelBuilder.Entity<Monstre>().HasData(monstres);
-                modelBuilder.Entity<Tuile>().HasKey(t => new { t.PositionX, t.PositionY });
             }
             catch
             {
