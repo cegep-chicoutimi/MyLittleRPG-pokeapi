@@ -2,15 +2,17 @@
 {
     public class TuileDTO
     {
-        public TuileDTO(int x, int y, int type)
+        public TuileDTO(int x, int y, int type, bool traversable)
         {
             X = x;
             Y = y;
             Type = type;
+            CanGoThrough = traversable;
         }
         public int X { get; set; }
         public int Y { get; set; }
         public int Type { get; set; }
+        public bool CanGoThrough { get; set; }
 
         public static List<TuileDTO> ListToDTO(List<Tuile> tuiles)
         {
@@ -70,10 +72,5 @@
             });
             return resultat;
         }
-    }
-
-    public class DTO
-    {
-
     }
 }

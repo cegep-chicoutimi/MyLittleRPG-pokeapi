@@ -9,9 +9,7 @@
 		=> new PersonnageDTO(idPersonnage, nom, niveau, pointsDeVie, pointDeVieMax, force, defense, posX, posY, dateCreation);
 		
 	public TuileDTO ToDTO()
-    {
-        return new TuileDTO(PositionX, PositionY, Type);
-    }
+	    => new TuileDTO(PositionX, PositionY, Type);
   ```
 
 - **Langue** : tout ce qui touche le client (DTO, JS) est en anglais, le reste de l'API reste en français. Le JS a été renommé pour correspondre aux DTO (voir la partie traductions)
@@ -24,7 +22,7 @@
 
 | Fichier                              | Modification                                                                                                                                                        |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Models/DTO.cs                        | TuileDTO, DeplacementDTO, PersonnageDTO, avec ListToDTO pour TuileDTO et PersonnageDTO                                                                              |
+| Models/DTO.cs                        | TuileDTO, DeplacementDTO, PersonnageDTO<br>avec ListToDTO pour TuileDTO et PersonnageDTO                                                                            |
 | Models/DeplacementResult.cs          | Renommé en DeplacementDTO et déplacé dans DTO.cs                                                                                                                    |
 | Models/Tuile.cs                      | Ajout de ToDTO()                                                                                                                                                    |
 | Models/Personnage.cs                 | Ajout de ToDTO()                                                                                                                                                    |
@@ -68,3 +66,44 @@ Côté JS, certaines variables de retour du fichier api.js ont été traduites :
 | tuiles   | tiles                                                                                                                |
 | tuile    | tile                                                                                                                 |
 | reussite | goodConnect (connect), registered (register), created (createCharacter), disconnecteds (disconnectApi) |
+## Détail des DTO
+
+```csharp
+public class TuileDTO
+{
+	public int X { get; set; }
+	public int Y { get; set; }
+	public int Type { get; set; }
+	public bool CanGoThrough { get; set; }
+	
+	public static List<TuileDTO> ListToDTO(List<Tuile> tuiles);
+}
+```
+
+```csharp
+public class PersonnageDTO
+{
+	public int Id { get; set; }
+	public string Name { get; set; } = "";
+	public int Level { get; set; }
+	public int Hp { get; set; }
+	public int MaxHp { get; set; }
+	public int Strength { get; set; }
+	public int Defense { get; set; }
+	public int PosX { get; set; }
+	public int PosY { get; set; }
+	public DateTime CreationDate { get; set; }
+	
+	public static List<PersonnageDTO> ListToDTO(List<Personnage> persos);
+}
+```
+
+```csharp
+public class DeplacementDTO
+{
+	public bool IsCorrect { get; set; }
+	public int FinalX { get; set; }
+	public int FinalY { get; set; }
+	public List<TuileDTO>? Tiles { get; set; } = null;
+}
+```

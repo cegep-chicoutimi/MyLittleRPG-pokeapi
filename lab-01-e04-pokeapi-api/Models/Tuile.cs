@@ -118,8 +118,6 @@ namespace lab_01_e04_pokeapi_api.Models
         }
 
         public TuileDTO ToDTO()
-        {
-            return new TuileDTO(PositionX, PositionY, Type);
-        }
+            => new TuileDTO(PositionX, PositionY, Type, EstTraversable);
     }
 }

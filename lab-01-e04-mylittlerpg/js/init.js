@@ -184,6 +184,7 @@ function initLegend(list) {
 
 async function initGame() {
   tileList = await getTileList(BASE_URL);
+  console.log(tileList);
   initCssFromApi(tileList);
 
   await partialView("partial/game.html", document.getElementById("main-sidebar"));

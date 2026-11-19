@@ -28,6 +28,7 @@ async function goToOneTile(jsMap, divBoxHtml, y, x, siteUrl, clique=false) {
                     console.error(error);
                     serverIsDown();
                 }
+                // console.log(tile);
                 jsMap[y][x] = tile;
             }
         }
@@ -76,9 +77,7 @@ async function refreshMap(siteUrl, player, htmlMap, jsMap) {
     await goAroundPlayer(siteUrl, player, htmlMap, jsMap);
 }
 
-// ========= AFTER CONNECTION
 
-// Affiche UNE case depuis une donnée déjà en mémoire (aucun appel API)
 function drawTile(divBoxHtml, tile) {
     if (tile == null || tile == 0) {
         divBoxHtml.className = "box";
@@ -88,14 +87,12 @@ function drawTile(divBoxHtml, tile) {
     divBoxHtml.className = "box explored b-" + (typeTile ? typeTile.name : "");
 }
 
-// Écrit les tuiles renvoyées par l'API dans jsMap (API en base 1, jsMap en base 0)
 function applyTilesToMap(jsMap, tiles) {
     tiles.forEach(t => {
         jsMap[t.y - 1][t.x - 1] = t;
     });
 }
 
-// Redessine la fenêtre 5x5 autour du joueur, uniquement depuis jsMap
 function drawWindow(jsMap, htmlMap, player) {
     for (let dy = -CENTER_Y; dy < NY - CENTER_Y; dy++) {
         for (let dx = -CENTER_X; dx < NX - CENTER_X; dx++) {
@@ -120,20 +117,24 @@ async function moveCharacter(jsMap, htmlMap, character, player, depY, depX, site
     if ((depX != depY && depX != -depY) && (depX == 1 || depX == 0 || depX == -1) && (depY == 1 || depY == 0 || depY == -1) ) {
         var postDeplY = player.y + depY;
         var postDeplX = player.x + depX;
-
+        console.log(jsMap[postDeplY][postDeplX].canGoThrough)
         if (!isOutMap(postDeplY, postDeplX) && jsMap[postDeplY][postDeplX].canGoThrough) {
             isMoving = true;
             try {
+                // console.log("avantmovecharapi")
                 var result = await moveCharApi(siteUrl, {y: postDeplY, x: postDeplX}, character.id);
 
-                // Le serveur fait foi (API en base 1, player en base 0)
+                // console.log("après movecharapi")
                 character.posY = result.finalY;
                 character.posX = result.finalX;
                 player.y = result.finalY - 1;
                 player.x = result.finalX - 1;
 
+                console.log(result);
+
                 if (result.isCorrect && result.tiles != null) {
                     applyTilesToMap(jsMap, result.tiles);
+                    // console.log("correct")
                 }
 
                 drawWindow(jsMap, htmlMap, player);
